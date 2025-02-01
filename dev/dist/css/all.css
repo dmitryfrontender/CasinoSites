@@ -1,3 +1,45 @@
+@font-face {
+	font-family: "HelveticaNeue-Regular";
+	src: url("../fonts/HelveticaNeue-Regular.eot");
+	src: url("../fonts/HelveticaNeue-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue-Regular.woff2") format("woff2"), url("../fonts/HelveticaNeue-Regular.ttf") format("truetype"), url("../fonts/HelveticaNeue-Regular.svg#helvetica_neueregular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Inter-Regular";
+	src: url("../fonts/Inter-Regular.eot");
+	src: url("../fonts/Inter-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter-Regular.svg#Inter-Regular") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Urbanist-Bold";
+	src: url("../fonts/Urbanist-Bold.eot");
+	src: url("../fonts/Urbanist-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Urbanist-Bold.woff2") format("woff2"), url("../fonts/Urbanist-Bold.ttf") format("truetype"), url("../fonts/Urbanist-Bold.svg#urbanistbold") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Urbanist-Medium";
+	src: url("../fonts/Urbanist-Medium.eot");
+	src: url("../fonts/Urbanist-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Urbanist-Medium.woff2") format("woff2"), url("../fonts/Urbanist-Medium.ttf") format("truetype"), url("../fonts/Urbanist-Medium.svg#urbanistmedium") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Urbanist-SemiBold";
+	src: url("../fonts/Urbanist-SemiBold.eot");
+	src: url("../fonts/Urbanist-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/Urbanist-SemiBold.woff2") format("woff2"), url("../fonts/Urbanist-SemiBold.ttf") format("truetype"), url("../fonts/Urbanist-SemiBold.svg#urbanistsemibold") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: "Urbanist-SemiBoldItalic";
+	src: url("../fonts/Urbanist-SemiBoldItalic.eot");
+	src: url("../fonts/Urbanist-SemiBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Urbanist-SemiBoldItalic.woff2") format("woff2"), url("../fonts/Urbanist-SemiBoldItalic.ttf") format("truetype"), url("../fonts/Urbanist-SemiBoldItalic.svg#urbanistsemibold_italic") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, button, input, p, blockquote, th, td {
 	margin: 0;
 	padding: 0;
@@ -29,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 q:before, q:after {
-	content: '';
+	content: "";
 }
 
 a * {
@@ -49,16 +91,16 @@ html {
 }
 
 body {
-	font: 12px/1.2 Arial, Helvetica, sans-serif;
+	font: 16px/150% "Urbanist-SemiBold", serif;
 	height: 100%;
 	min-width: 320px;
 	position: relative;
-	color: #000;
-	background: #fff;
+	color: #fff;
+	background: #111A24;
 }
 
 a {
-	color: #2600ff;
+	color: #87FE37;
 	text-decoration: none;
 }
 
@@ -75,57 +117,46 @@ input {
 * {
 	box-sizing: border-box;
 }
-
 *:before, *:after {
 	box-sizing: border-box;
 }
-
 * ::-moz-selection {
-	background: #2600ff;
-	color: #fff;
+	background: #87FE37;
+	color: #83A2C6;
 }
-
 * ::selection {
-	background: #2600ff;
-	color: #fff;
+	background: #87FE37;
+	color: #83A2C6;
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-	color: #999;
+	color: #83A2C6;
 }
-
 input:-moz-placeholder, textarea:-moz-placeholder {
-	color: #999;
+	color: #83A2C6;
 	opacity: 1;
 }
-
 input::-moz-placeholder, textarea::-moz-placeholder {
-	color: #999;
+	color: #83A2C6;
 	opacity: 1;
 }
-
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-	color: #999;
+	color: #83A2C6;
 }
-
 input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
 	color: transparent;
 }
-
 input:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
 	color: transparent;
 }
-
 input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
 	color: transparent;
 }
-
 input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
 	color: transparent;
 }
-
 input.placeholder, textarea.placeholder {
-	color: #999 !important;
+	color: #83A2C6 !important;
 }
 
 .wrapper {
