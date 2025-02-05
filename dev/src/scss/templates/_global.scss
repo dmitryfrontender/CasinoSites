@@ -101,22 +101,12 @@ input, textarea {
 	height: 100%;
 	table-layout: fixed;
 }
-.container{}
-//icon
-// [class^="icon-"], [class*=" icon-"] {
-// 	/* use !important to prevent issues with browser extensions that change fonts */
-// 	font-family: 'Ico Moon' !important;
-// 	font-size: 12px;
-// 	speak: none;
-// 	font-style: normal;
-// 	font-weight: normal;
-// 	font-variant: normal;
-// 	text-transform: none;
-// 	line-height: 1;
+.container {
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
 
-// 	/* Better Font Rendering =========== */
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// }
-
-// @include max-screen(1000px) {}
+.green-text {
+	color: #87FE37;
+}

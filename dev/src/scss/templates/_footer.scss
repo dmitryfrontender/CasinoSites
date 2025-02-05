@@ -5,3 +5,15 @@
 
 // @import 'includes/plugins';
 //
+
+
+footer {
+    height: 1px;
+    display: table-row;
+
+    .footer-wrapper {
+        height: 553px;
+        background-image: linear-gradient(180deg, #212C44 0%, #111A22 100%);
+        padding: 0 10px;
+    }
+}
