@@ -296,6 +296,59 @@ button {
 	border: none;
 }
 
+.visit-btn {
+	border-radius: 10px;
+	background: #F9EB3D;
+	box-shadow: 0px 1px 0px 0px #FFF983 inset, 1px 1px 0px 0px #FFCE08 inset;
+	padding: 8px 20px;
+	width: 160px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+}
+.visit-btn span {
+	color: #020123;
+}
+
+.rate {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 20px;
+	border: 1px solid #576C86;
+	padding: 10px 15px;
+	background: #1A2535;
+	gap: 5px;
+}
+.rate svg {
+	width: 16px;
+	height: 16px;
+}
+
+.ellipse {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.ellipse svg {
+	width: 40px;
+	height: 40px;
+}
+.ellipse span {
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
 .top-header {
 	background: #111922;
 	width: 100%;
@@ -318,11 +371,16 @@ button {
 }
 .top-header-wrapper .mobile-menu svg {
 	width: 23px;
+	height: 23px;
+	fill: white;
 }
 @media screen and (max-width: 1024px) {
 	.top-header-wrapper .mobile-menu {
 		display: block;
 	}
+}
+.top-header-wrapper .active-mobile-btn svg {
+	fill: #87FE37;
 }
 .top-header-wrapper .logo {
 	display: flex;
@@ -412,6 +470,7 @@ button {
 }
 .top-header-wrapper .button-group .mobile-search-btn svg {
 	fill: transparent;
+	stroke: #73838F;
 	width: 20px;
 	height: 20px;
 }
@@ -419,6 +478,9 @@ button {
 	.top-header-wrapper .button-group .mobile-search-btn {
 		display: block;
 	}
+}
+.top-header-wrapper .button-group .active-search-btn svg {
+	stroke: #87FE37;
 }
 .top-header-wrapper .button-group button {
 	display: flex;
@@ -631,4 +693,441 @@ button {
 .mobile-search.active-mobile-search + .active-mobile-menu {
 	transform: translateY(0);
 	transition: all 0.3s ease;
+}
+
+.casino-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 130px;
+}
+.casino-wrapper .info-block h2 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 10px;
+}
+.casino-wrapper .info-block h2 .text-accent {
+	color: #87FE37;
+}
+.casino-wrapper .info-block p {
+	color: #83A2C6;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 20px;
+}
+.casino-wrapper .info-block .summary {
+	color: #fff;
+}
+.casino-wrapper .info-block .summary .yellow-text {
+	color: #F8EB3E;
+}
+.casino-wrapper img {
+	width: 100%;
+	max-width: 550px;
+}
+
+.top-casino-list {
+	margin-top: 100px;
+}
+.top-casino-list ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.top-casino-list ul li {
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr 1fr;
+	grid-row: auto;
+	align-items: center;
+	padding: 20px;
+	gap: 20px;
+	justify-content: space-between;
+	cursor: pointer;
+}
+.top-casino-list ul li .casino-banner {
+	display: flex;
+	align-items: center;
+}
+.top-casino-list ul li .casino-banner span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #151F2C;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	color: #AFD9A4;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding: 8px 10px 8px 20px;
+}
+.top-casino-list ul li .casino-banner .accent-num {
+	background: #588552;
+	color: #AFD9A4;
+}
+.top-casino-list ul li .casino-banner img {
+	border-radius: 20px;
+}
+.top-casino-list ul li .text-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.top-casino-list ul li .text-wrapper p {
+	color: #83A2C6;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	width: 400px;
+}
+.top-casino-list ul li .summary {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.top-casino-list ul li .summary .top-summary {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.top-casino-list ul li .summary .top-summary svg {
+	fill: #87FE37;
+	width: 18px;
+	height: 18px;
+}
+.top-casino-list ul li .summary .top-summary span {
+	color: #83A2C6;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+}
+.top-casino-list ul li .summary .top-summary .accent {
+	color: #87FE37;
+}
+.top-casino-list ul li .summary .discount {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.top-casino-list ul li .summary .discount span {
+	color: #83A2C6;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	text-transform: capitalize;
+}
+.top-casino-list ul li .summary .discount .accent {
+	color: #B5F88E;
+	background: #3D9700;
+	border-radius: 5px;
+	padding: 5px;
+}
+.top-casino-list ul li .summary .rate-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.top-casino-list ul li .buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 18px;
+}
+.top-casino-list ul li .buttons svg {
+	width: 20px;
+	height: 20px;
+}
+.top-casino-list ul li .buttons .run-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.top-casino-list ul li .buttons .run-btn .white-text {
+	color: #fff;
+}
+.top-casino-list ul li .buttons .run-btn span {
+	color: #87FE37;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+}
+.top-casino-list ul li::before {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: linear-gradient(90deg, rgb(135, 254, 55) 0%, rgb(131, 162, 198) 80%);
+	z-index: -1;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+	.top-casino-list ul li:hover::before {
+		opacity: 1;
+	}
+}
+
+.list .text-accent {
+	color: #87FE37 !important;
+}
+
+.casino-list, .event-list {
+	margin-bottom: 50px;
+}
+.casino-list .list-name, .event-list .list-name {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 15px;
+	margin-bottom: 30px;
+	gap: 10px;
+}
+.casino-list .list-name svg, .event-list .list-name svg {
+	width: 25px;
+	height: 25px;
+}
+.casino-list .list-name span, .event-list .list-name span {
+	color: white;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 17px;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium";
+}
+.casino-list ul, .event-list ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+.casino-list ul li, .event-list ul li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 275px;
+	padding: 20px;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+}
+
+.green-text {
+	color: #87FE37;
+}
+
+header {
+	padding: 0 10px;
+}
+
+main {
+	padding: 0 10px;
+}
+
+.banner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 60px 0 50px;
+}
+.banner-left {
+	max-width: 520px;
+}
+.banner-title {
+	color: #FFF;
+	font-feature-settings: "liga" off, "clig" off;
+	font-size: 34px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.banner-text {
+	color: #83A2C6;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 150%;
+}
+.banner-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+}
+.banner-grid-item {
+	display: flex;
+	width: 150px;
+	padding: 10px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+	overflow: hidden;
+}
+.casino-list ul li .list-head, .event-list ul li .list-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.casino-list ul li .list-head span, .event-list ul li .list-head span {
+	color: #AFD9A4;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium";
+	padding: 8px 20px 14px;
+	background: #588552;
+	border-radius: 10px;
+	transform: translateY(10px);
+	z-index: -1;
+}
+.casino-list ul li .list-head img, .event-list ul li .list-head img {
+	width: 200px;
+	border-radius: 20px;
+}
+.casino-list ul li h3, .event-list ul li h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium";
+}
+.casino-list ul li .card-buttons, .event-list ul li .card-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+}
+.casino-list ul li .card-buttons svg, .event-list ul li .card-buttons svg {
+	width: 20px;
+	height: 20px;
+}
+.casino-list ul li .card-buttons button, .event-list ul li .card-buttons button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.casino-list ul li .card-buttons button span, .event-list ul li .card-buttons button span {
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+}
+.casino-list ul li .card-buttons .visit-btn span, .event-list ul li .card-buttons .visit-btn span {
+	color: #020123;
+}
+.casino-list ul .accent-card, .event-list ul .accent-card {
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
+	box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.7);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+}
+.casino-list ul .active-card, .event-list ul .active-card {
+	border-radius: 20px;
+	border: 2px solid #87FE37;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+}
+
+.event-list .list-name svg {
+	fill: #75F94C;
+}
+.event-list ul li {
+	padding: 0 0 20px;
+}
+.event-list ul li .list-head img {
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.event-list ul li .card-buttons button {
+	border-radius: 10px;
+	border: 1px solid #576C86;
+	background: #1A2535;
+	padding: 10px 15px;
+	font-family: "Urbanist-Medium";
+}
+.event-list ul li .card-buttons .visit-btn {
+	border-radius: 10px;
+	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+	box-shadow: 1px 1px 0px 0px #87FE37 inset;
+}
+.event-list ul .active-card {
+	border: 2px solid #A14EF6;
+}
+.event-list .list-head .head {
+	position: absolute;
+	transform: translateY(0);
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	color: #83A2C6;
+	padding: 6px 10px;
+	background: #000;
+	z-index: 1;
+	top: 0;
+}
+.banner-grid-icon {
+	display: flex;
+	width: 50px;
+	height: 50px;
+	padding: 7px 5px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 32px;
+	background: #1D283B;
+}
+
+footer {
+	height: 1px;
+	display: table-row;
+}
+footer .footer-wrapper {
+	height: 553px;
+	background-image: linear-gradient(180deg, #212C44 0%, #111A22 100%);
+	padding: 0 10px;
 }

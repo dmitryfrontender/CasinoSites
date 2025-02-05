@@ -25,20 +25,20 @@ $(document).ready(function(){
 //functions
 const mobileMenu = () => {
 	$('.mobile-menu').on('click', function(){
-		$('.header-nav').toggleClass('active-mobile-menu')
-		console.log('click -btn')
+		$('.header-nav').toggleClass('active-mobile-menu');
+		$('.mobile-menu').toggleClass('active-mobile-btn');
 	})
 }
 
 const closeSearch = () => {
 	$('#close-search').on('click', function(){
-
 		$('.mobile-search').removeClass('active-mobile-search');
 	})
 }
 
 const toggleSearch = () => {
 	$('#toggle-search').on('click', function(){
+		$('#toggle-search').toggleClass('active-search-btn');
 		$('#mobile-search').toggleClass('active-mobile-search');
 	})
 }
