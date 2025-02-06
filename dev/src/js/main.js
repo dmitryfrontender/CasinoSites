@@ -2,7 +2,7 @@ $(document).ready(function(){
 	mobileMenu();
 	closeSearch();
 	toggleSearch();
-	
+
 	//calls functions
 });
 
@@ -37,7 +37,6 @@ const closeSearch = () => {
 }
 
 const toggleSearch = () => {
-
 	$('#toggle-search').on('click', function(){
 		$('#toggle-search').toggleClass('active-search-btn');
 		$('#mobile-search').toggleClass('active-mobile-search');
