@@ -892,6 +892,7 @@ button{
                     padding: 20px;
                     gap: 20px;
                     position: relative;
+                    flex: 1;
                     .element{
                         border-radius: 10px;
                         background: rgba(135, 254, 55, 0.20);    
@@ -1181,5 +1182,355 @@ button{
         }
     }
     
+}
+.review-wrapper{
+    border-radius: 20px;
+    border: 1px solid #1D283C;
+    background: linear-gradient(180deg, #111922 0%, #020305 100%);
+    backdrop-filter: blur(17px);
+    padding: 20px;
+    .title-accent{
+        color: vars.$selection_bg
+    }
+    .text-content{
+        .title{
+            @include mixins.text(white, 18px, 600, normal);
+        }
+        .block{
+            border-radius: 20px;
+            border: 1px solid #1D283C;
+            backdrop-filter: blur(17px);
+            padding: 20px;
+        }
+    }
+    .read-more{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        gap: 5px;
+        span{
+            @include mixins.text(vars.$selection_bg, 16px, 600, 150%);
+        }
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .general-info{
+        margin-top: 20px;
+       
+        span{
+            @include mixins.text(white, 14px, 600, 150%);
+        }
+        .item-wrap{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            span{
+                color: vars.$selection_bg;
+                // white-space: wrap;
+            }
+        }
+        .info-wrap{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                li{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    // display: grid;
+                    // grid-template-columns: 1fr 25px 1fr auto;
+                    .option{
+                        flex-basis: 110px;
+                    }
+                }
+            }
+        }
+    }
+    .languages{
+        ul{
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            
+            
+        }
+    }
+    .payment-methods{
+        svg{
+            width: 40px !important;
+            // height: 40px;
+        }
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 20px;
+            gap: 20px;
+            li{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+        }
+    }
+
+    .top-reason{
+
+        .wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            .item{
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+                flex: 1;
+                .num{
+                    color: vars.$selection_bg;
+                    border-radius: 10px;
+                    background: rgba(135, 254, 55, 0.20);
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                }
+            }
+            .separator{
+                width: 1px;
+                align-self: stretch;
+                background-color: #1A2535;
+            }
+        }
+    }
+
+    .available-sports{
+        ul{
+            margin-top: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            li{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex-basis: 100px;
+                gap: 15px;
+                svg{
+                    width: 40px !important;
+                    height: 40px !important;
+
+                }
+                span{
+                    white-space: nowrap;
+                    color: vars.$placeholder_color;
+                }
+            }
+        }
+    }
+
+    .other-products {
+      
+        
+      
+        .products-grid {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          justify-items: start;
+          margin-top: 30px;
+          position: relative;
+
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #1A2535; 
+          }
+      
+          &::before {
+            left: 32%;
+          }
+      
+          &::after {
+            left: 66%; 
+          }
+      
+          .product {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px 10px 0;
+            width: 100%;
+
+          }
+        }
+      }
+
+      .rating-container {
+        // display: grid;
+        gap: 5px;
+        // grid-template-columns: minmax(100px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+        // justify-items: start;
+        margin-top: 30px;
+        position: relative;
+        // display: flex;
+        // flex-wrap: wrap;
+        // background: #0c0c0c;
+        // color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        position: relative;
+
+    }
+    
+    .rating-global {
+        flex: 1 1 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 8px 42px;
+    
+        .thumb {
+            font-size: 50px;
+            color: #7fff00;
+        }
+    
+        .global-score {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    }
+    .separator {
+        width: 1px;
+        align-self: stretch;
+        background-color: #1A2535;
+    }
+    
+    // .rating-details {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: space-between;
+    //     flex: 1 1 100%;
+    // }
+    
+    .column {
+        flex: 1 1 45%;
+        min-width: 300px;
+        margin-top: 20px;
+    }
+    
+    .rating-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+    
+        span {
+            flex: 0 0 20%;
+        }
+    
+        .bar {
+            flex: 1;
+            height: 5px;
+            background: #333;
+            border-radius: 5px;
+            overflow: hidden;
+    
+            div {
+                height: 100%;
+                background: #7fff00;
+            }
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .column {
+            flex: 1 1 100%;
+        }
+    }
+    
+
+      .bet-summary {
+      
+        .summary-grid {
+          display: grid;
+        //   grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        justify-items: start;
+        position: relative;
+        margin-top: 20px;
+
+          gap: 20px;
+
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #1A2535; 
+          }
+      
+          &::before {
+            left: 32%;
+          }
+      
+          &::after {
+            left: 66%; 
+          }
+      
+          .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px 10px 0;
+            width: 100%;
+
+      
+            .label {
+              font-size: 0.875rem;
+            }
+      
+            .value {
+              @include mixins.text(vars.$selection_bg, 16px, 600, 150%);
+            }
+      
+          }
+        }
+      }
+      
+      
 }
 
