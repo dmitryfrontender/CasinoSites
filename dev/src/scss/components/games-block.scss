@@ -1,0 +1,128 @@
+@use "../includes/variables" as vars;
+@use '../includes/mixins' as mixins;
+
+.games-block{
+    margin-top: 15px;
+    ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        li{
+            .slide-wrapper{
+                // padding-bottom: 150px;
+                // padding-bottom: 50px;
+                .slide-cart{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    padding: 0 0 20px;
+                    overflow: hidden;
+
+                    border-radius: 20px;
+                    border: 1px solid #1D283C;
+                    background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                    backdrop-filter: blur(17px);
+                    position: relative;
+                    // overflow: hidden;
+                    .list-head{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                       
+                        
+                        span{
+                            @include mixins.text(#AFD9A4, 14px, 600, normal);
+                            font-family: 'Urbanist-Medium', sans-serif;
+                            position: absolute;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 10px;
+                            border-bottom-left-radius: 10px;
+                            // border-radius: 10px;
+                            padding-top: 2px;
+                            transform: translateY(-5px);
+                            color: #83A2C6;
+                            padding: 6px 10px;
+                            background: #000;
+                            z-index: 1;
+                            top: 0;
+                        }
+                        img{
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            border-bottom-right-radius: 0;
+                            border-bottom-left-radius: 0;
+                        }
+                    }
+                    h3{
+                        @include mixins.text(white, 20px, 600, normal);
+                        font-family: 'Urbanist-Medium', sans-serif;
+        
+                    }
+                    .card-buttons{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 18px;
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                        }
+                        button{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 10px;
+                            border: 1px solid #576C86;
+                            background: #1A2535;
+                            padding: 10px 15px;
+                            font-family: 'Urbanist-Medium', sans-serif;
+                            gap: 10px;
+                            span{
+                                @include mixins.text(white, 14px, 600, normal);
+                            }
+        
+                        }
+                        .visit-btn{
+                            border-radius: 10px;
+                            background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+                            box-shadow: 1px 1px 0px 0px #87FE37 inset;
+
+                        }
+                        // .visit-btn{
+                        //     span{
+                        //         color: #020123;
+        
+                        //     }
+        
+                        // }
+                        
+                    }
+                }
+             
+            }
+        }
+        @media screen and (max-width: 900px) {
+            grid-template-columns: repeat(3, 1fr);
+            
+        }
+        @media screen and (max-width: 650px) {
+            grid-template-columns: repeat(2, 1fr);
+            .head, button span{
+                font-size: clamp(10px, 3vw, 14px) !important;
+            }
+
+            
+        }
+        @media screen and (max-width: 375px) {
+            grid-template-columns: 1fr;
+            
+        }
+      
+    }
+   
+}

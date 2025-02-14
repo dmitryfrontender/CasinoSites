@@ -1,0 +1,76 @@
+@use "../includes/variables" as vars;
+
+// @use "../includes/mixins";
+@use '../includes/mixins' as mixins;
+
+
+
+.casino-australia{
+    overflow-x: clip;
+    @media screen and (max-width: 1024px) {
+        &{
+            overflow-x: unset;
+        }
+    }
+}
+
+.casino-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // gap: 130px;
+    .info-block{
+        flex: 1;
+        h2{
+            @include mixins.text(#fff, 34px, 700, normal);
+            .text-accent{
+                color: vars.$selection_bg
+            }
+            padding-bottom: 10px;
+
+        }
+        p{
+            @include mixins.text(vars.$placeholder_color, 16px, 500, normal);
+            padding-bottom: 20px;
+        }
+        .summary{
+            color: #fff;
+            .yellow-text{
+                color: #F8EB3E;
+            }
+        }
+    }
+    .bg-wrapper{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        img{
+            position: relative;
+            left: 30%;
+            width: 130%;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        &{
+            flex-direction: column;
+            .bg-wrapper{
+                flex: none;
+                width: 100%;
+                height: 300px; 
+                background: rgba(55, 254, 171, 0.40);
+                filter: blur(152px);
+                background-image: url('../images/banner-girl.png');
+                background-size: 250%;
+                background-position: center;
+                background-repeat: no-repeat;
+                img{
+                    // left: 0;
+                    display: none;
+                }
+            }
+        }
+    }
+    
+}

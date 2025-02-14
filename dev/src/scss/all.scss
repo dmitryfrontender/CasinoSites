@@ -25,6 +25,9 @@
 
 // template css
 @use "templates/footer";
+// *{
+//     border: 1px solid white;
+// }
 
 .container{
     width: clamp(300px, 95%, 1280px);
@@ -304,7 +307,6 @@ button{
     display: flex;
     align-items: center;
     justify-content: center;
-    // transition: margin-top 0.3s ease;
     ul{
         display: flex;
         justify-content: space-between;
@@ -371,7 +373,6 @@ button{
             transform: translateY(-200%);
             transition: all 0.3s ease;
             height: -webkit-fill-available;
-            // height: 100vh;
             position: fixed;
             height: 100vh;
             background: rgba(12, 19, 27, 0.90);
@@ -412,48 +413,37 @@ button{
 
 }
 
-.casino-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 130px;
-    .info-block{
-        h2{
-            @include mixins.text(#fff, 34px, 700, normal);
-            .text-accent{
-                color: vars.$selection_bg
-            }
-            padding-bottom: 10px;
 
-        }
-        p{
-            @include mixins.text(vars.$placeholder_color, 16px, 500, normal);
-            padding-bottom: 20px;
-        }
-        .summary{
-            color: #fff;
-            .yellow-text{
-                color: #F8EB3E;
-            }
-        }
-    }
-    img{
-        width: 100%;
-        max-width: 550px;
-    }
-}
+
 
 .casino-list-block{
     margin-top: 100px;
     ul{
         display: flex;
         flex-direction: column;
+        overflow-y: hidden;
+        overflow-x: scroll;
         gap: 10px;
+        @media screen and (max-width: 1150px) {
+            &{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media screen and (max-width: 800px) {
+            &{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (max-width: 500px) {
+            &{
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }
 .casino-list-elem{
-    background: linear-gradient(180deg, #111922 0%, #020305 100%);
-    // backdrop-filter: blur(17px);        
+    background: linear-gradient(180deg, #111922 0%, #020305 100%);   
     position: relative;
     top: 0;
     left: 0;
@@ -608,6 +598,22 @@ button{
         }
         
     }
+    @media screen and (max-width: 1150px) {
+        &{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .text-wrapper{
+                text-align: center;
+                p{
+                    width: auto;
+                    max-width: 350px;
+                }
+            }
+
+        }
+    }
    
 }
 .casino-list-elem::before {
@@ -625,6 +631,14 @@ button{
     transition: opacity 0.3s ease-in-out; 
 }
 
+.casino-list-block ul::-webkit-scrollbar {
+    display: none;
+}
+
+.casino-list-block ul{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
 @media screen and (min-width: 1024px) {
     .casino-list-elem:hover::before {
         opacity: 1; 
@@ -647,7 +661,7 @@ button{
 }
 
 .casino-list, .event-list{
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
     .list-name{
         display: flex;
         align-items: center;
@@ -665,97 +679,130 @@ button{
             font-family: 'Urbanist-Medium';
         }
     }
-    ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        li{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 275px;
-            padding: 20px;
-            border-radius: 20px;
-            border: 1px solid #1D283C;
-            background: linear-gradient(180deg, #111922 0%, #020305 100%);
-            backdrop-filter: blur(17px);
-            position: relative;
-            overflow: hidden;;
+    // .swiper-wrapper{
+    //     overflow: visible !important;
+    // }
+    // :deep{
+    //     .mySwiper{
+    //         overflow: auto;
+    //     }
+    // }
+    .mySwiper{
+        width: 100%;
+        height: 100%;
+        overflow: visible !important;
 
-
-
-            .list-head{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-               
-                
-                span{
-                    @include mixins.text(#AFD9A4, 14px, 600, normal);
-                    font-family: 'Urbanist-Medium';
-                    padding: 8px 20px 14px;
-                    background: #588552;
-                    border-radius: 10px;
-                    transform: translateY(10px);
-                    z-index: -1;
-                }
-                img{
-                    width: 200px;
-                    border-radius: 20px;
-                }
-            }
-            h3{
-                @include mixins.text(white, 20px, 600, normal);
-                font-family: 'Urbanist-Medium';
-
-            }
-            .card-buttons{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 18px;
-                svg{
-                    width: 20px;
-                    height: 20px;
-                }
-                button{
+        swiper-slide{
+            .slide-wrapper{
+                // padding-bottom: 150px;
+                padding-bottom: 50px;
+                .slide-cart{
                     display: flex;
-                    justify-content: center;
+                    flex-direction: column;
                     align-items: center;
-                    gap: 10px;
-                    span{
-                        @include mixins.text(white, 14px, 600, normal);
+                    gap: 20px;
+                    width: 100%;
+                    padding: 20px;
+                    border-radius: 20px;
+                    border: 1px solid #1D283C;
+                    background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                    backdrop-filter: blur(17px);
+                    position: relative;
+                    // overflow: hidden;
+                    .list-head{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                       
+                        
+                        span{
+                            @include mixins.text(#AFD9A4, 14px, 600, normal);
+                            font-family: 'Urbanist-Medium', sans-serif;
+                            padding: 8px 20px 14px;
+                            background: #588552;
+                            border-radius: 10px;
+                            transform: translateY(10px);
+                            z-index: -1;
+                        }
+                        img{
+                            width: 200px;
+                            border-radius: 20px;
+                        }
                     }
-
-                }
-                .visit-btn{
-                    span{
-                        color: #020123;
-
+                    h3{
+                        @include mixins.text(white, 20px, 600, normal);
+                        font-family: 'Urbanist-Medium', sans-serif;
+        
                     }
-
+                    .card-buttons{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 18px;
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                        }
+                        button{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 10px;
+                            span{
+                                @include mixins.text(white, 14px, 600, normal);
+                            }
+        
+                        }
+                        .visit-btn{
+                            span{
+                                color: #020123;
+        
+                            }
+        
+                        }
+                        
+                    }
                 }
-                
+             
             }
+         
         }
-        .accent-card{
+
+      
+        .accent-card .slide-cart::after{
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
             border-radius: 20px;
-            border: 1px solid #1D283C;
             background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
-            box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.70);
+            // box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.70);
+            box-shadow:  
+            0px 80px 25px 0px rgba(0, 0, 0, 0.01),  
+            0px 50px 20px 0px rgba(0, 0, 0, 0.11),  
+            0px 30px 15px 0px rgba(0, 0, 0, 0.36),  
+            0px 15px 10px 0px rgba(0, 0, 0, 0.61),  
+            0px 4px 8px 0px rgba(0, 0, 0, 0.70);
+          
             backdrop-filter: blur(17px);
         }
-        .active-card{
-            border-radius: 20px;
-            border: 2px solid #87FE37;
-            background: linear-gradient(180deg, #111922 0%, #020305 100%);
-            backdrop-filter: blur(17px);
+        
+        
+        
+        .active-card .slide-wrapper{
+            .slide-cart{
+                border: 2px solid #87FE37;
+                background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                backdrop-filter: blur(17px);
+            }
+       
         }
     }
 }
+
+
+  
 
 .event-list{
     .list-name{
@@ -763,427 +810,74 @@ button{
             fill: #75F94C;
         }
     }
-    ul{
-        li{
-            padding: 0 0 20px;
-            .list-head{
-                img{
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    border-bottom-right-radius: 0;
-                    border-bottom-left-radius: 0;
+    .mySwiper{
+        
+        swiper-slide{
+            .slide-wrapper{
+                .slide-cart{
+                    padding: 0 0 20px;
 
+                    .list-head{
+                        span{
+                            position: absolute;
+                            transform: translateY(0);
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            color: #83A2C6;
+                            padding: 6px 10px;
+                            background: #000;
+                            z-index: 1;
+                            top: 0;
+                        }
+                        img{
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            border-bottom-right-radius: 0;
+                            border-bottom-left-radius: 0;
+        
+                        }
+                    }
+                    .card-buttons{
+                        button{
+                            border-radius: 10px;
+                            border: 1px solid #576C86;
+                            background: #1A2535;
+                            padding: 10px 15px;
+                            font-family: 'Urbanist-Medium', sans-serif;
+                        }
+                        .visit-btn{
+                            border-radius: 10px;
+                            background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+                            box-shadow: 1px 1px 0px 0px #87FE37 inset;
+                        }
+                    }
                 }
+             
             }
-            .card-buttons{
-                button{
-                    border-radius: 10px;
-                    border: 1px solid #576C86;
-                    background: #1A2535;
-                    padding: 10px 15px;
-                    font-family: 'Urbanist-Medium';
-                }
-                .visit-btn{
-                    border-radius: 10px;
-                    background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
-                    box-shadow: 1px 1px 0px 0px #87FE37 inset;
-                }
-            }
+         
         }
         .active-card{
-            border: 2px solid #A14EF6;
-        }
-    }
+            .slide-wrapper{
+                .slide-cart{
+                    border: 2px solid #A14EF6;
     
-    .list-head{
-        .head{
-            position: absolute;
-            transform: translateY(0);
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            color: #83A2C6;
-            padding: 6px 10px;
-            background: #000;
-            z-index: 1;
-            top: 0;
+                }
+            }
+           
         }
     }
+
 }
 
-.benefits-wrapper{
-    display: grid;
-    grid-template-columns: minmax(250px, 3fr) minmax(200px, 1fr);
-    gap: 50px;
-    height: 100%;
+// .swiper{
+//     overflow: visible !important;
+// }
+// .swiper-wrapper{
+//     overflow: visible !important;
+// }
 
-    .content{
-        h2{
-            @include mixins.text(white, 34px, 700, normal);
-            padding-bottom: 20px;
-        }
-        p{
-            @include mixins.text(vars.$placeholder_color, 16px, 500, 150%);
-            padding-bottom: 20px;
-        }
-        .table{
-            padding: 10px 20px;
-            border-radius: 10px;
-            background: #040608;
-            display: grid;
-            grid-template-columns: 1fr 2fr 1fr 1fr;
-            gap: 10px;
-            span{
-                @include mixins.text(vars.$placeholder_color, 16px, 500, normal);
-            }
-        }
-        .casino-list{ 
-            .casino-list-elem{
-                margin-block: 3px;
-                .casino-banner{
-                    span{
-                        display: none;
-                    }
-                }
-            }
-        }
-        .text-content{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            svg{
-                width: 20px;
-                height: 20px;
-            }
-            img{
-                border-radius: 20px;
-// background: url('./images/footer-banner.png') lightgray 50% / cover no-repeat;
-            }
-            .features{
-                display: flex;
-                flex-direction: column;
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%);
-                backdrop-filter: blur(17px);
-                padding: 20px;
-                gap: 20px;
-                li{
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    gap: 15px;
-                    
-                }
-            }
-            .payment-features{
-                display: flex;
-                justify-content: space-between;
-                align-items: stretch;
-                gap: 30px;
-                .card{
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-start;
-                    border-radius: 20px;
-                    border: 1px solid #1D283C;
-                    background: linear-gradient(180deg, #111922 0%, #020305 100%);
-                    backdrop-filter: blur(17px);
-                    padding: 20px;
-                    gap: 20px;
-                    position: relative;
-                    flex: 1;
-                    .element{
-                        border-radius: 10px;
-                        background: rgba(135, 254, 55, 0.20);    
-                        height: 100%;
-                        padding: 20px 14px 20px 8px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        span{
-                            transform: rotate(-90deg);
-                            @include mixins.text(vars.$selection_bg, 14px, 600, normal);
-                            text-transform: uppercase;
-
-
-                        }
-                    }
-                    .cons{  
-                        background: rgba(254, 55, 58, 0.20);
-                        span{
-                            color: #FE373A;
-
-                        }
-                    }
-                    ul{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                        li{
-                            display: flex;
-                            justify-content: flex-start;
-                            gap: 15px;
-                            span{
-                                @include mixins.text(white, 15px, 600, normal);
-
-                            }
-                            svg{
-                                flex-shrink: 0;
-                            }
-                        }
-                    }
-                }
-
-                
-            }
-            .info-block{
-                display: flex;
-                align-items: flex-start;
-                justify-content: flex-start;
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: #1B0D0D;
-                backdrop-filter: blur(17px);
-                padding: 20px;
-                gap: 15px;
-                svg{
-                    flex-shrink: 0;
-                }
-                p{
-                    color: white;
-                    padding-bottom: 0;
-                }
-            }
-            .quote-block{
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: linear-gradient(180deg, #111922 0%, #020305 100%);
-                backdrop-filter: blur(17px);
-                gap: 15px;
-                padding: 20px;
-                svg{
-                    width: 100px;
-                    height: 100px;
-                }
-                .content{
-                    span{
-                        @include mixins.text(vars.$selection_bg, 24px, 600, normal);
-                    }
-                    p{
-                        padding-top: 15px;
-                        padding-bottom: 0;
-                    }
-                }
-            }
-        }
-        .about-author{
-            border-radius: 20px;
-            border: 1px solid #1D283C;
-            background: linear-gradient(180deg, #111922 0%, #020305 100%);
-            backdrop-filter: blur(17px);
-            padding: 20px;
-            .title{
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                margin-bottom: 20px;
-                gap: 10px;
-                svg{
-                    width: 30px;
-                    height: 30px;
-                }
-                h3{
-                    @include mixins.text(white, 24px, 600, normal);
-
-                }
-            }
-            .content-wrapper{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 40px;
-            }
-            .top-content{
-                .yellow-accent{
-                    @include mixins.text(#FFCE08, 16px, 500, normal);
-
-                }
-                .name-wrapper{
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-end;
-                    padding-top: 10px;
-                    gap: 20px;
-                    .name{
-                        font-size: 20px;
-                        color: white;
-                    }
-                    span{
-                        @include mixins.text(vars.$placeholder_color, 16px, 500, 150%);
-                    }
-                }
-            }
-            .bottom-content{
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                svg{
-                    fill: #73838F;
-                    width: 30px;
-                    height: 30px;
-                    transition: all ease 0.3s;
-
-                    @media screen and (min-width: 1024px) {
-                        &:hover{
-                            transition: all ease 0.3s;
-                            fill: #FFCE08;
-
-                        }
-                    }
-                }
-                .socials{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-                }
-                span{
-                    @include mixins.text(vars.$placeholder_color, 13px, 600, 150%);
-
-                }
-               
-            }
-        }
-    }
-    .faq{
-        ul{
-            li{
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: linear-gradient(180deg, #111922 0%, #020305 100%);
-                backdrop-filter: blur(17px);
-                padding: 20px;
-                margin-block: 10px;
-                .top-block{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 20px;
-                    .question{
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        gap: 15px;
-                    }
-                    .arrow{
-                        background: #F9EB3D;
-                        padding: 5px;
-                        border-radius: 5px;
-                        transform: rotate(180deg);
-
-                    }
-                }
-                .answer{
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 15px;
-                    svg{
-                        flex-shrink: 0;
-                    }
-                    .accent-text{
-                        color: vars.$selection_bg;
-                    }
-                }
-            }
-        }
-    }
-    .side-bar{
-        // margin-left: auto;
-        position: sticky;
-        top: 20px;
-        align-self: flex-start;
-        height: fit-content;
-        svg{
-            width: 20px;
-            height: 20px;
-
-        }
-        .casino-bar{
-            border-radius: 20px;
-            border: 1px solid #1D283C;
-            background: linear-gradient(180deg, #111922 0%, #020305 100%);
-            backdrop-filter: blur(17px);
-            padding: 20px;
-            .head-card{
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                margin-bottom: 20px;
-                gap: 10px;
-                @include mixins.text(white, 16px, 700, normal);
-
-            }
-            .separate-line{
-                height: 1px;
-                width: -webkit-fill-available;
-                background-color: #1A2535;
-                margin-block: 20px;
-            }
-            ul{
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-            .top-card{
-                li{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 10px;
-                    img{
-                        width: 70px;
-                        height: 65px;
-                        border-radius: 10px;
-                    }
-                    span{
-                        text-align: center;
-                        padding: 5px 10px;
-                        border-radius: 20px;
-                        background: #1A2535;
-                        @include mixins.text(vars.$placeholder_color, 13px, 600, 150%);
-
-                    }
-                    button{
-                        border-radius: 10px;
-                        background: #F9EB3D;
-                        padding: 8px 10px;
-                        box-shadow: 0px 1px 0px 0px #FFF983 inset, 1px 1px 0px 0px #FFCE08 inset;
-                    }
-                }
-            }
-            .bottom-card{
-                .table-list{
-                    ul{
-                        padding-left: 35px;
-                    }
-                }
-            }
-        }
-        .table-contents{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-            gap: 30px;
-        }
-    }
-    
-}
+@import './components/benefits.scss';
 .review-wrapper{
     margin-top: 30px;
     .content{
@@ -1737,347 +1431,9 @@ button{
     }
 }
 
-.casino-filters{
-    margin-top: 30px;
-    .filters-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        border: 1px solid #1D283C;
-        background: linear-gradient(180deg, #111922 0%, #020305 100%);
-        backdrop-filter: blur(17px);
-        position: relative;
-        padding: 15px;
-        gap: 20px;
-        .row{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            width: 100%;
-            gap: 10px;
-            
-        }
-       .item{
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 10px;
-            border: 1px solid #1D283C;
-            background: linear-gradient(180deg, #111922 0%, #020305 100%);
-            backdrop-filter: blur(17px);
-            padding: 15px 20px;
-            gap: 100px;
-
-            svg{
-                width: 24px;
-                height: 24px;
-                fill: vars.$link_color;
-            }
-            span{
-                @include mixins.text(#A4B4D2, 14px, 600, normal);
-                white-space: nowrap;
-            }
-            .name{
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 15px;
-            }
-            .num{
-                border-radius: 20px;
-                background: #203144;
-                width: 25px;
-                height: 25px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-       }
-       .info{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            svg{
-                width: 24px;
-                height: 24px;
-            }
-            span{
-                @include mixins.text(vars.$link_color, 13px, 600, 150%);
-            }
-       }
-       .recommended-buttons{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            button{
-                border-radius: 10px;
-                background: #1A2535;
-                padding: 10px 15px;
-                flex-basis: 400px;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 15px;
-                svg{
-                    width: 20px;
-                    height: 20px;
-                }
-                span{
-                    @include mixins.text(vars.$placeholder_color, 14px, 600, 150%);
-                }
-            }
-            .mobile-filters{
-                display: none;
-            }
-            @media screen and (max-width: 768px) {
-                .mobile-filters{
-                    display: flex;
-                }
-            }
-            
-       }
-       @media screen and (max-width: 768px) {
-            .bottom-row{
-                flex-direction: column;
-                .info{
-                    justify-content: flex-start;
-                    width: 100%;
-                }
-                .recommended-buttons{
-                    width: 100%;
-                }
-            }
-       }
-    }
-    .content-block{
-        
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        margin-top: 15px;
-        gap: 10px;
-        .sidebar{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex-shrink: 0;
-            gap: 50px;
-            width: 25%;
-            .bar{
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: linear-gradient(180deg, #111922 0%, #020305 100%);
-                backdrop-filter: blur(17px);
-                padding: 20px;  
-                .head{
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding-bottom: 30px;
-                    .title{
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        gap: 10px;
-                        svg{
-                            width: 30px;
-                            height: 30px;
-                            stroke: none;
-                        }
-                    }
-                    svg{
-                        width: 24px;
-                        height: 24px;
-                        stroke: #F9EB3D;
-                        fill: transparent;
-                    }
-                }
-                .checkbox-list{
-                    li{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        padding-block: 10px;
-                        .box-content{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            gap: 14px;
-                        }
-                        svg{
-                            width: 18px;
-                            height: 18px;
-                        }
-                        .num{
-                            width: 20px;
-                            height: 20px;
-                            border-radius: 20px;
-                            background: #203144;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            @include mixins.text(#A4B4D2, 12px, 600, normal);
-                        }
-                    }
-                    button{
-                        padding: 8px 20px 8px 35px;
-                        margin-block: 35px;
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        cursor: pointer;
-                        gap: 10px;
-                        @include mixins.text(#F9EB3D, 14px, 600, normal);
-                        svg{
-                            width: 20px;
-                            height: 20px;
-                            stroke: #F9EB3D;
-                        }
-                    }
-                }
-                .list{
-                    display: flex;
-                    flex-direction: column;
-                    // gap: 15px;
-                    li{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        position: relative;
-                        padding-block: 20px;
-                        gap: 10px;
-                        .title{
-                            @include mixins.text(white, 16px, 700, normal);
-                        }
-                        span{
-                            @include mixins.text(#83A2C6, 13px, 600, 150%);
-                            white-space: nowrap;
-                        }
-                        svg{
-                            width: 30px !important;
-                            height: 30px !important;
-                            fill: vars.$selection_bg;
-                        }
-                        button{
-                            svg{
-                                fill: transparent;
-                                stroke: vars.$link_color;
-                                transition: all ease 0.3s;
-                                cursor: pointer;
-                            }
-                            @media screen and (min-width: 1024px) {
-                                &:hover{
-                                    svg{
-                                        stroke: white;
-                                        transition: all ease 0.3s;
-
-                                    }
-                                }
-                            }
-                        }
-                        
-                    }
-                    li::before{
-                        content: '';
-                        display: block;
-                        width: 100%;
-                        height: 1px;
-                        background: #1D283C;
-                        position: absolute;
-                        top: 0;
-                    }
-                }
-            }
-            img{
-                padding-inline: 20px;
-            }
-        }
-        .card-wrapper{
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            width: 75%;
-            li{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                width: 32.5%;
-                padding: 20px;
-                border-radius: 20px;
-                border: 1px solid #1D283C;
-                background: linear-gradient(180deg, #111922 0%, #020305 100%);
-                backdrop-filter: blur(17px);
-                position: relative;
-                overflow: hidden;;
-    
-    
-    
-                .list-head{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                   
-                    
-                    span{
-                        @include mixins.text(#AFD9A4, 14px, 600, normal);
-                        font-family: 'Urbanist-Medium';
-                        padding: 8px 20px 14px;
-                        background: #588552;
-                        border-radius: 10px;
-                        transform: translateY(10px);
-                        z-index: -1;
-                    }
-                    img{
-                        width: 200px;
-                        border-radius: 20px;
-                    }
-                }
-                h3{
-                    @include mixins.text(white, 20px, 600, normal);
-                    font-family: 'Urbanist-Medium';
-    
-                }
-                .card-buttons{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 18px;
-                    svg{
-                        width: 20px;
-                        height: 20px;
-                    }
-                    button{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 10px;
-                        span{
-                            @include mixins.text(white, 14px, 600, normal);
-                        }
-    
-                    }
-                    .visit-btn{
-                        span{
-                            color: #020123;
-    
-                        }
-    
-                    }
-                    
-                }
-            }
-        }
-    }
-}
 
 
+@import './components/casino-filters.scss';
+@import './components/casino-australia.scss';
+@import './components/filters-component.scss';
+@import './components/games-block.scss';
