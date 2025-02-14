@@ -698,49 +698,31 @@ button {
 	transition: all 0.3s ease;
 }
 
-.casino-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 130px;
-}
-.casino-wrapper .info-block h2 {
-	color: #fff;
-	font-size: 34px;
-	font-weight: 700;
-	line-height: normal;
-	font-family: var(--default-font);
-	padding-bottom: 10px;
-}
-.casino-wrapper .info-block h2 .text-accent {
-	color: #87FE37;
-}
-.casino-wrapper .info-block p {
-	color: #83A2C6;
-	font-size: 16px;
-	font-weight: 500;
-	line-height: normal;
-	font-family: var(--default-font);
-	padding-bottom: 20px;
-}
-.casino-wrapper .info-block .summary {
-	color: #fff;
-}
-.casino-wrapper .info-block .summary .yellow-text {
-	color: #F8EB3E;
-}
-.casino-wrapper img {
-	width: 100%;
-	max-width: 550px;
-}
-
 .casino-list-block {
 	margin-top: 100px;
 }
 .casino-list-block ul {
 	display: flex;
 	flex-direction: column;
+	overflow-y: hidden;
+	overflow-x: scroll;
 	gap: 10px;
+}
+@media screen and (max-width: 1150px) {
+	.casino-list-block ul {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 800px) {
+	.casino-list-block ul {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 500px) {
+	.casino-list-block ul {
+		grid-template-columns: 1fr;
+	}
 }
 
 .casino-list-elem {
@@ -918,6 +900,21 @@ button {
 	font-family: var(--default-font);
 	white-space: nowrap;
 }
+@media screen and (max-width: 1150px) {
+	.casino-list-elem {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.casino-list-elem .text-wrapper {
+		text-align: center;
+	}
+	.casino-list-elem .text-wrapper p {
+		width: auto;
+		max-width: 350px;
+	}
+}
 
 .casino-list-elem::before {
 	content: "";
@@ -934,6 +931,15 @@ button {
 	transition: opacity 0.3s ease-in-out;
 }
 
+.casino-list-block ul::-webkit-scrollbar {
+	display: none;
+}
+
+.casino-list-block ul {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
 @media screen and (min-width: 1024px) {
 	.casino-list-elem:hover::before {
 		opacity: 1;
@@ -947,9 +953,6 @@ button {
 	color: #87FE37 !important;
 }
 
-.casino-list, .event-list {
-	margin-bottom: 50px;
-}
 .casino-list .list-name, .event-list .list-name {
 	display: flex;
 	align-items: center;
@@ -970,18 +973,20 @@ button {
 	font-family: var(--default-font);
 	font-family: "Urbanist-Medium";
 }
-.casino-list ul, .event-list ul {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 20px;
+.casino-list .mySwiper, .event-list .mySwiper {
+	width: 100%;
+	height: 100%;
+	overflow: visible !important;
 }
-.casino-list ul li, .event-list ul li {
+.casino-list .mySwiper swiper-slide .slide-wrapper, .event-list .mySwiper swiper-slide .slide-wrapper {
+	padding-bottom: 50px;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
-	width: 275px;
+	width: 100%;
 	padding: 20px;
 	border-radius: 20px;
 	border: 1px solid #1D283C;
@@ -989,75 +994,76 @@ button {
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
 	position: relative;
-	overflow: hidden;
 }
-.casino-list ul li .list-head, .event-list ul li .list-head {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-.casino-list ul li .list-head span, .event-list ul li .list-head span {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span {
 	color: #AFD9A4;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
-	font-family: "Urbanist-Medium";
+	font-family: "Urbanist-Medium", sans-serif;
 	padding: 8px 20px 14px;
 	background: #588552;
 	border-radius: 10px;
 	transform: translateY(10px);
 	z-index: -1;
 }
-.casino-list ul li .list-head img, .event-list ul li .list-head img {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
 	width: 200px;
 	border-radius: 20px;
 }
-.casino-list ul li h3, .event-list ul li h3 {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3 {
 	color: white;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
-	font-family: "Urbanist-Medium";
+	font-family: "Urbanist-Medium", sans-serif;
 }
-.casino-list ul li .card-buttons, .event-list ul li .card-buttons {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	gap: 18px;
 }
-.casino-list ul li .card-buttons svg, .event-list ul li .card-buttons svg {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
 	width: 20px;
 	height: 20px;
 }
-.casino-list ul li .card-buttons button, .event-list ul li .card-buttons button {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
 }
-.casino-list ul li .card-buttons button span, .event-list ul li .card-buttons button span {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button span, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button span {
 	color: white;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
 }
-.casino-list ul li .card-buttons .visit-btn span, .event-list ul li .card-buttons .visit-btn span {
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span, .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span {
 	color: #020123;
 }
-.casino-list ul .accent-card, .event-list ul .accent-card {
+.casino-list .mySwiper .accent-card .slide-cart::after, .event-list .mySwiper .accent-card .slide-cart::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
 	border-radius: 20px;
-	border: 1px solid #1D283C;
 	background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
-	box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 80px 25px 0px rgba(0, 0, 0, 0.01), 0px 50px 20px 0px rgba(0, 0, 0, 0.11), 0px 30px 15px 0px rgba(0, 0, 0, 0.36), 0px 15px 10px 0px rgba(0, 0, 0, 0.61), 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
 }
-.casino-list ul .active-card, .event-list ul .active-card {
-	border-radius: 20px;
+.casino-list .mySwiper .active-card .slide-wrapper .slide-cart, .event-list .mySwiper .active-card .slide-wrapper .slide-cart {
 	border: 2px solid #87FE37;
 	background: linear-gradient(180deg, #111922 0%, #020305 100%);
 	-webkit-backdrop-filter: blur(17px);
@@ -1067,32 +1073,10 @@ button {
 .event-list .list-name svg {
 	fill: #75F94C;
 }
-.event-list ul li {
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart {
 	padding: 0 0 20px;
 }
-.event-list ul li .list-head img {
-	top: 0;
-	left: 0;
-	width: 100%;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-.event-list ul li .card-buttons button {
-	border-radius: 10px;
-	border: 1px solid #576C86;
-	background: #1A2535;
-	padding: 10px 15px;
-	font-family: "Urbanist-Medium";
-}
-.event-list ul li .card-buttons .visit-btn {
-	border-radius: 10px;
-	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
-	box-shadow: 1px 1px 0px 0px #87FE37 inset;
-}
-.event-list ul .active-card {
-	border: 2px solid #A14EF6;
-}
-.event-list .list-head .head {
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span {
 	position: absolute;
 	transform: translateY(0);
 	border-top-left-radius: 0;
@@ -1103,10 +1087,32 @@ button {
 	z-index: 1;
 	top: 0;
 }
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button {
+	border-radius: 10px;
+	border: 1px solid #576C86;
+	background: #1A2535;
+	padding: 10px 15px;
+	font-family: "Urbanist-Medium", sans-serif;
+}
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn {
+	border-radius: 10px;
+	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+	box-shadow: 1px 1px 0px 0px #87FE37 inset;
+}
+.event-list .mySwiper .active-card .slide-wrapper .slide-cart {
+	border: 2px solid #A14EF6;
+}
 
 .benefits-wrapper {
 	display: grid;
-	grid-template-columns: minmax(250px, 3fr) minmax(200px, 1fr);
+	grid-template-columns: minmax(250px, 3fr) minmax(300px, 1fr);
 	gap: 50px;
 	height: 100%;
 }
@@ -1141,11 +1147,55 @@ button {
 	line-height: normal;
 	font-family: var(--default-font);
 }
+@media screen and (max-width: 768px) {
+	.benefits-wrapper .content .table {
+		display: none;
+	}
+}
 .benefits-wrapper .content .casino-list .casino-list-elem {
 	margin-block: 3px;
 }
 .benefits-wrapper .content .casino-list .casino-list-elem .casino-banner span {
 	display: none;
+}
+@media screen and (max-width: 768px) {
+	.benefits-wrapper .content .casino-list .casino-list-elem {
+		display: flex;
+		flex-direction: column;
+		width: calc(50% - 5px);
+		height: auto;
+	}
+	.benefits-wrapper .content .casino-list .casino-list-elem .bonus {
+		justify-content: center;
+	}
+}
+@media screen and (max-width: 480px) {
+	.benefits-wrapper .content .casino-list .casino-list-elem {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 1150px) {
+	.benefits-wrapper .content .casino-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10px;
+	}
+	.benefits-wrapper .content .casino-list .bonus {
+		justify-content: center;
+	}
+}
+@media screen and (max-width: 768px) {
+	.benefits-wrapper .content .casino-list {
+		display: flex;
+		align-items: stretch;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+}
+@media screen and (max-width: 500px) {
+	.benefits-wrapper .content .casino-list {
+		grid-template-columns: 1fr;
+	}
 }
 .benefits-wrapper .content .text-content {
 	display: flex;
@@ -1185,7 +1235,7 @@ button {
 .benefits-wrapper .content .text-content .payment-features .card {
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: stretch;
 	border-radius: 20px;
 	border: 1px solid #1D283C;
 	background: linear-gradient(180deg, #111922 0%, #020305 100%);
@@ -1199,11 +1249,12 @@ button {
 .benefits-wrapper .content .text-content .payment-features .card .element {
 	border-radius: 10px;
 	background: rgba(135, 254, 55, 0.2);
-	height: 100%;
+	min-height: 100%;
 	padding: 20px 14px 20px 8px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-grow: 1;
 }
 .benefits-wrapper .content .text-content .payment-features .card .element span {
 	transform: rotate(-90deg);
@@ -1239,6 +1290,11 @@ button {
 }
 .benefits-wrapper .content .text-content .payment-features .card ul li svg {
 	flex-shrink: 0;
+}
+@media screen and (max-width: 768px) {
+	.benefits-wrapper .content .text-content .payment-features {
+		flex-direction: column;
+	}
 }
 .benefits-wrapper .content .text-content .info-block {
 	display: flex;
@@ -1286,6 +1342,12 @@ button {
 	padding-top: 15px;
 	padding-bottom: 0;
 }
+@media screen and (max-width: 475px) {
+	.benefits-wrapper .content .text-content .quote-block {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
 .benefits-wrapper .content .about-author {
 	border-radius: 20px;
 	border: 1px solid #1D283C;
@@ -1318,6 +1380,12 @@ button {
 	align-items: center;
 	gap: 40px;
 }
+@media screen and (max-width: 768px) {
+	.benefits-wrapper .content .about-author .content-wrapper {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
 .benefits-wrapper .content .about-author .top-content .yellow-accent {
 	color: #FFCE08;
 	font-size: 16px;
@@ -1347,6 +1415,7 @@ button {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
+	gap: 5px;
 }
 .benefits-wrapper .content .about-author .bottom-content svg {
 	fill: #73838F;
@@ -1372,6 +1441,15 @@ button {
 	font-weight: 600;
 	line-height: 150%;
 	font-family: var(--default-font);
+	white-space: nowrap;
+}
+@media screen and (max-width: 475px) {
+	.benefits-wrapper .content .about-author .bottom-content {
+		align-items: center;
+	}
+	.benefits-wrapper .content .about-author .bottom-content .socials {
+		gap: 5px;
+	}
 }
 .benefits-wrapper .faq ul li {
 	border-radius: 20px;
@@ -1387,6 +1465,7 @@ button {
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 20px;
+	gap: 5px;
 }
 .benefits-wrapper .faq ul li .top-block .question {
 	display: flex;
@@ -1491,6 +1570,16 @@ button {
 	align-items: center;
 	margin-top: 30px;
 	gap: 30px;
+}
+@media screen and (max-width: 1024px) {
+	.benefits-wrapper .side-bar {
+		display: none;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.benefits-wrapper {
+		display: block;
+	}
 }
 
 .review-wrapper {
@@ -2022,139 +2111,11 @@ button {
 .casino-filters {
 	margin-top: 30px;
 }
-.casino-filters .filters-block {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 20px;
-	border: 1px solid #1D283C;
-	background: linear-gradient(180deg, #111922 0%, #020305 100%);
-	-webkit-backdrop-filter: blur(17px);
-	        backdrop-filter: blur(17px);
-	position: relative;
-	padding: 15px;
-	gap: 20px;
-}
-.casino-filters .filters-block .row {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-	width: 100%;
-	gap: 10px;
-}
-.casino-filters .filters-block .item {
-	flex: 1;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-radius: 10px;
-	border: 1px solid #1D283C;
-	background: linear-gradient(180deg, #111922 0%, #020305 100%);
-	-webkit-backdrop-filter: blur(17px);
-	        backdrop-filter: blur(17px);
-	padding: 15px 20px;
-	gap: 100px;
-}
-.casino-filters .filters-block .item svg {
-	width: 24px;
-	height: 24px;
-	fill: #73838F;
-}
-.casino-filters .filters-block .item span {
-	color: #A4B4D2;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: normal;
-	font-family: var(--default-font);
-	white-space: nowrap;
-}
-.casino-filters .filters-block .item .name {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 15px;
-}
-.casino-filters .filters-block .item .num {
-	border-radius: 20px;
-	background: #203144;
-	width: 25px;
-	height: 25px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.casino-filters .filters-block .info {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-}
-.casino-filters .filters-block .info svg {
-	width: 24px;
-	height: 24px;
-}
-.casino-filters .filters-block .info span {
-	color: #73838F;
-	font-size: 13px;
-	font-weight: 600;
-	line-height: 150%;
-	font-family: var(--default-font);
-}
-.casino-filters .filters-block .recommended-buttons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 10px;
-}
-.casino-filters .filters-block .recommended-buttons button {
-	border-radius: 10px;
-	background: #1A2535;
-	padding: 10px 15px;
-	flex-basis: 400px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 15px;
-}
-.casino-filters .filters-block .recommended-buttons button svg {
-	width: 20px;
-	height: 20px;
-}
-.casino-filters .filters-block .recommended-buttons button span {
-	color: #83A2C6;
-	font-size: 14px;
-	font-weight: 600;
-	line-height: 150%;
-	font-family: var(--default-font);
-}
-.casino-filters .filters-block .recommended-buttons .mobile-filters {
-	display: none;
-}
-@media screen and (max-width: 768px) {
-	.casino-filters .filters-block .recommended-buttons .mobile-filters {
-		display: flex;
-	}
-}
-@media screen and (max-width: 768px) {
-	.casino-filters .filters-block .bottom-row {
-		flex-direction: column;
-	}
-	.casino-filters .filters-block .bottom-row .info {
-		justify-content: flex-start;
-		width: 100%;
-	}
-	.casino-filters .filters-block .bottom-row .recommended-buttons {
-		width: 100%;
-	}
-}
 .casino-filters .content-block {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 	margin-top: 15px;
-	gap: 10px;
 }
 .casino-filters .content-block .sidebar {
 	display: flex;
@@ -2256,16 +2217,28 @@ button {
 	padding-block: 20px;
 	gap: 10px;
 }
+.casino-filters .content-block .sidebar .bar .list li .item-content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+	flex: 1;
+	min-width: 0;
+}
+.casino-filters .content-block .sidebar .bar .list li .text {
+	display: flex;
+	flex-direction: column;
+}
 .casino-filters .content-block .sidebar .bar .list li .title {
 	color: white;
-	font-size: 16px;
+	font-size: clamp(14px, 1vw, 16px);
 	font-weight: 700;
 	line-height: normal;
 	font-family: var(--default-font);
 }
 .casino-filters .content-block .sidebar .bar .list li span {
 	color: #83A2C6;
-	font-size: 13px;
+	font-size: clamp(10px, 0.8vw, 13px);
 	font-weight: 600;
 	line-height: 150%;
 	font-family: var(--default-font);
@@ -2300,12 +2273,22 @@ button {
 .casino-filters .content-block .sidebar img {
 	padding-inline: 20px;
 }
+@media screen and (max-width: 1175px) {
+	.casino-filters .content-block .sidebar {
+		width: 33.3%;
+	}
+}
+@media screen and (max-width: 860px) {
+	.casino-filters .content-block .sidebar {
+		display: none;
+	}
+}
 .casino-filters .content-block .card-wrapper {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	flex-wrap: wrap;
-	gap: 10px;
+	row-gap: 10px;
 	width: 75%;
 }
 .casino-filters .content-block .card-wrapper li {
@@ -2313,7 +2296,7 @@ button {
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
-	width: 32.5%;
+	width: calc(33.3% - 10px);
 	padding: 20px;
 	border-radius: 20px;
 	border: 1px solid #1D283C;
@@ -2322,6 +2305,7 @@ button {
 	        backdrop-filter: blur(17px);
 	position: relative;
 	overflow: hidden;
+	margin-left: 10px;
 }
 .casino-filters .content-block .card-wrapper li .list-head {
 	display: flex;
@@ -2334,7 +2318,7 @@ button {
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
-	font-family: "Urbanist-Medium";
+	font-family: "Urbanist-Medium", sans-serif;
 	padding: 8px 20px 14px;
 	background: #588552;
 	border-radius: 10px;
@@ -2379,4 +2363,384 @@ button {
 }
 .casino-filters .content-block .card-wrapper li .card-buttons .visit-btn span {
 	color: #020123;
+}
+@media screen and (max-width: 1175px) {
+	.casino-filters .content-block .card-wrapper {
+		width: auto;
+	}
+	.casino-filters .content-block .card-wrapper li {
+		width: calc(50% - 10px);
+	}
+}
+@media screen and (max-width: 860px) {
+	.casino-filters .content-block .card-wrapper {
+		justify-content: center;
+		gap: 10px;
+	}
+	.casino-filters .content-block .card-wrapper li {
+		margin-left: unset;
+		width: calc(50% - 5px);
+	}
+}
+@media screen and (max-width: 550px) {
+	.casino-filters .content-block .card-wrapper li {
+		width: 100%;
+	}
+}
+
+.casino-australia {
+	overflow-x: clip;
+}
+@media screen and (max-width: 1024px) {
+	.casino-australia {
+		overflow-x: unset;
+	}
+}
+
+.casino-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.casino-wrapper .info-block {
+	flex: 1;
+}
+.casino-wrapper .info-block h2 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 10px;
+}
+.casino-wrapper .info-block h2 .text-accent {
+	color: #87FE37;
+}
+.casino-wrapper .info-block p {
+	color: #83A2C6;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 20px;
+}
+.casino-wrapper .info-block .summary {
+	color: #fff;
+}
+.casino-wrapper .info-block .summary .yellow-text {
+	color: #F8EB3E;
+}
+.casino-wrapper .bg-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 1;
+}
+.casino-wrapper .bg-wrapper img {
+	position: relative;
+	left: 30%;
+	width: 130%;
+}
+@media screen and (max-width: 1024px) {
+	.casino-wrapper {
+		flex-direction: column;
+	}
+	.casino-wrapper .bg-wrapper {
+		flex: none;
+		width: 100%;
+		height: 300px;
+		background: rgba(55, 254, 171, 0.4);
+		filter: blur(152px);
+		background-image: url("../images/banner-girl.png");
+		background-size: 250%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.casino-wrapper .bg-wrapper img {
+		display: none;
+	}
+}
+
+.filters-component .filters-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+	padding: 15px;
+	gap: 20px;
+}
+.filters-component .filters-block .row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 10px;
+}
+.filters-component .filters-block .item {
+	flex: 1 1 300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	padding: 15px 20px;
+	gap: 100px;
+	position: relative;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.filters-component .filters-block .item svg {
+	width: 24px;
+	height: 24px;
+	fill: #73838F;
+}
+.filters-component .filters-block .item span {
+	color: #A4B4D2;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	white-space: nowrap;
+}
+.filters-component .filters-block .item .name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.filters-component .filters-block .item .num {
+	border-radius: 20px;
+	background: #203144;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+@media screen and (max-width: 420px) {
+	.filters-component .filters-block .item {
+		gap: unset;
+		max-width: 100%;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.filters-component .filters-block .item {
+		position: relative;
+	}
+	.filters-component .filters-block .item {
+		cursor: pointer;
+	}
+	.filters-component .filters-block .item::before {
+		content: "";
+		position: absolute;
+		inset: -2px;
+		background: linear-gradient(90deg, rgb(135, 254, 55) 30%, rgb(131, 162, 198) 80%);
+		border-radius: inherit;
+		z-index: -2;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+	.filters-component .filters-block .item::after {
+		content: "";
+		position: absolute;
+		inset: 1px;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		border-radius: inherit;
+		z-index: -1;
+	}
+	.filters-component .filters-block .item:hover::before {
+		opacity: 1;
+	}
+}
+.filters-component .filters-block .info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.filters-component .filters-block .info svg {
+	width: 24px;
+	height: 24px;
+}
+.filters-component .filters-block .info span {
+	color: #73838F;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 150%;
+	font-family: var(--default-font);
+}
+.filters-component .filters-block .recommended-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.filters-component .filters-block .recommended-buttons button {
+	border-radius: 10px;
+	background: #1A2535;
+	padding: 10px 15px;
+	flex-basis: 400px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.filters-component .filters-block .recommended-buttons button svg {
+	width: 20px;
+	height: 20px;
+}
+.filters-component .filters-block .recommended-buttons button span {
+	color: #83A2C6;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 150%;
+	font-family: var(--default-font);
+}
+.filters-component .filters-block .recommended-buttons .mobile-filters {
+	display: none;
+}
+@media screen and (max-width: 768px) {
+	.filters-component .filters-block .recommended-buttons .mobile-filters {
+		display: flex;
+	}
+}
+@media screen and (max-width: 768px) {
+	.filters-component .filters-block .bottom-row {
+		flex-direction: column;
+	}
+	.filters-component .filters-block .bottom-row .info {
+		justify-content: flex-start;
+		width: 100%;
+	}
+	.filters-component .filters-block .bottom-row .recommended-buttons {
+		width: 100%;
+	}
+}
+
+.games-block {
+	margin-top: 15px;
+}
+.games-block ul {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+.games-block ul li .slide-wrapper .slide-cart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	padding: 0 0 20px;
+	overflow: hidden;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head span {
+	color: #AFD9A4;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium", sans-serif;
+	position: absolute;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding-top: 2px;
+	transform: translateY(-5px);
+	color: #83A2C6;
+	padding: 6px 10px;
+	background: #000;
+	z-index: 1;
+	top: 0;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head img {
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.games-block ul li .slide-wrapper .slide-cart h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium", sans-serif;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons svg {
+	width: 20px;
+	height: 20px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid #576C86;
+	background: #1A2535;
+	padding: 10px 15px;
+	font-family: "Urbanist-Medium", sans-serif;
+	gap: 10px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons button span {
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn {
+	border-radius: 10px;
+	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+	box-shadow: 1px 1px 0px 0px #87FE37 inset;
+}
+@media screen and (max-width: 900px) {
+	.games-block ul {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 650px) {
+	.games-block ul {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.games-block ul .head, .games-block ul button span {
+		font-size: clamp(10px, 3vw, 14px) !important;
+	}
+}
+@media screen and (max-width: 375px) {
+	.games-block ul {
+		grid-template-columns: 1fr;
+	}
 }

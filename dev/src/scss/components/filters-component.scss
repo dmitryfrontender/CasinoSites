@@ -1,0 +1,168 @@
+@use "../includes/variables" as vars;
+@use '../includes/mixins' as mixins;
+
+.filters-component{
+    .filters-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border: 1px solid #1D283C;
+        background: linear-gradient(180deg, #111922 0%, #020305 100%);
+        backdrop-filter: blur(17px);
+        position: relative;
+        padding: 15px;
+        gap: 20px;
+        .row{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 10px;
+            
+        }
+       .item{
+            flex: 1 1 300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            border: 1px solid #1D283C;
+            background: linear-gradient(180deg, #111922 0%, #020305 100%);
+            backdrop-filter: blur(17px);
+            padding: 15px 20px;
+            gap: 100px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+            svg{
+                width: 24px;
+                height: 24px;
+                fill: vars.$link_color;
+            }
+            span{
+                @include mixins.text(#A4B4D2, 14px, 600, normal);
+                white-space: nowrap;
+            }
+            .name{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 15px;
+            }
+            .num{
+                border-radius: 20px;
+                background: #203144;
+                width: 25px;
+                height: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+            @media screen and (max-width: 420px) {
+                &{
+                    gap: unset;
+                    max-width: 100%;
+                }
+            }
+        
+            @media screen and (min-width: 1024px) {
+                position: relative;
+
+                &{
+                    cursor: pointer;
+                }
+            
+                &::before {
+                    content: "";
+                    position: absolute;
+                    inset: -2px;
+                    background: linear-gradient(90deg, rgb(135, 254, 55) 30%, rgb(131, 162, 198) 80%);
+                    border-radius: inherit;
+                    z-index: -2;
+                    opacity: 0;
+                    transition: opacity 0.3s ease-in-out;
+                }
+            
+                &::after {
+                    content: "";
+                    position: absolute;
+                    inset: 1px;
+                    background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                    border-radius: inherit;
+                    z-index: -1;
+                }
+            
+                &:hover {
+                    &::before {
+                        opacity: 1; 
+                    }
+                }
+            }
+            
+            
+           
+           
+       }
+       .info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            svg{
+                width: 24px;
+                height: 24px;
+            }
+            span{
+                @include mixins.text(vars.$link_color, 13px, 600, 150%);
+            }
+       }
+       .recommended-buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            button{
+                border-radius: 10px;
+                background: #1A2535;
+                padding: 10px 15px;
+                flex-basis: 400px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 15px;
+                svg{
+                    width: 20px;
+                    height: 20px;
+                }
+                span{
+                    @include mixins.text(vars.$placeholder_color, 14px, 600, 150%);
+                }
+            }
+            .mobile-filters{
+                display: none;
+            }
+            @media screen and (max-width: 768px) {
+                .mobile-filters{
+                    display: flex;
+                }
+            }
+            
+       }
+       @media screen and (max-width: 768px) {
+            .bottom-row{
+                flex-direction: column;
+                .info{
+                    justify-content: flex-start;
+                    width: 100%;
+                }
+                .recommended-buttons{
+                    width: 100%;
+                }
+            }
+       }
+    }
+}

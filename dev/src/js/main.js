@@ -2,6 +2,8 @@ $(document).ready(function(){
 	mobileMenu();
 	closeSearch();
 	toggleSearch();
+	// removeSwiperOverflow();
+	// swiper()
 
 	//calls functions
 });
@@ -42,3 +44,44 @@ const toggleSearch = () => {
 		$('#mobile-search').toggleClass('active-mobile-search');
 	})
 }
+
+const removeSwiperOverflow = () => {
+	let swiperContainer = $("swiper-container").get(0);
+	if (swiperContainer && swiperContainer.shadowRoot) {
+	  let swiperElement = $(swiperContainer.shadowRoot).find(".swiper");
+	  if (swiperElement.length) {
+		swiperElement.css("overflow", "visible");
+		// swiperElement.css("overflow-x", "hidden");
+		// swiperElement.css("overflow-y", "visible");
+
+	  }
+	}
+};
+const swiper = new Swiper('.swiper', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: false,
+  
+	// Navigation arrows
+	// navigation: {
+	//   nextEl: '.swiper-button-next',
+	//   prevEl: '.swiper-button-prev',
+	// },
+  
+	// Responsive breakpoints
+	breakpoints: {
+		1200: {
+			slidesPerView: 4,
+			spaceBetween: 15
+		  },
+		  780: {
+			slidesPerView: 3,
+			spaceBetween: 15
+		  },
+	  475: {
+		slidesPerView: 2,
+		spaceBetween: 15
+	  }
+	}
+  });
+  

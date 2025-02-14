@@ -1,0 +1,115 @@
+.games-block {
+	margin-top: 15px;
+}
+.games-block ul {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+.games-block ul li .slide-wrapper .slide-cart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	padding: 0 0 20px;
+	overflow: hidden;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head span {
+	color: #AFD9A4;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium", sans-serif;
+	position: absolute;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	padding-top: 2px;
+	transform: translateY(-5px);
+	color: #83A2C6;
+	padding: 6px 10px;
+	background: #000;
+	z-index: 1;
+	top: 0;
+}
+.games-block ul li .slide-wrapper .slide-cart .list-head img {
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.games-block ul li .slide-wrapper .slide-cart h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	font-family: "Urbanist-Medium", sans-serif;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 18px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons svg {
+	width: 20px;
+	height: 20px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid #576C86;
+	background: #1A2535;
+	padding: 10px 15px;
+	font-family: "Urbanist-Medium", sans-serif;
+	gap: 10px;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons button span {
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn {
+	border-radius: 10px;
+	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+	box-shadow: 1px 1px 0px 0px #87FE37 inset;
+}
+@media screen and (max-width: 900px) {
+	.games-block ul {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 650px) {
+	.games-block ul {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.games-block ul .head, .games-block ul button span {
+		font-size: clamp(10px, 3vw, 14px) !important;
+	}
+}
+@media screen and (max-width: 375px) {
+	.games-block ul {
+		grid-template-columns: 1fr;
+	}
+}

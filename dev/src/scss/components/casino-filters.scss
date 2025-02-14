@@ -1,0 +1,404 @@
+@use "../includes/variables" as vars;
+@use '../includes/mixins' as mixins;
+
+.casino-filters{
+    margin-top: 30px;
+    // .filters-block{
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     border-radius: 20px;
+    //     border: 1px solid #1D283C;
+    //     background: linear-gradient(180deg, #111922 0%, #020305 100%);
+    //     backdrop-filter: blur(17px);
+    //     position: relative;
+    //     padding: 15px;
+    //     gap: 20px;
+    //     .row{
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         flex-wrap: wrap;
+    //         width: 100%;
+    //         gap: 10px;
+            
+    //     }
+    //    .item{
+    //         flex: 1;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         border-radius: 10px;
+    //         border: 1px solid #1D283C;
+    //         background: linear-gradient(180deg, #111922 0%, #020305 100%);
+    //         backdrop-filter: blur(17px);
+    //         padding: 15px 20px;
+    //         gap: 100px;
+
+    //         svg{
+    //             width: 24px;
+    //             height: 24px;
+    //             fill: vars.$link_color;
+    //         }
+    //         span{
+    //             @include mixins.text(#A4B4D2, 14px, 600, normal);
+    //             white-space: nowrap;
+    //         }
+    //         .name{
+    //             display: flex;
+    //             justify-content: flex-start;
+    //             align-items: center;
+    //             gap: 15px;
+    //         }
+    //         .num{
+    //             border-radius: 20px;
+    //             background: #203144;
+    //             width: 25px;
+    //             height: 25px;
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: center;
+    //         }
+    //         @media screen and (max-width: 420px) {
+    //             &{
+    //                 gap: unset;
+    //             }
+    //         }
+    //    }
+    //    .info{
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: center;
+    //         gap: 10px;
+    //         svg{
+    //             width: 24px;
+    //             height: 24px;
+    //         }
+    //         span{
+    //             @include mixins.text(vars.$link_color, 13px, 600, 150%);
+    //         }
+    //    }
+    //    .recommended-buttons{
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         gap: 10px;
+    //         button{
+    //             border-radius: 10px;
+    //             background: #1A2535;
+    //             padding: 10px 15px;
+    //             flex-basis: 400px;
+    //             display: flex;
+    //             justify-content: flex-start;
+    //             align-items: center;
+    //             gap: 15px;
+    //             svg{
+    //                 width: 20px;
+    //                 height: 20px;
+    //             }
+    //             span{
+    //                 @include mixins.text(vars.$placeholder_color, 14px, 600, 150%);
+    //             }
+    //         }
+    //         .mobile-filters{
+    //             display: none;
+    //         }
+    //         @media screen and (max-width: 768px) {
+    //             .mobile-filters{
+    //                 display: flex;
+    //             }
+    //         }
+            
+    //    }
+    //    @media screen and (max-width: 768px) {
+    //         .bottom-row{
+    //             flex-direction: column;
+    //             .info{
+    //                 justify-content: flex-start;
+    //                 width: 100%;
+    //             }
+    //             .recommended-buttons{
+    //                 width: 100%;
+    //             }
+    //         }
+    //    }
+    // }
+    .content-block{
+        
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 15px;
+        .sidebar{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-shrink: 0;
+            gap: 50px;
+            width: 25%;
+            .bar{
+                border-radius: 20px;
+                border: 1px solid #1D283C;
+                background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                backdrop-filter: blur(17px);
+                padding: 20px;  
+                .head{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 30px;
+                    .title{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 10px;
+                        svg{
+                            width: 30px;
+                            height: 30px;
+                            stroke: none;
+                        }
+                    }
+                    svg{
+                        width: 24px;
+                        height: 24px;
+                        stroke: #F9EB3D;
+                        fill: transparent;
+                    }
+                }
+                .checkbox-list{
+                    li{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-block: 10px;
+                        .box-content{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 14px;
+                        }
+                        svg{
+                            width: 18px;
+                            height: 18px;
+                        }
+                        .num{
+                            width: 20px;
+                            height: 20px;
+                            border-radius: 20px;
+                            background: #203144;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            @include mixins.text(#A4B4D2, 12px, 600, normal);
+                        }
+                    }
+                    button{
+                        padding: 8px 20px 8px 35px;
+                        margin-block: 35px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        cursor: pointer;
+                        gap: 10px;
+                        @include mixins.text(#F9EB3D, 14px, 600, normal);
+                        svg{
+                            width: 20px;
+                            height: 20px;
+                            stroke: #F9EB3D;
+                        }
+                    }
+                }
+                .list{
+                    display: flex;
+                    flex-direction: column;
+                    // gap: 15px;
+                    li{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+                        padding-block: 20px;
+                        gap: 10px;
+                        .item-content{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 10px;
+                            flex: 1;
+                            min-width: 0; 
+                        }
+                        .text{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .title{
+                            @include mixins.text(white, clamp(14px, 1vw, 16px), 700, normal);
+                        }
+                        span{
+                            @include mixins.text(#83A2C6, clamp(10px, 0.8vw, 13px), 600, 150%);
+                            white-space: nowrap;
+                        }
+                        svg{
+                            width: 30px !important;
+                            height: 30px !important;
+                            fill: vars.$selection_bg;
+                        }
+                        button{
+                            svg{
+                                fill: transparent;
+                                stroke: vars.$link_color;
+                                transition: all ease 0.3s;
+                                cursor: pointer;
+                            }
+                            @media screen and (min-width: 1024px) {
+                                &:hover{
+                                    svg{
+                                        stroke: white;
+                                        transition: all ease 0.3s;
+
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                    li::before{
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 1px;
+                        background: #1D283C;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+            }
+            img{
+                padding-inline: 20px;
+            }
+            @media screen and (max-width: 1175px) {
+                &{
+                    width: 33.3%;
+                }
+            }
+            @media screen and (max-width: 860px) {
+                &{
+                    display: none;
+                } 
+            }
+        }
+        .card-wrapper{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 10px;
+            width: 75%;
+            li{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: calc(33.3% - 10px);
+                padding: 20px;
+                border-radius: 20px;
+                border: 1px solid #1D283C;
+                background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                backdrop-filter: blur(17px);
+                position: relative;
+                overflow: hidden;
+                margin-left: 10px;
+    
+    
+    
+                .list-head{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                   
+                    
+                    span{
+                        @include mixins.text(#AFD9A4, 14px, 600, normal);
+                        font-family: 'Urbanist-Medium', sans-serif;
+                        padding: 8px 20px 14px;
+                        background: #588552;
+                        border-radius: 10px;
+                        transform: translateY(10px);
+                        z-index: -1;
+                    }
+                    img{
+                        width: 200px;
+                        border-radius: 20px;
+                    }
+                }
+                h3{
+                    @include mixins.text(white, 20px, 600, normal);
+                    font-family: 'Urbanist-Medium';
+    
+                }
+                .card-buttons{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 18px;
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                    }
+                    button{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                        span{
+                            @include mixins.text(white, 14px, 600, normal);
+                        }
+    
+                    }
+                    .visit-btn{
+                        span{
+                            color: #020123;
+    
+                        }
+    
+                    }
+                    
+                }
+            }
+            @media screen and (max-width: 1175px) {
+                &{
+                    width: auto;
+                    li{
+                        width: calc(50% - 10px);
+
+                    }
+
+                }
+            }
+            @media screen and (max-width: 860px) {
+                &{
+                    justify-content: center;
+                    gap: 10px;
+                    li{
+                        margin-left: unset;
+                        width: calc(50% - 5px);
+
+                    }
+                } 
+            }
+            @media screen and (max-width: 550px) {
+                &{
+                    li{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        // @media screen and (max-width: 860px) {
+        //     justify-content: center;
+        //     gap: 10px;
+        // }
+    }
+}

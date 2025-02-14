@@ -1,0 +1,166 @@
+.filters-component .filters-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+	padding: 15px;
+	gap: 20px;
+}
+.filters-component .filters-block .row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	gap: 10px;
+}
+.filters-component .filters-block .item {
+	flex: 1 1 300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	border: 1px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	padding: 15px 20px;
+	gap: 100px;
+	position: relative;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+.filters-component .filters-block .item svg {
+	width: 24px;
+	height: 24px;
+	fill: #73838F;
+}
+.filters-component .filters-block .item span {
+	color: #A4B4D2;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: var(--default-font);
+	white-space: nowrap;
+}
+.filters-component .filters-block .item .name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.filters-component .filters-block .item .num {
+	border-radius: 20px;
+	background: #203144;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+@media screen and (max-width: 420px) {
+	.filters-component .filters-block .item {
+		gap: unset;
+		max-width: 100%;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.filters-component .filters-block .item {
+		position: relative;
+	}
+	.filters-component .filters-block .item {
+		cursor: pointer;
+	}
+	.filters-component .filters-block .item::before {
+		content: "";
+		position: absolute;
+		inset: -2px;
+		background: linear-gradient(90deg, rgb(135, 254, 55) 30%, rgb(131, 162, 198) 80%);
+		border-radius: inherit;
+		z-index: -2;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
+	.filters-component .filters-block .item::after {
+		content: "";
+		position: absolute;
+		inset: 1px;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		border-radius: inherit;
+		z-index: -1;
+	}
+	.filters-component .filters-block .item:hover::before {
+		opacity: 1;
+	}
+}
+.filters-component .filters-block .info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}
+.filters-component .filters-block .info svg {
+	width: 24px;
+	height: 24px;
+}
+.filters-component .filters-block .info span {
+	color: #73838F;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 150%;
+	font-family: var(--default-font);
+}
+.filters-component .filters-block .recommended-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.filters-component .filters-block .recommended-buttons button {
+	border-radius: 10px;
+	background: #1A2535;
+	padding: 10px 15px;
+	flex-basis: 400px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 15px;
+}
+.filters-component .filters-block .recommended-buttons button svg {
+	width: 20px;
+	height: 20px;
+}
+.filters-component .filters-block .recommended-buttons button span {
+	color: #83A2C6;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 150%;
+	font-family: var(--default-font);
+}
+.filters-component .filters-block .recommended-buttons .mobile-filters {
+	display: none;
+}
+@media screen and (max-width: 768px) {
+	.filters-component .filters-block .recommended-buttons .mobile-filters {
+		display: flex;
+	}
+}
+@media screen and (max-width: 768px) {
+	.filters-component .filters-block .bottom-row {
+		flex-direction: column;
+	}
+	.filters-component .filters-block .bottom-row .info {
+		justify-content: flex-start;
+		width: 100%;
+	}
+	.filters-component .filters-block .bottom-row .recommended-buttons {
+		width: 100%;
+	}
+}
