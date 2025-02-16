@@ -11,6 +11,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 25px;
 }
 .casino-wrapper .info-block {
 	flex: 1;
@@ -22,9 +23,6 @@
 	line-height: normal;
 	font-family: var(--default-font);
 	padding-bottom: 10px;
-}
-.casino-wrapper .info-block h2 .text-accent {
-	color: #87FE37;
 }
 .casino-wrapper .info-block p {
 	color: #83A2C6;
@@ -49,8 +47,8 @@
 }
 .casino-wrapper .bg-wrapper img {
 	position: relative;
-	left: 30%;
-	width: 130%;
+	left: -2%;
+	width: 85%;
 }
 @media screen and (max-width: 1024px) {
 	.casino-wrapper {

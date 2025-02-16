@@ -18,14 +18,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // gap: 130px;
+    margin-bottom: 25px;
+
     .info-block{
         flex: 1;
         h2{
             @include mixins.text(#fff, 34px, 700, normal);
-            .text-accent{
-                color: vars.$selection_bg
-            }
             padding-bottom: 10px;
 
         }
@@ -48,8 +46,8 @@
         flex: 1;
         img{
             position: relative;
-            left: 30%;
-            width: 130%;
+            left: -2%;
+            width: 85%;
         }
     }
     @media screen and (max-width: 1024px) {
@@ -58,7 +56,7 @@
             .bg-wrapper{
                 flex: none;
                 width: 100%;
-                height: 300px; 
+                height: 300px;
                 background: rgba(55, 254, 171, 0.40);
                 filter: blur(152px);
                 background-image: url('../images/banner-girl.png');
@@ -72,5 +70,5 @@
             }
         }
     }
-    
+
 }

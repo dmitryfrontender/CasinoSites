@@ -524,7 +524,7 @@ main {
 }
 
 .banner {
-	padding: 57px 0 0;
+	padding: 52px 0 0;
 	margin-bottom: 50px;
 }
 .banner .homepage-banner-wrapper {
@@ -536,13 +536,13 @@ main {
 .banner .homepage-banner-wrapper::before {
 	content: "";
 	position: absolute;
-	width: 1129px;
-	height: 1030px;
-	right: 0;
+	width: 1329px;
+	height: 1230px;
+	right: -60px;
 	top: 50%;
 	transform: translateY(-50%);
 	flex-shrink: 0;
-	opacity: 0.3;
+	opacity: 0.6;
 	background: url("../images/banner-bg.png") 50%/contain no-repeat;
 }
 @media screen and (max-width: 1024px) {
@@ -599,8 +599,8 @@ main {
 	background: #1D283B;
 }
 .banner-grid-icon .svg-icon {
-	width: 100%;
-	height: 100%;
+	width: 40px;
+	height: 40px;
 }
 
 footer {
@@ -1494,6 +1494,7 @@ footer .footer-bottom .copyright {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 25px;
 }
 .casino-wrapper .info-block {
 	flex: 1;
@@ -1505,9 +1506,6 @@ footer .footer-bottom .copyright {
 	line-height: normal;
 	font-family: var(--default-font);
 	padding-bottom: 10px;
-}
-.casino-wrapper .info-block h2 .text-accent {
-	color: #87FE37;
 }
 .casino-wrapper .info-block p {
 	color: #83A2C6;
@@ -1532,8 +1530,8 @@ footer .footer-bottom .copyright {
 }
 .casino-wrapper .bg-wrapper img {
 	position: relative;
-	left: 30%;
-	width: 130%;
+	left: -2%;
+	width: 85%;
 }
 @media screen and (max-width: 1024px) {
 	.casino-wrapper {
@@ -1954,7 +1952,7 @@ button {
 	grid-template-columns: 1fr 2fr 1fr 1fr;
 	grid-row: auto;
 	align-items: center;
-	padding: 20px;
+	padding: 14px;
 	gap: 20px;
 	justify-content: space-between;
 	cursor: pointer;
@@ -2017,9 +2015,6 @@ button {
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
-}
-.casino-list-elem .payId span .text-accent {
-	color: #87FE37;
 }
 .casino-list-elem .payId span .text-danger {
 	color: #FE373A;
@@ -2153,10 +2148,6 @@ button {
 		color: #B8D5F8;
 	}
 }
-.list .text-accent {
-	color: #87FE37 !important;
-}
-
 .casino-list .list-name,
 .event-list .list-name {
 	display: flex;
@@ -2197,7 +2188,7 @@ button {
 	align-items: center;
 	gap: 20px;
 	width: 100%;
-	padding: 20px;
+	padding: 10px 20px 20px;
 	border-radius: 20px;
 	border: 1px solid #1D283C;
 	background: linear-gradient(180deg, #111922 0%, #020305 100%);
@@ -2222,7 +2213,8 @@ button {
 	padding: 8px 20px 14px;
 	background: #588552;
 	border-radius: 10px;
-	transform: translateY(10px);
+	position: relative;
+	top: 10px;
 	z-index: -1;
 }
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img,
@@ -2245,7 +2237,7 @@ button {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 18px;
+	gap: 15px;
 }
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
@@ -2271,6 +2263,15 @@ button {
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span {
 	color: #020123;
 }
+@media screen and (min-width: 1024px) {
+	.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover,
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover {
+		border: 2px solid #87FE37;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		-webkit-backdrop-filter: blur(17px);
+		        backdrop-filter: blur(17px);
+	}
+}
 .casino-list .mySwiper .accent-card .slide-cart::after,
 .event-list .mySwiper .accent-card .slide-cart::after {
 	content: "";
@@ -2280,13 +2281,6 @@ button {
 	border-radius: 20px;
 	background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
 	box-shadow: 0px 80px 25px 0px rgba(0, 0, 0, 0.01), 0px 50px 20px 0px rgba(0, 0, 0, 0.11), 0px 30px 15px 0px rgba(0, 0, 0, 0.36), 0px 15px 10px 0px rgba(0, 0, 0, 0.61), 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
-	-webkit-backdrop-filter: blur(17px);
-	        backdrop-filter: blur(17px);
-}
-.casino-list .mySwiper .active-card .slide-wrapper .slide-cart,
-.event-list .mySwiper .active-card .slide-wrapper .slide-cart {
-	border: 2px solid #87FE37;
-	background: linear-gradient(180deg, #111922 0%, #020305 100%);
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
 }
