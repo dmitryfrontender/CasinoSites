@@ -1,10 +1,9 @@
 main {
-	// padding: 0 10px;
     margin-bottom: 50px;
 }
 
 .banner {
-    padding: 57px 0 0;
+    padding: 52px 0 0;
     margin-bottom: 50px;
 
     .homepage-banner-wrapper {
@@ -16,13 +15,13 @@ main {
         &::before {
             content: '';
             position: absolute;
-            width: 1129px;
-            height: 1030px;
-            right: 0;
+            width: 1329px;
+            height: 1230px;
+            right: -60px;
             top: 50%;
             transform: translateY(-50%);
             flex-shrink: 0;
-            opacity: 0.3;
+            opacity: 0.6;
             background: url('../images/banner-bg.png') 50% / contain no-repeat;
         }
 
@@ -37,9 +36,7 @@ main {
 
     &-title {
         color: #FFF;
-        // font-feature-settings: 'liga' off, 'clig' off;
         font-size: 34px;
-        // font-style: normal;
         font-weight: 700;
         line-height: 1.1;
         margin-bottom: 10px;
@@ -85,8 +82,8 @@ main {
             background: #1D283B;
 
             .svg-icon {
-                width: 100%;
-                height: 100%;
+                width: 40px;
+                height: 40px;
             }
         }
     }

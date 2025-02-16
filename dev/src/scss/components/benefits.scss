@@ -1,9 +1,6 @@
 @use "../includes/variables" as vars;
 @use '../includes/mixins' as mixins;
 
-
-
-
 .benefits-wrapper{
     display: grid;
     grid-template-columns: minmax(250px, 3fr) minmax(300px, 1fr);
