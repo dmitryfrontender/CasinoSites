@@ -35,8 +35,8 @@
                 }
             }
         }
-        .casino-list{ 
-            
+        .casino-list{
+
             .casino-list-elem{
                 margin-block: 3px;
                 .casino-banner{
@@ -61,7 +61,7 @@
                     }
                 }
             }
-            @media screen and (max-width: 1150px) {
+            @media screen and (max-width: 1024px) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
@@ -107,7 +107,7 @@
                     align-items: center;
                     justify-content: flex-start;
                     gap: 15px;
-                    
+
                 }
             }
             .payment-features{
@@ -129,7 +129,7 @@
                     flex: 1;
                     .element{
                         border-radius: 10px;
-                        background: rgba(135, 254, 55, 0.20);    
+                        background: rgba(135, 254, 55, 0.20);
                         min-height: 100%;
                         padding: 20px 14px 20px 8px;
                         display: flex;
@@ -144,7 +144,7 @@
 
                         }
                     }
-                    .cons{  
+                    .cons{
                         background: rgba(254, 55, 58, 0.20);
                         span{
                             color: #FE373A;
@@ -175,7 +175,7 @@
                     }
                 }
 
-                
+
             }
             .info-block{
                 display: flex;
@@ -314,9 +314,9 @@
                         }
                     }
                 }
-               
+
             }
-            
+
         }
     }
     .faq{
@@ -450,5 +450,5 @@
     @media screen and (max-width: 1024px) {
         display: block;;
     }
-    
+
 }
