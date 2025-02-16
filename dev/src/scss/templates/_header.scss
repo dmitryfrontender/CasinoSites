@@ -22,7 +22,7 @@ header {
     justify-content: space-between;
     gap: 20px;
     height: 70px;
-	padding: 0 10px;
+	// padding: 0 10px;
 
     .mobile-menu{
         border: none;
@@ -126,7 +126,7 @@ header {
             gap: 10px;
             background: #3D9700;
             padding: 5px;
-            border-radius: 10px;
+            border-radius: 5px;
 
             svg{
                 width: 24px;
@@ -252,7 +252,7 @@ header {
                     fill: vars.$link_color;
                 }
                 span{
-                    @include mixins.text(var(--body_color), var(--site-font-size), 600, 17px);
+                    font-size: 14px;
                 }
 
 

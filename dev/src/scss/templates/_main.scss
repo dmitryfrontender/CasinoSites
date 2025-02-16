@@ -1,10 +1,11 @@
 main {
-	padding: 0 10px;
+	// padding: 0 10px;
     margin-bottom: 50px;
 }
 
 .banner {
-    padding: 60px 0 50px;
+    padding: 57px 0 0;
+    margin-bottom: 50px;
 
     .homepage-banner-wrapper {
         display: flex;
@@ -36,11 +37,11 @@ main {
 
     &-title {
         color: #FFF;
-        font-feature-settings: 'liga' off, 'clig' off;
+        // font-feature-settings: 'liga' off, 'clig' off;
         font-size: 34px;
-        font-style: normal;
+        // font-style: normal;
         font-weight: 700;
-        line-height: normal;
+        line-height: 1.1;
         margin-bottom: 10px;
     }
 
