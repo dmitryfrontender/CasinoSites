@@ -29,6 +29,13 @@
 //     border: 1px solid white;
 // }
 
+
+@use './components/benefits.scss';
+@use './components/casino-filters.scss';
+@use './components/casino-australia.scss';
+@use './components/filters-component.scss';
+@use './components/games-block.scss';
+
 button{
     background: transparent;
     border: none;
@@ -88,7 +95,25 @@ button{
 
 
 .casino-list-block{
-    margin-top: 100px;
+    margin-bottom: 50px;
+
+    .list-name{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 15px;
+        margin-bottom: 30px;
+        gap: 10px;
+
+        svg{
+            width: 25px;
+            height: 25px;
+        }
+        span{
+            @include mixins.text(white, 24px, 600, 17px);
+            font-family: 'Urbanist-Medium';
+        }
+    }
     ul{
         display: flex;
         flex-direction: column;
@@ -321,8 +346,8 @@ button{
     }
 }
 
-.casino-list, .event-list{
-    // margin-bottom: 50px;
+.casino-list,
+.event-list{
     .list-name{
         display: flex;
         align-items: center;
@@ -340,14 +365,6 @@ button{
             font-family: 'Urbanist-Medium';
         }
     }
-    // .swiper-wrapper{
-    //     overflow: visible !important;
-    // }
-    // :deep{
-    //     .mySwiper{
-    //         overflow: auto;
-    //     }
-    // }
     .mySwiper{
         width: 100%;
         height: 100%;
@@ -355,7 +372,6 @@ button{
 
         swiper-slide{
             .slide-wrapper{
-                // padding-bottom: 150px;
                 padding-bottom: 50px;
                 .slide-cart{
                     display: flex;
@@ -369,7 +385,6 @@ button{
                     background: linear-gradient(180deg, #111922 0%, #020305 100%);
                     backdrop-filter: blur(17px);
                     position: relative;
-                    // overflow: hidden;
                     .list-head{
                         display: flex;
                         flex-direction: column;
@@ -462,9 +477,6 @@ button{
     }
 }
 
-
-
-
 .event-list{
     .list-name{
         svg{
@@ -531,14 +543,6 @@ button{
 
 }
 
-// .swiper{
-//     overflow: visible !important;
-// }
-// .swiper-wrapper{
-//     overflow: visible !important;
-// }
-
-@import './components/benefits.scss';
 .review-wrapper{
     margin-top: 30px;
     .content{
@@ -589,7 +593,6 @@ button{
             gap: 10px;
             span{
                 color: vars.$selection_bg;
-                // white-space: wrap;
             }
         }
         .info-wrap{
@@ -607,8 +610,6 @@ button{
                     justify-content: flex-start;
                     align-items: center;
                     gap: 10px;
-                    // display: grid;
-                    // grid-template-columns: 1fr 25px 1fr auto;
                     .option{
                         flex-basis: 110px;
                     }
@@ -624,14 +625,11 @@ button{
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
-
-
         }
     }
     .payment-methods{
         svg{
             width: 40px !important;
-            // height: 40px;
         }
         ul{
             display: flex;
@@ -712,9 +710,6 @@ button{
     }
 
     .other-products {
-
-
-
         .products-grid {
           display: grid;
           gap: 20px;
@@ -722,7 +717,6 @@ button{
           justify-items: start;
           margin-top: 30px;
           position: relative;
-
 
           &::before,
           &::after {
@@ -761,8 +755,6 @@ button{
         display: flex;
         justify-content: flex-start;
         align-items: stretch;
-        position: relative;
-
     }
 
     .rating-global {
@@ -814,8 +806,6 @@ button{
         gap: 10px;
         .item{
             width: -webkit-fill-available;
-
-
         }
 
         span {
@@ -848,7 +838,6 @@ button{
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            padding: 0 0 20px;
             overflow: hidden;
             .list-head{
                 display: flex;
@@ -872,8 +861,6 @@ button{
                     width: 100%;
                     border-bottom-right-radius: 0;
                     border-bottom-left-radius: 0;
-                    // position: absolute;
-
                 }
             }
             h3{
@@ -953,55 +940,52 @@ button{
     }
 
 
-      .bet-summary {
-
+    .bet-summary {
         .summary-grid {
-          display: grid;
-        //   grid-template-columns: repeat(3, 1fr);
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        justify-items: start;
-        position: relative;
-        margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            justify-items: start;
+            position: relative;
+            margin-top: 20px;
+            gap: 20px;
 
-          gap: 20px;
-
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #1A2535;
-          }
-
-          &::before {
-            left: 32%;
-          }
-
-          &::after {
-            left: 66%;
-          }
-
-          .summary-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px 10px 0;
-            width: 100%;
-
-
-            .label {
-              font-size: 0.875rem;
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 1px;
+                background-color: #1A2535;
             }
 
-            .value {
-              @include mixins.text(vars.$selection_bg, 16px, 600, 150%);
+            &::before {
+                left: 32%;
             }
 
-          }
+            &::after {
+                left: 66%;
+            }
+
+            .summary-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px 10px 0;
+                width: 100%;
+
+
+                .label {
+                font-size: 0.875rem;
+                }
+
+                .value {
+                @include mixins.text(vars.$selection_bg, 16px, 600, 150%);
+                }
+
+            }
         }
-      }
+    }
 
 
 }
@@ -1096,10 +1080,3 @@ button{
     max-width: 100%;
     max-height: 100%;
 }
-
-
-
-@import './components/casino-filters.scss';
-@import './components/casino-australia.scss';
-@import './components/filters-component.scss';
-@import './components/games-block.scss';

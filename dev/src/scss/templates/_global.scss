@@ -108,6 +108,9 @@ input, textarea {
 	margin: 0 auto;
 }
 
+.text-accent{
+	color: vars.$link_active !important;
+}
 .green-text {
 	color: #87FE37;
 }
