@@ -57,31 +57,35 @@ const removeSwiperOverflow = () => {
 	  }
 	}
 };
-const swiper = new Swiper('.swiper', {
-	// Optional parameters
-	direction: 'horizontal',
-	loop: false,
-  
-	// Navigation arrows
-	// navigation: {
-	//   nextEl: '.swiper-button-next',
-	//   prevEl: '.swiper-button-prev',
-	// },
-  
-	// Responsive breakpoints
-	breakpoints: {
-		1200: {
-			slidesPerView: 4,
+
+if ($('.swiper').length) {
+
+	const swiper = new Swiper('.swiper', {
+		// Optional parameters
+		direction: 'horizontal',
+		loop: false,
+
+		// Navigation arrows
+		// navigation: {
+		//   nextEl: '.swiper-button-next',
+		//   prevEl: '.swiper-button-prev',
+		// },
+
+		// Responsive breakpoints
+		breakpoints: {
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 15
+			},
+			780: {
+				slidesPerView: 3,
+				spaceBetween: 15
+			},
+		475: {
+			slidesPerView: 2,
 			spaceBetween: 15
-		  },
-		  780: {
-			slidesPerView: 3,
-			spaceBetween: 15
-		  },
-	  475: {
-		slidesPerView: 2,
-		spaceBetween: 15
-	  }
-	}
-  });
-  
+		}
+		}
+	});
+
+}

@@ -29,18 +29,12 @@
 //     border: 1px solid white;
 // }
 
-.container{
-    width: clamp(300px, 95%, 1280px);
-    height: 100%;
-    margin: 0 auto;
-}
-
 button{
     background: transparent;
     border: none;
 }
 .visit-btn{
-                    
+
     border-radius: 10px;
     background: #F9EB3D;
     box-shadow: 0px 1px 0px 0px #FFF983 inset, 1px 1px 0px 0px #FFCE08 inset;
@@ -53,8 +47,8 @@ button{
     span{
         color: #020123
     }
-    
-    
+
+
 }
 .rate{
     display: flex;
@@ -90,329 +84,6 @@ button{
     }
 }
 
-.top-header{
-    background: #111922;
-    width: 100%;
-    height: 70px;
-    position: relative;
-    z-index: 10;
-}
-.top-header-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
-    gap: 20px;
-    .mobile-menu{
-        border: none;
-        background: transparent;
-        display: none;
-        svg{
-            width: 23px;
-            height: 23px;
-            fill: white;
-        }
-        
-        @media screen and (max-width: 1024px) {
-            display: block;
-        }
-    }
-    .active-mobile-btn svg{
-        fill: vars.$link_active;
-    }
-    .logo{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        img{
-            filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.51)) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.44)) drop-shadow(0px 6px 4px rgba(0, 0, 0, 0.26)) drop-shadow(0px 11px 4px rgba(0, 0, 0, 0.08)) drop-shadow(0px 17px 5px rgba(0, 0, 0, 0.01));
-        }
-        span{
-            @include mixins.text(var(--body_light_color), clamp(20px, 1vw, 24px), 600, 17px);
-            @media screen and (max-width: 425px) {
-                font-size: clamp(14px, 1vw, 20px);
-            }
-        }
-    }
-    .search{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1 1 400px;
-        max-width: 400px;
-        border-radius: 10px;
-        background: #1A2535;
-        label{
-            display: flex;
-            align-items: center;
-            justify-content: baseline;
-            position: relative;
-            padding: 10px 15px;
-
-            gap: 10px;
-            width: 100%;
-       
-            svg{
-                width: 16px;
-                height: 16px;
-                fill: transparent;
-            }
-            input{
-        
-                width: 100%;
-                // background: #1A2535;
-                background: transparent;
-                border: none;
-                color: white;
-                @include mixins.text(white, 0.7rem, 600, normal);
-                &::placeholder{
-                    @include mixins.text(#83A2C6, 0.7rem, 600, normal);
-                    font-family: 'Urbanist-Medium';
-                }
-                
-            }
-        }
-        @media screen and (max-width: 650px) {
-            &{
-                display: none;
-            }
-        }
-    }
-    .button-group{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        .mobile-search-btn{
-            background: transparent;
-            display: none;
-            svg{
-                fill: transparent;
-                stroke: #73838F;
-                width: 20px;
-                height: 20px;
-
-            }
-            @media screen and (max-width: 650px) {
-                display: block;
-            }
-        }
-        .active-search-btn svg{
-            stroke: vars.$link_active;
-        }
-        button{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: #3D9700;
-            padding: 5px;
-            border-radius: 10px;
-    
-            svg{
-                width: 24px;
-                height: 24px;
-                fill: #75F94C;
-                padding: 0 4px;
-                @media screen and (max-width: 650px) {
-                    &{
-                        padding: 0;
-                    }
-                }
-
-                
-            }
-            span{
-                @include mixins.text(#B5F88E, 0.8rem, 600, normal);
-                font-family: 'Urbanist-Medium';
-            }
-        }
-        @media screen and (max-width: 375px) {
-            gap: clamp(5px, 0.5vw, 15px);
-        }
-    }
-    @media screen and (max-width: 375px) {
-        gap: clamp(5px, 1vw, 20px);
-    }
-    
-}
-
-.mobile-search{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #0C131B;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    padding: 15px 10px;
-    position: relative;
-    z-index: 5;
-    gap: 10px;
-    .search{
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex: 1 ;
-        border-radius: 10px;
-        background: #1A2535;
-        label{
-            display: flex;
-            align-items: center;
-            justify-content: baseline;
-            position: relative;
-            padding: 10px 15px;
-
-            gap: 10px;
-            width: 100%;
-    
-            svg{
-                width: 16px;
-                height: 16px;
-                fill: transparent;
-            }
-            input{
-        
-                width: 100%;
-                // background: #1A2535;
-                background: transparent;
-                border: none;
-                color: white;
-                @include mixins.text(white, 0.7rem, 600, normal);
-                &::placeholder{
-                    @include mixins.text(#83A2C6, 0.7rem, 600, normal);
-                    font-family: 'Urbanist-Medium';
-                }
-                
-            }
-        }
-    }
-    svg{
-        width: 20px;
-        height: 20px;
-    }
-    @media screen and (min-width: 650px) {
-        display: none;
-        
-    }
-    
-}
-
-
-.header-nav{
-    background: vars.$body_dark_color;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    ul{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-        // gap: 1rem;
-        li{
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 0 10px;
-            cursor: pointer;
-
-            a{
-                color: var(--body_light_color);
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                gap: 7px;
-                svg{
-                    width: 15px;
-                    height: 15px;
-                    fill: vars.$link_color;
-                }
-                span{
-                    @include mixins.text(var(--body_color), var(--site-font-size), 600, 17px);
-                }
-                
-                
-            }
-            .active-link{
-                background: transparent;
-                position: absolute;
-                bottom: 0;
-                height: 3px;
-                width: 100%;
-            }
-            @media screen and (min-width: 1024px) {
-                &:hover{
-                    svg{
-                        fill: vars.$link_active;
-                    }
-                    span{
-                        color: vars.$link_active;
-                    }
-                    .active-link{
-                        background: vars.$link_active;
-                    }
-                }
-            }
-          
-           
-            
-        }
-       
-    }
-    @media screen and (max-width: 1024px) {
-        &{
-            .container{
-                width: 100%;
-            }
-            transform: translateY(-200%);
-            transition: all 0.3s ease;
-            height: -webkit-fill-available;
-            position: fixed;
-            height: 100vh;
-            background: rgba(12, 19, 27, 0.90);
-            backdrop-filter: blur(7px);
-
-            ul{
-                flex-direction: column;
-                align-items: baseline;
-                justify-content: flex-start;
-                position: relative;
-                top: 30px;
-                gap: 35px;
-                li{
-                    height: auto;
-                }
-                .active-link{
-                    display: none;
-                }
-              
-            }
-        }
-        &.active-mobile-menu{
-            transform: translateY(-10%);
-            transition: all 0.3s ease;
-        }
-        
-    }
-}
-
-.mobile-search.active-mobile-search {
-    transform: translateY(0);
-}
-  
-.mobile-search.active-mobile-search + .active-mobile-menu{
-    transform: translateY(0);
-    transition: all 0.3s ease;
-
-
-}
-
 
 
 
@@ -421,10 +92,8 @@ button{
     ul{
         display: flex;
         flex-direction: column;
-        overflow-y: hidden;
-        overflow-x: scroll;
         gap: 10px;
-        @media screen and (max-width: 1150px) {
+        @media screen and (max-width: 1024px) {
             &{
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -443,7 +112,7 @@ button{
     }
 }
 .casino-list-elem{
-    background: linear-gradient(180deg, #111922 0%, #020305 100%);   
+    background: linear-gradient(180deg, #111922 0%, #020305 100%);
     position: relative;
     top: 0;
     left: 0;
@@ -475,7 +144,7 @@ button{
         .accent-num{
             background: #588552;
             color: #AFD9A4;
-            
+
         }
         img{
             border-radius: 20px;
@@ -485,10 +154,6 @@ button{
         display: flex;
         align-items: center;
         justify-content: center;
-        p{
-            @include mixins.text(vars.$placeholder_color, 15px, 600, normal);
-            width: 400px;
-        }
     }
     .bonus{
         display: flex;
@@ -522,9 +187,9 @@ button{
             width: 20px;
             height: 20px;
         }
-        
+
     }
-    
+
     .summary{
         display: flex;
         flex-direction: column;
@@ -546,7 +211,7 @@ button{
             .accent{
                 color: vars.$selection_bg
             }
-            
+
         }
         .discount{
             display: flex;
@@ -570,7 +235,7 @@ button{
             align-items: center;
             gap: 10px;
         }
-        
+
     }
     .buttons{
 
@@ -596,9 +261,9 @@ button{
                 white-space: nowrap;
             }
         }
-        
+
     }
-    @media screen and (max-width: 1150px) {
+    @media screen and (max-width: 1024px) {
         &{
             display: flex;
             flex-direction: column;
@@ -606,15 +271,11 @@ button{
             align-items: center;
             .text-wrapper{
                 text-align: center;
-                p{
-                    width: auto;
-                    max-width: 350px;
-                }
             }
 
         }
     }
-   
+
 }
 .casino-list-elem::before {
     content: "";
@@ -628,7 +289,7 @@ button{
     z-index: -1;
     border-radius: inherit;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out; 
+    transition: opacity 0.3s ease-in-out;
 }
 
 .casino-list-block ul::-webkit-scrollbar {
@@ -641,8 +302,8 @@ button{
 }
 @media screen and (min-width: 1024px) {
     .casino-list-elem:hover::before {
-        opacity: 1; 
-        
+        opacity: 1;
+
     }
     .casino-list-elem:hover{
         .bonus{
@@ -713,8 +374,8 @@ button{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                       
-                        
+
+
                         span{
                             @include mixins.text(#AFD9A4, 14px, 600, normal);
                             font-family: 'Urbanist-Medium', sans-serif;
@@ -732,7 +393,7 @@ button{
                     h3{
                         @include mixins.text(white, 20px, 600, normal);
                         font-family: 'Urbanist-Medium', sans-serif;
-        
+
                     }
                     .card-buttons{
                         display: flex;
@@ -752,24 +413,24 @@ button{
                             span{
                                 @include mixins.text(white, 14px, 600, normal);
                             }
-        
+
                         }
                         .visit-btn{
                             span{
                                 color: #020123;
-        
+
                             }
-        
+
                         }
-                        
+
                     }
                 }
-             
+
             }
-         
+
         }
 
-      
+
         .accent-card .slide-cart::after{
             content: '';
             position: absolute;
@@ -778,31 +439,31 @@ button{
             border-radius: 20px;
             background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
             // box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.70);
-            box-shadow:  
-            0px 80px 25px 0px rgba(0, 0, 0, 0.01),  
-            0px 50px 20px 0px rgba(0, 0, 0, 0.11),  
-            0px 30px 15px 0px rgba(0, 0, 0, 0.36),  
-            0px 15px 10px 0px rgba(0, 0, 0, 0.61),  
+            box-shadow:
+            0px 80px 25px 0px rgba(0, 0, 0, 0.01),
+            0px 50px 20px 0px rgba(0, 0, 0, 0.11),
+            0px 30px 15px 0px rgba(0, 0, 0, 0.36),
+            0px 15px 10px 0px rgba(0, 0, 0, 0.61),
             0px 4px 8px 0px rgba(0, 0, 0, 0.70);
-          
+
             backdrop-filter: blur(17px);
         }
-        
-        
-        
+
+
+
         .active-card .slide-wrapper{
             .slide-cart{
                 border: 2px solid #87FE37;
                 background: linear-gradient(180deg, #111922 0%, #020305 100%);
                 backdrop-filter: blur(17px);
             }
-       
+
         }
     }
 }
 
 
-  
+
 
 .event-list{
     .list-name{
@@ -811,7 +472,7 @@ button{
         }
     }
     .mySwiper{
-        
+
         swiper-slide{
             .slide-wrapper{
                 .slide-cart{
@@ -835,7 +496,7 @@ button{
                             width: 100%;
                             border-bottom-right-radius: 0;
                             border-bottom-left-radius: 0;
-        
+
                         }
                     }
                     .card-buttons{
@@ -853,18 +514,18 @@ button{
                         }
                     }
                 }
-             
+
             }
-         
+
         }
         .active-card{
             .slide-wrapper{
                 .slide-cart{
                     border: 2px solid #A14EF6;
-    
+
                 }
             }
-           
+
         }
     }
 
@@ -917,7 +578,7 @@ button{
     }
     .general-info{
         margin-top: 20px;
-       
+
         span{
             @include mixins.text(white, 14px, 600, 150%);
         }
@@ -963,8 +624,8 @@ button{
             align-items: center;
             gap: 20px;
             flex-wrap: wrap;
-            
-            
+
+
         }
     }
     .payment-methods{
@@ -1051,9 +712,9 @@ button{
     }
 
     .other-products {
-      
-        
-      
+
+
+
         .products-grid {
           display: grid;
           gap: 20px;
@@ -1070,17 +731,17 @@ button{
             top: 0;
             bottom: 0;
             width: 1px;
-            background-color: #1A2535; 
+            background-color: #1A2535;
           }
-      
+
           &::before {
             left: 32%;
           }
-      
+
           &::after {
-            left: 66%; 
+            left: 66%;
           }
-      
+
           .product {
             display: flex;
             justify-content: space-between;
@@ -1103,7 +764,7 @@ button{
         position: relative;
 
     }
-    
+
     .rating-global {
         flex: 1 1 100%;
         text-align: center;
@@ -1117,12 +778,12 @@ button{
             width: 75px !important;
             height: 75px !important;
         }
-    
+
         .thumb {
             font-size: 50px;
             color: #7fff00;
         }
-    
+
         .global-score {
             font-size: 2em;
             font-weight: bold;
@@ -1138,13 +799,13 @@ button{
         position: relative;
         right: 20px;
     }
-    
+
     .column {
         flex: 1 1 45%;
         min-width: 300px;
         margin-top: 20px;
     }
-    
+
     .rating-item {
         display: flex;
         align-items: center;
@@ -1153,14 +814,14 @@ button{
         gap: 10px;
         .item{
             width: -webkit-fill-available;
-       
+
 
         }
-    
+
         span {
             flex: 0 0 20%;
         }
-    
+
         .bar {
             flex: 1;
             height: 5px;
@@ -1168,7 +829,7 @@ button{
             border-radius: 5px;
             overflow: hidden;
             margin-top: 10px;
-    
+
             div {
                 height: 100%;
                 background: #7fff00;
@@ -1284,16 +945,16 @@ button{
             }
         }
     }
-    
+
     @media (max-width: 600px) {
         .column {
             flex: 1 1 100%;
         }
     }
-    
+
 
       .bet-summary {
-      
+
         .summary-grid {
           display: grid;
         //   grid-template-columns: repeat(3, 1fr);
@@ -1311,17 +972,17 @@ button{
             top: 0;
             bottom: 0;
             width: 1px;
-            background-color: #1A2535; 
+            background-color: #1A2535;
           }
-      
+
           &::before {
             left: 32%;
           }
-      
+
           &::after {
-            left: 66%; 
+            left: 66%;
           }
-      
+
           .summary-item {
             display: flex;
             justify-content: space-between;
@@ -1329,20 +990,20 @@ button{
             padding: 10px 15px 10px 0;
             width: 100%;
 
-      
+
             .label {
               font-size: 0.875rem;
             }
-      
+
             .value {
               @include mixins.text(vars.$selection_bg, 16px, 600, 150%);
             }
-      
+
           }
         }
       }
-      
-      
+
+
 }
 
 .gold-party{
@@ -1429,6 +1090,11 @@ button{
             }
         }
     }
+}
+
+.svg-icon {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
