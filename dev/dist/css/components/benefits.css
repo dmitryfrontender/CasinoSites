@@ -3,6 +3,7 @@
 	grid-template-columns: minmax(250px, 3fr) minmax(300px, 1fr);
 	gap: 50px;
 	height: 100%;
+	margin-bottom: 50px;
 }
 .benefits-wrapper .content h2 {
 	color: white;

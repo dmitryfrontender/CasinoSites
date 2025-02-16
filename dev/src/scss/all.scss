@@ -453,7 +453,6 @@ button{
             z-index: -1;
             border-radius: 20px;
             background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
-            // box-shadow: 0px 173px 48px 0px rgba(0, 0, 0, 0.01), 0px 111px 44px 0px rgba(0, 0, 0, 0.11), 0px 62px 37px 0px rgba(0, 0, 0, 0.36), 0px 28px 28px 0px rgba(0, 0, 0, 0.61), 0px 7px 15px 0px rgba(0, 0, 0, 0.70);
             box-shadow:
             0px 80px 25px 0px rgba(0, 0, 0, 0.01),
             0px 50px 20px 0px rgba(0, 0, 0, 0.11),
@@ -598,7 +597,7 @@ button{
         .info-wrap{
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-top: 20px;
             gap: 20px;
             ul{
@@ -608,11 +607,22 @@ button{
                 li{
                     display: flex;
                     justify-content: flex-start;
-                    align-items: center;
+                    align-items: flex-start;
                     gap: 10px;
+                    @media screen and (max-width: 440px) {
+                        span{
+                            font-size: clamp(12px, 1.5vw, 14px);
+                        }
+                    }
                     .option{
                         flex-basis: 110px;
                     }
+                }
+            }
+            @media screen and (max-width: 768px) {
+                &{
+                    flex-direction: column;
+                    align-items: flex-start;
                 }
             }
         }
@@ -672,11 +682,39 @@ button{
                     justify-content: center;
                     flex-shrink: 0;
                 }
+                @media screen and (max-width: 1024px) {
+                    &{
+                        flex: 1 0 100%;
+                        p{
+                            padding-bottom: 0;
+                        }
+                        
+                    }
+                    
+                }
+                @media screen and (max-width: 375px) {
+                    &{
+                        flex-direction: column;
+                    }
+                }
             }
             .separator{
                 width: 1px;
                 align-self: stretch;
                 background-color: #1A2535;
+                @media screen and (max-width: 1024px) {
+                    &{
+                        width: 100%;
+                        height: 1px;
+                    }
+                    
+                }
+            }
+            @media screen and (max-width: 1024px) {
+                &{
+                    flex-direction: column;
+                }
+                
             }
         }
     }
@@ -713,29 +751,12 @@ button{
         .products-grid {
           display: grid;
           gap: 20px;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(3, minmax(200px, 1fr));
           justify-items: start;
           margin-top: 30px;
           position: relative;
 
-          &::before,
-          &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: #1A2535;
-          }
-
-          &::before {
-            left: 32%;
-          }
-
-          &::after {
-            left: 66%;
-          }
-
+          @include mixins.mediaGridBlock;
           .product {
             display: flex;
             justify-content: space-between;
@@ -748,17 +769,23 @@ button{
       }
 
       .rating-container {
-        gap: 5px;
-        margin-top: 30px;
-        position: relative;
-        padding: 20px;
         display: flex;
         justify-content: flex-start;
-        align-items: stretch;
+        gap: 20px;
+
+        justify-items: start;
+        margin-top: 30px;
+        position: relative;
+        @media screen and (max-width: 550px) {
+            &{
+                flex-direction: column;
+            }
+        }
     }
+   
 
     .rating-global {
-        flex: 1 1 100%;
+        flex: 1 1 20%;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -784,18 +811,62 @@ button{
             @include mixins.text(white, 16px, 500, 150%);
         }
     }
-    .separator {
-        width: 1px;
-        align-self: stretch;
-        background-color: #1A2535;
+    .column-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        width: 100%;
+        column-gap: 60px;
         position: relative;
-        right: 20px;
-    }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 1px;
+            height: 80%;
+            transform: translateY(-50%);
+            background-color: #1A2535;
+        }
+        &::before{
+            left: -5%;
+        }
+        &::after{
+            left: 50%;
+        }
+        @media screen and (max-width: 1132px) {
+            &::before{
+                left: -8%;
+            }
+            &::after{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            &::before{
+                left: -5%;
+            }
+            &::after{
+                display: block;
+            }
+        }
+        @media screen and (max-width: 782px) {
+            &::before{
+                left: -8%;
+            }
+            &::after{
+                display: none;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            &::before{
+                left: 0;
+                height: 1px;
+                width: 100%;
+                top: -2%;
+            }
+        }
 
-    .column {
-        flex: 1 1 45%;
-        min-width: 300px;
-        margin-top: 20px;
     }
 
     .rating-item {
@@ -806,10 +877,6 @@ button{
         gap: 10px;
         .item{
             width: -webkit-fill-available;
-        }
-
-        span {
-            flex: 0 0 20%;
         }
 
         .bar {
@@ -949,23 +1016,7 @@ button{
             margin-top: 20px;
             gap: 20px;
 
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                width: 1px;
-                background-color: #1A2535;
-            }
-
-            &::before {
-                left: 32%;
-            }
-
-            &::after {
-                left: 66%;
-            }
+            @include mixins.mediaGridBlock;
 
             .summary-item {
                 display: flex;
