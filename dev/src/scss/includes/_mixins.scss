@@ -121,7 +121,7 @@
 	@media screen and (max-width: 1093px) {
 		&{
 			grid-template-columns: repeat(2, minmax(200px, 1fr));
-			
+
 		}
 		&::before{
 			display: none;
@@ -161,7 +161,7 @@
 		}
 	  }
 	  @media screen and (max-width: 743px) {
-	
+
 		&::before{
 			display: none;
 		}

@@ -3,7 +3,7 @@
 
 .benefits-wrapper{
     display: grid;
-    grid-template-columns: minmax(250px, 3fr) minmax(300px, 1fr);
+    grid-template-columns: minmax(250px, 3fr) minmax(315px, 1fr);
     gap: 50px;
     height: 100%;
     margin-bottom: 50px;
@@ -11,11 +11,15 @@
     .content{
         h2{
             @include mixins.text(white, 34px, 700, normal);
-            padding-bottom: 20px;
         }
-        p{
-            @include mixins.text(vars.$placeholder_color, 16px, 500, 150%);
-            padding-bottom: 20px;
+         p{
+            @include mixins.text(vars.$placeholder_color, 16px, 500, 25px);
+        }
+        & > h2{
+            margin-bottom: 20px;
+        }
+        & > p{
+            margin-bottom: 20px;
         }
         .table{
             padding: 10px 20px;
@@ -24,6 +28,7 @@
             display: grid;
             grid-template-columns: 1fr 2fr 1fr 1fr;
             gap: 10px;
+            margin-bottom: 17px;
             span{
                 @include mixins.text(vars.$placeholder_color, 16px, 500, normal);
             }
@@ -34,9 +39,12 @@
             }
         }
         .casino-list{
+            margin-bottom: 30px;
 
             .casino-list-elem{
-                margin-block: 3px;
+                margin-bottom: 5px;
+                padding: 20px;
+
                 .casino-banner{
                     span{
                         display: none;
@@ -102,7 +110,7 @@
                 gap: 20px;
                 li{
                     display: flex;
-                    align-items: center;
+                    align-items: flex-start;
                     justify-content: flex-start;
                     gap: 15px;
 
@@ -129,7 +137,6 @@
                         border-radius: 10px;
                         background: rgba(135, 254, 55, 0.20);
                         min-height: 100%;
-                        padding: 20px 14px 20px 8px;
                         display: flex;
                         align-items: center;
                         justify-content: center;

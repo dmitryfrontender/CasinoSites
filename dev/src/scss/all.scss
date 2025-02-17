@@ -41,21 +41,26 @@ button{
     border: none;
 }
 .visit-btn{
-
     border-radius: 10px;
     background: #F9EB3D;
     box-shadow: 0px 1px 0px 0px #FFF983 inset, 1px 1px 0px 0px #FFCE08 inset;
     padding: 8px 20px;
-    width: 160px;
+    width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    cursor: pointer;
     span{
         color: #020123
     }
 
-
+    svg,
+    .svg-icon {
+        path {
+            fill: #020123;
+        }
+    }
 }
 .rate{
     display: flex;
@@ -83,7 +88,7 @@ button{
     }
     span{
         @include mixins.text(white, 14px, 600, normal);
-        font-family: 'Urbanist-Medium';
+        font-family: 'Urbanist-Medium', sans-serif;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -111,7 +116,7 @@ button{
         }
         span{
             @include mixins.text(white, 24px, 600, 17px);
-            font-family: 'Urbanist-Medium';
+            font-family: 'Urbanist-Medium', sans-serif;
         }
     }
     ul{
@@ -152,7 +157,6 @@ button{
     padding: 14px;
     gap: 20px;
     justify-content: space-between;
-    cursor: pointer;
     .casino-banner{
         display: flex;
         align-items: center;
@@ -275,12 +279,18 @@ button{
             align-items: center;
             justify-content: center;
             gap: 10px;
+            cursor: pointer;
             .white-text{
                 color: #fff
             }
             span{
                 @include mixins.text(vars.$selection_bg, 14px, 600, normal);
                 white-space: nowrap;
+            }
+
+            svg,
+            .svg-icon {
+                fill: #73838F;
             }
         }
 
@@ -353,7 +363,7 @@ button{
         }
         span{
             @include mixins.text(white, 24px, 600, 17px);
-            font-family: 'Urbanist-Medium';
+            font-family: 'Urbanist-Medium', sans-serif;
         }
     }
     .mySwiper{
@@ -376,6 +386,7 @@ button{
                     background: linear-gradient(180deg, #111922 0%, #020305 100%);
                     backdrop-filter: blur(17px);
                     position: relative;
+
                     .list-head{
                         display: flex;
                         flex-direction: column;
@@ -417,6 +428,8 @@ button{
                             justify-content: center;
                             align-items: center;
                             gap: 10px;
+                            width: 200px;
+                            cursor: pointer;
                             span{
                                 @include mixins.text(white, 14px, 600, normal);
                             }
@@ -425,7 +438,6 @@ button{
                         .visit-btn{
                             span{
                                 color: #020123;
-
                             }
 
                         }
@@ -443,24 +455,18 @@ button{
 
             }
 
-        }
+            &.accent-card {
+                .slide-cart {
+                    background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
+                    box-shadow:
+                    0px 80px 25px 0px rgba(0, 0, 0, 0.01),
+                    0px 50px 20px 0px rgba(0, 0, 0, 0.11),
+                    0px 30px 15px 0px rgba(0, 0, 0, 0.36),
+                    0px 15px 10px 0px rgba(0, 0, 0, 0.61),
+                    0px 4px 8px 0px rgba(0, 0, 0, 0.70);
+                }
+            }
 
-
-        .accent-card .slide-cart::after{
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            border-radius: 20px;
-            background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
-            box-shadow:
-            0px 80px 25px 0px rgba(0, 0, 0, 0.01),
-            0px 50px 20px 0px rgba(0, 0, 0, 0.11),
-            0px 30px 15px 0px rgba(0, 0, 0, 0.36),
-            0px 15px 10px 0px rgba(0, 0, 0, 0.61),
-            0px 4px 8px 0px rgba(0, 0, 0, 0.70);
-
-            backdrop-filter: blur(17px);
         }
     }
 }
@@ -511,6 +517,11 @@ button{
                             border-radius: 10px;
                             background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
                             box-shadow: 1px 1px 0px 0px #87FE37 inset;
+
+                            svg,
+                            .svg-icon {
+                                fill: white;
+                            }
                         }
                     }
                 }
@@ -939,7 +950,7 @@ button{
                     gap: 5px;
                 }
                 span{
-                    font-family: 'Urbanist-Medium';
+                    font-family: 'Urbanist-Medium', sans-serif;
                 }
                 .title{
                     @include mixins.text(white, 14px, 600, normal);
@@ -969,7 +980,7 @@ button{
                     border: 1px solid #576C86;
                     background: #1A2535;
                     padding: 10px 15px;
-                    font-family: 'Urbanist-Medium';
+                    font-family: 'Urbanist-Medium', sans-serif;
                 }
                 button{
                     span{

@@ -22,7 +22,7 @@
     //         flex-wrap: wrap;
     //         width: 100%;
     //         gap: 10px;
-            
+
     //     }
     //    .item{
     //         flex: 1;
@@ -109,7 +109,7 @@
     //                 display: flex;
     //             }
     //         }
-            
+
     //    }
     //    @media screen and (max-width: 768px) {
     //         .bottom-row{
@@ -125,7 +125,7 @@
     //    }
     // }
     .content-block{
-        
+
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -142,7 +142,7 @@
                 border: 1px solid #1D283C;
                 background: linear-gradient(180deg, #111922 0%, #020305 100%);
                 backdrop-filter: blur(17px);
-                padding: 20px;  
+                padding: 20px;
                 .head{
                     display: flex;
                     justify-content: space-between;
@@ -226,7 +226,7 @@
                             align-items: center;
                             gap: 10px;
                             flex: 1;
-                            min-width: 0; 
+                            min-width: 0;
                         }
                         .text{
                             display: flex;
@@ -261,7 +261,7 @@
                                 }
                             }
                         }
-                        
+
                     }
                     li::before{
                         content: '';
@@ -285,7 +285,7 @@
             @media screen and (max-width: 860px) {
                 &{
                     display: none;
-                } 
+                }
             }
         }
         .card-wrapper{
@@ -309,15 +309,15 @@
                 position: relative;
                 overflow: hidden;
                 margin-left: 10px;
-    
-    
-    
+
+
+
                 .list-head{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                   
-                    
+
+
                     span{
                         @include mixins.text(#AFD9A4, 14px, 600, normal);
                         font-family: 'Urbanist-Medium', sans-serif;
@@ -334,8 +334,8 @@
                 }
                 h3{
                     @include mixins.text(white, 20px, 600, normal);
-                    font-family: 'Urbanist-Medium';
-    
+                    font-family: 'Urbanist-Medium', sans-serif;
+
                 }
                 .card-buttons{
                     display: flex;
@@ -355,16 +355,16 @@
                         span{
                             @include mixins.text(white, 14px, 600, normal);
                         }
-    
+
                     }
                     .visit-btn{
                         span{
                             color: #020123;
-    
+
                         }
-    
+
                     }
-                    
+
                 }
             }
             @media screen and (max-width: 1175px) {
@@ -386,7 +386,7 @@
                         width: calc(50% - 5px);
 
                     }
-                } 
+                }
             }
             @media screen and (max-width: 550px) {
                 &{
