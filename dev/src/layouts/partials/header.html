@@ -5,6 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{pageTitle}}</title>
+
+	{{#if indexBanner}}
+		<link rel="preload" as="image" href="images/banner-bg.png">
+	{{/if}}
+	{{#if categoryBanner}}
+		<link rel="preload" as="image" href="images/banner-bg.png">
+	{{/if}}
 	<link rel="stylesheet" type="text/css" href="css/all.css" media="all">
 
 </head>
