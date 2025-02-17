@@ -80,6 +80,7 @@
 	border: 1px solid #576C86;
 	background: #1A2535;
 	padding: 10px 15px;
+	width: 200px;
 	font-family: "Urbanist-Medium", sans-serif;
 	gap: 10px;
 }
@@ -94,6 +95,10 @@
 	border-radius: 10px;
 	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
 	box-shadow: 1px 1px 0px 0px #87FE37 inset;
+}
+.games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn svg,
+.games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn .svg-icon {
+	fill: white;
 }
 @media screen and (max-width: 900px) {
 	.games-block ul {

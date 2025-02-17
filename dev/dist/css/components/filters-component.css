@@ -21,7 +21,7 @@
 	gap: 10px;
 }
 .filters-component .filters-block .item {
-	flex: 1 1 300px;
+	width: calc(25% - 8px);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -31,15 +31,19 @@
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
 	padding: 15px 20px;
-	gap: 100px;
 	position: relative;
 	overflow: hidden;
-	flex-shrink: 0;
+}
+@media screen and (max-width: 1024px) {
+	.filters-component .filters-block .item {
+		width: 100%;
+	}
 }
 .filters-component .filters-block .item svg {
 	width: 24px;
 	height: 24px;
 	fill: #73838F;
+	flex-shrink: 0;
 }
 .filters-component .filters-block .item span {
 	color: #A4B4D2;
@@ -48,12 +52,15 @@
 	line-height: normal;
 	font-family: var(--default-font);
 	white-space: nowrap;
+	flex-shrink: 1;
 }
 .filters-component .filters-block .item .name {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 15px;
+	flex-shrink: 1;
+	flex-grow: 1;
 }
 .filters-component .filters-block .item .num {
 	border-radius: 20px;

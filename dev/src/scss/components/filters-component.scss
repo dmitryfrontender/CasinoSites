@@ -21,10 +21,9 @@
             flex-wrap: wrap;
             width: 100%;
             gap: 10px;
-            
         }
        .item{
-            flex: 1 1 300px;
+            width: calc(25% - 8px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -33,24 +32,31 @@
             background: linear-gradient(180deg, #111922 0%, #020305 100%);
             backdrop-filter: blur(17px);
             padding: 15px 20px;
-            gap: 100px;
             position: relative;
             overflow: hidden;
-            flex-shrink: 0;
+
+            @media screen and (max-width: 1024px) {
+                width: 100%;
+            }
+
             svg{
                 width: 24px;
                 height: 24px;
                 fill: vars.$link_color;
+                flex-shrink: 0;
             }
             span{
                 @include mixins.text(#A4B4D2, 14px, 600, normal);
                 white-space: nowrap;
+                flex-shrink: 1;
             }
             .name{
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 gap: 15px;
+                flex-shrink: 1;
+                flex-grow: 1;
             }
             .num{
                 border-radius: 20px;
@@ -68,14 +74,14 @@
                     max-width: 100%;
                 }
             }
-        
+
             @media screen and (min-width: 1024px) {
                 position: relative;
 
                 &{
                     cursor: pointer;
                 }
-            
+
                 &::before {
                     content: "";
                     position: absolute;
@@ -86,7 +92,7 @@
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
                 }
-            
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -95,17 +101,17 @@
                     border-radius: inherit;
                     z-index: -1;
                 }
-            
+
                 &:hover {
                     &::before {
-                        opacity: 1; 
+                        opacity: 1;
                     }
                 }
             }
-            
-            
-           
-           
+
+
+
+
        }
        .info{
             display: flex;
@@ -150,7 +156,7 @@
                     display: flex;
                 }
             }
-            
+
        }
        @media screen and (max-width: 768px) {
             .bottom-row{
