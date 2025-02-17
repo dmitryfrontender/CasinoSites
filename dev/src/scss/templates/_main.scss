@@ -28,6 +28,33 @@ main {
             flex-shrink: 0;
             opacity: 0.6;
             background: url('../images/banner-bg.png') 50% / contain no-repeat;
+            z-index: -1;
+        }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    .categories-banner-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 1329px;
+            height: 1230px;
+            right: -185px;
+            top: 50%;
+            transform: translateY(-50%);
+            flex-shrink: 0;
+            opacity: 0.6;
+            background: url('../images/banner-bg.png') 50% / contain no-repeat;
+            filter: blur(10px);
+            z-index: -1;
         }
 
         @media screen and (max-width: 1024px) {

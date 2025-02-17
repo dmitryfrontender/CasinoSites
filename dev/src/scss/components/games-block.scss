@@ -80,6 +80,7 @@
                             border: 1px solid #576C86;
                             background: #1A2535;
                             padding: 10px 15px;
+                            width: 200px;
                             font-family: 'Urbanist-Medium', sans-serif;
                             gap: 10px;
                             span{
@@ -92,6 +93,10 @@
                             background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
                             box-shadow: 1px 1px 0px 0px #87FE37 inset;
 
+                            svg,
+                            .svg-icon {
+                                fill: white;
+                            }
                         }
                     }
                 }

@@ -274,25 +274,6 @@ button{
             width: 20px;
             height: 20px;
         }
-        .run-btn{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            cursor: pointer;
-            .white-text{
-                color: #fff
-            }
-            span{
-                @include mixins.text(vars.$selection_bg, 14px, 600, normal);
-                white-space: nowrap;
-            }
-
-            svg,
-            .svg-icon {
-                fill: #73838F;
-            }
-        }
 
     }
     @media screen and (max-width: 1024px) {
@@ -309,6 +290,27 @@ button{
     }
 
 }
+
+.run-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    .white-text{
+        color: #fff
+    }
+    span{
+        @include mixins.text(vars.$selection_bg, 14px, 600, normal);
+        white-space: nowrap;
+    }
+
+    svg,
+    .svg-icon {
+        fill: #73838F;
+    }
+}
+
 .casino-list-elem::before {
     content: "";
     position: absolute;
@@ -517,6 +519,10 @@ button{
                             border-radius: 10px;
                             background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
                             box-shadow: 1px 1px 0px 0px #87FE37 inset;
+
+                            span {
+                                color: #fff;
+                            }
 
                             svg,
                             .svg-icon {
@@ -979,10 +985,10 @@ button{
                     border-radius: 10px;
                     border: 1px solid #576C86;
                     background: #1A2535;
+                    width: 200px;
                     padding: 10px 15px;
                     font-family: 'Urbanist-Medium', sans-serif;
-                }
-                button{
+
                     span{
                         color: white;
 
@@ -992,6 +998,11 @@ button{
                     border-radius: 10px;
                     background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
                     box-shadow: 1px 1px 0px 0px #87FE37 inset;
+
+                    svg,
+                    .svg-icon {
+                        fill: white;
+                    }
                 }
                 svg{
                     fill: vars.$selection_bg;
@@ -1040,24 +1051,24 @@ button{
 
 
 }
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    margin: 30px 0 20px;
+    svg{
+        width: 16px;
+        height: 16px;
+        fill: vars.$placeholder_color;
+        stroke: vars.$placeholder_color;
+    }
+    span{
+        @include mixins.text(vars.$placeholder_color, 12px, 500, 150%);
+    }
+}
 
 .gold-party{
-    margin-top: 30px;
-    .navigation{
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 8px;
-        svg{
-            width: 16px;
-            height: 16px;
-            fill: vars.$placeholder_color;
-            stroke: vars.$placeholder_color;
-        }
-        span{
-            @include mixins.text(vars.$placeholder_color, 12px, 500, 150%);
-        }
-    }
     .slot-game{
         margin-top: 30px;
         .title{
@@ -1107,7 +1118,7 @@ button{
                     padding: 10px 30px;
                     width: 100%;
                     cursor: pointer;
-
+                    height: 40px;
                 }
                 span{
                     @include mixins.text(white, 15px, 600, normal);
@@ -1116,8 +1127,11 @@ button{
                 .visit-btn{
                     border-radius: 10px;
                     background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
-                    box-shadow: 1px 1px 0px 0px #87FE37 inset;;
-                    svg{
+                    box-shadow: 1px 1px 0px 0px #87FE37 inset;
+
+                    svg,
+                    .svg-icon {
+                        fill: white;
                         width: 24px;
                         height: 24px;
                     }
