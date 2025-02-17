@@ -225,7 +225,7 @@
 	font-weight: 600;
 	line-height: normal;
 	font-family: var(--default-font);
-	font-family: "Urbanist-Medium";
+	font-family: "Urbanist-Medium", sans-serif;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons {
 	display: flex;

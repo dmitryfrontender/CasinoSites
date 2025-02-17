@@ -6,6 +6,11 @@ main {
     padding: 52px 0 0;
     margin-bottom: 50px;
 
+    @media screen and (max-width: 1024px) {
+        padding: 40px 0 0;
+        margin-bottom: 40px;
+    }
+
     .homepage-banner-wrapper {
         display: flex;
         align-items: center;
@@ -17,7 +22,7 @@ main {
             position: absolute;
             width: 1329px;
             height: 1230px;
-            right: -60px;
+            right: -185px;
             top: 50%;
             transform: translateY(-50%);
             flex-shrink: 0;
@@ -52,21 +57,30 @@ main {
 
     &-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(50px, 150px));
         gap: 10px;
 
         &-item {
-            display: flex;
-            width: 150px;
             padding: 10px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             gap: 10px;
             border-radius: 20px;
             border: 1px solid #1D283C;
             background: linear-gradient(180deg, #111922 0%, #020305 100%);
             backdrop-filter: blur(17px);
+        }
+
+        &-link {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            @media screen and (min-width: 1025px) {
+                &:hover {
+                    opacity: .7;
+                }
+            }
         }
 
         &-icon {
@@ -85,6 +99,149 @@ main {
                 width: 40px;
                 height: 40px;
             }
+        }
+    }
+}
+
+.add-to-bookmarks {
+    display: flex;
+    width: 100%;
+    &__wrapper {
+        display: inline-flex;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: space-between;
+        gap: 15px;
+        align-items: center;
+        flex-shrink: 0;
+        border-radius: 20px;
+        border: 1px solid #1D283C;
+        background: linear-gradient(180deg, #111922 0%, #020305 100%);
+        backdrop-filter: blur(17px);
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        max-width: 595px;
+        flex-shrink: 1;
+    }
+
+    &__right {
+        flex-shrink: 0;
+
+        @media screen and (max-width: 1024px) {
+            padding: 38px 0 45px;
+            width: 100%;
+        }
+    }
+
+    &__title {
+        color: #FFF;
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 34px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        p {
+            color: #83A2C6;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+            margin-bottom: 20px;
+
+            &.instructions {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &__btn {
+        position: relative;
+        width: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+
+            width: 286px;
+            height: 181px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+
+            background-image: url('../images/bookmarks-bg.png');
+            background-position: center;
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 46px;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
+            box-shadow: 0px 122px 34px 0px rgba(0, 0, 0, 0.01), 0px 78px 31px 0px rgba(0, 0, 0, 0.09), 0px 44px 26px 0px rgba(0, 0, 0, 0.30), 0px 20px 20px 0px rgba(0, 0, 0, 0.51), 0px 5px 11px 0px rgba(0, 0, 0, 0.59);
+
+            @media screen and (max-width: 1024px) {
+                padding: 15px 20px;
+                width: 100%;
+            }
+        }
+
+        &-title {
+            color: #FFF;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 5px;
+
+            @media screen and (max-width: 1024px) {
+                font-size: 24px;
+            }
+        }
+
+        &-icon {
+            display: flex;
+            width: 50px;
+            padding: 7px 5px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 32px;
+            background: #265505;
+            flex-shrink: 0;
+
+            .svg-icon {
+                width: 27px;
+                height: 33px;
+                flex-shrink: 0;
+            }
+        }
+
+        &-info {
+            color: #9FE76E;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
         }
     }
 }
