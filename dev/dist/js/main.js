@@ -1,7 +1,15 @@
+
 $(document).ready(function(){
 	mobileMenu();
 	closeSearch();
 	toggleSearch();
+	openFilterPopup();
+	closeFilterPopup();
+	toggleAccordeon();
+	scrollToBenefitsContent();
+	displayLink();
+	showFilterAccordeon();
+	roundSliderValue();
 	// removeSwiperOverflow();
 	// swiper()
 
@@ -87,5 +95,163 @@ if ($('.swiper').length) {
 		}
 		}
 	});
+
+}
+
+const openFilterPopup = () => {
+	$('#more-filters, .mobile-filters').on('click', function() {
+		$('body').css('overflow', 'hidden');
+		$('.popup-category-filters').addClass('filters-popup-active');
+	});
+}
+
+const closeFilterPopup = () => {
+	$('.popup-category-filters').on('click', function(event) {
+		if (!$(event.target).closest('.popup-wrapper').length) {
+			$('.popup-category-filters').removeClass('filters-popup-active');
+			$('body').css('overflow', 'auto');
+		}
+	});
+}
+
+const toggleAccordeon = () => {
+	$('.top-block').on('click', function() {
+		$(this).find('.arrow').toggleClass('arrow-active');
+		$(this).closest('li').find('.answer').toggleClass('answer-active');
+		
+	})
+}
+
+const scrollToBenefitsContent = () => {
+	$(".link-element a").on("click", (e) => {
+		e.preventDefault();
+
+		let targetElem = $($(e.currentTarget).attr("href"));
+
+		$("html, body").animate(
+			{ scrollTop: targetElem.offset().top -50 },
+			600
+		);
+	});
+};
+
+// function displayLink() {
+// 	$(window).on("scroll", function () {
+// 		let scrollPos = $(window).scrollTop();
+
+// 		$(".content-section").each(function () {
+// 			let top = $(this).offset().top - 120;
+// 			let bottom = top + $(this).outerHeight();
+
+
+// 			if (scrollPos >= top && scrollPos <= bottom) {
+// 				let id = $(this).attr("id");
+// 				$(".link-element a").removeClass("active-link");
+// 				$('.link-element a[href="#' + id + '"]').addClass("active-link");
+// 			}
+// 		});
+// 	});
+
+// }
+function displayLink() {
+    let debounceTimer;
+    $(window).on("scroll", function () {
+        clearTimeout(debounceTimer);
+
+        debounceTimer = setTimeout(function () {
+            let scrollPos = $(window).scrollTop();
+
+            $(".content-section").each(function () {
+                let top = $(this).offset().top - 120;
+                let bottom = top + $(this).outerHeight();
+
+                if (scrollPos >= top && scrollPos <= bottom) {
+                    let id = $(this).attr("id");
+                    $(".link-element a").removeClass("active-link");
+                    $('.link-element a[href="#' + id + '"]').addClass("active-link");
+                }
+            });
+        }, 50);
+    });
+}
+
+
+const showFilterAccordeon = () => {
+
+	$('.icon-btn').on('click', function() {
+		$('.head').toggleClass('active-head-btn');
+		$('.checkbox-list').toggleClass('active-checkbox-list');
+	})
+
+}
+
+
+// const roundSliderValue = () => {
+// 	function updateProgress(container, value) {
+// 		let circle = container.find(".progress-bar");
+// 		let progressValue = container.find(".progress-value");
+
+// 		let percent = ((value - 9) / 3) * 100;
+// 		let offset = 251.2 - (251.2 * percent) / 100;
+
+// 		circle.css("stroke-dashoffset", offset);
+
+// 		if (percent < 33) {
+// 			circle.css("stroke", "red");
+// 		} else if (percent < 66) {
+// 			circle.css("stroke", "yellow");
+// 		} else {
+// 			circle.css("stroke", "limegreen");
+// 		}
+
+// 		progressValue.text(value.toFixed(1).replace('.', ','));
+// 	}
+
+// 	$(".progress-wrapper").each(function () {
+// 		let container = $(this);
+// 		let rangeInput = container.find(".rangeInput");
+
+// 		rangeInput.on("input", function () {
+// 			updateProgress(container, parseFloat(this.value));
+// 		});
+
+// 		updateProgress(container, parseFloat(rangeInput.val()));
+// 	});
+// }
+
+const roundSliderValue = () => {
+
+function updateProgress(container, value) {
+    let circle = container.find(".progress-bar");
+    let progressValue = container.find(".progress-value");
+
+    let normalizedValue = Math.min(Math.max(value, 0), 10);
+
+    let percent = (normalizedValue / 10) * 100;
+    let offset = 151 - (151 * percent) / 100;
+
+    circle.css("stroke-dashoffset", offset);
+
+    if (normalizedValue <= 3.3) {
+        circle.css("stroke", "red");
+    } else if (normalizedValue <= 6.6) {
+        circle.css("stroke", "yellow");
+    } else {
+        circle.css("stroke", "limegreen");
+    }
+    progressValue.text(value.toFixed(1).replace('.', ','));
+}
+
+$(".progress-wrapper").each(function () {
+    let container = $(this);
+    let input = container.find(".progress-input");
+
+    updateProgress(container, parseFloat(input.val() || 0));
+
+    input.on("input", function () {
+        updateProgress(container, parseFloat($(this).val()));
+    });
+});
+
 
 }

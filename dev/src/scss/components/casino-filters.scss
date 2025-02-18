@@ -159,14 +159,24 @@
                             stroke: none;
                         }
                     }
-                    svg{
+                    .icon-btn{
                         width: 24px;
                         height: 24px;
                         stroke: #F9EB3D;
                         fill: transparent;
+                        transition: all ease 0.3s;
+                    }
+                    
+                }
+                .active-head-btn{
+                    .icon-btn{
+                        transform: rotate(180deg);
+                        transition: all ease 0.3s;
+
                     }
                 }
                 .checkbox-list{
+                    display: none;
                     li{
                         display: flex;
                         justify-content: space-between;
@@ -208,6 +218,9 @@
                             stroke: #F9EB3D;
                         }
                     }
+                }
+                .active-checkbox-list{
+                    display: block;
                 }
                 .list{
                     display: flex;

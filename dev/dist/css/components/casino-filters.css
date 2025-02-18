@@ -40,11 +40,19 @@
 	height: 30px;
 	stroke: none;
 }
-.casino-filters .content-block .sidebar .bar .head svg {
+.casino-filters .content-block .sidebar .bar .head .icon-btn {
 	width: 24px;
 	height: 24px;
 	stroke: #F9EB3D;
 	fill: transparent;
+	transition: all ease 0.3s;
+}
+.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn {
+	transform: rotate(180deg);
+	transition: all ease 0.3s;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list {
+	display: none;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list li {
 	display: flex;
@@ -94,6 +102,9 @@
 	width: 20px;
 	height: 20px;
 	stroke: #F9EB3D;
+}
+.casino-filters .content-block .sidebar .bar .active-checkbox-list {
+	display: block;
 }
 .casino-filters .content-block .sidebar .bar .list {
 	display: flex;
