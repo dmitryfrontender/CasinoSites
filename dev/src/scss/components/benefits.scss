@@ -5,7 +5,7 @@
     display: grid;
     grid-template-columns: minmax(250px, 3fr) minmax(315px, 1fr);
     gap: 50px;
-    height: 100%;
+    height: auto;
     margin-bottom: 50px;
 
     .content{
@@ -338,6 +338,7 @@
                     justify-content: space-between;
                     align-items: center;
                     margin-bottom: 20px;
+                    cursor: pointer;
                     gap: 5px;
                     .question{
                         display: flex;
@@ -350,20 +351,30 @@
                         padding: 5px;
                         border-radius: 5px;
                         transform: rotate(180deg);
+                        transition: all ease 0.3s;
+
+                    }
+                    .arrow-active{
+                        transform: rotate(0deg);
+                        transition: all ease 0.3s;
 
                     }
                 }
                 .answer{
-                    display: flex;
+                    display: none;
                     justify-content: flex-start;
                     align-items: flex-start;
                     gap: 15px;
+
                     svg{
                         flex-shrink: 0;
                     }
                     .accent-text{
                         color: vars.$selection_bg;
                     }
+                }
+                .answer-active{
+                    display: flex;
                 }
             }
         }
@@ -372,7 +383,6 @@
         position: sticky;
         top: 20px;
         align-self: flex-start;
-        height: fit-content;
         svg{
             width: 20px;
             height: 20px;
@@ -436,6 +446,27 @@
                     ul{
                         padding-left: 35px;
                     }
+                    .link-element{
+                        position: relative;
+                        svg{
+                            position: absolute;
+                            top: 50%;
+                            left: -15%;
+                            transform: translate(0, -50%);
+                            width: 16px;
+                            height: 16px;
+                        }
+                        .active-link{
+                            svg{
+                                stroke: #7692B4;
+                            }
+                            span{
+                                color: white;
+                            }
+                        }
+
+                    }
+                   
                 }
             }
         }

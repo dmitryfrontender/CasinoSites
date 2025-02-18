@@ -1,0 +1,144 @@
+@use "../includes/variables" as vars;
+@use '../includes/mixins' as mixins;
+
+.popup-category-filters{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.filters-popup-active{
+    display: flex;
+}
+
+.popup-wrapper{
+    max-width: 870px;
+    height: 100&;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 20px;
+    border: 1px solid #1D283C;
+    background: linear-gradient(180deg, #111922 0%, #020305 100%);
+    box-shadow: 0px 144px 40px 0px rgba(0, 0, 0, 0.01), 0px 92px 37px 0px rgba(0, 0, 0, 0.07), 0px 52px 31px 0px rgba(0, 0, 0, 0.25), 0px 23px 23px 0px rgba(0, 0, 0, 0.43), 0px 6px 13px 0px rgba(0, 0, 0, 0.49);
+    // backdrop-filter: blur(17px);
+    padding: 20px;
+    gap: 20px;
+}
+
+.popup-head{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    svg{
+        width: 30px;
+        height: 30px;
+       
+    }
+}
+
+.filters-wrap{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    max-height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap: 20px;
+    width: 100%;
+    .filter{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        padding: 0 0 10px 0;
+        width: 100%;
+        &::after{
+            content: '';
+            height: 1px;
+            width: 100%;
+            background: #1A2535;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .content{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            svg{
+                width: 18px;
+                height: 18px;
+                display: none;
+            }
+            .checkbox-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                
+            }
+            .checkbox-container input {
+                display: none;
+            }
+            .checkbox-custom {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #1A2535;
+                border-radius: 4px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all ease 0.3s;
+                @media screen and (min-width: 1024px) {
+                    &:hover{
+                        border: 2px solid vars.$selection_bg;
+                        transition: all ease 0.3s;
+                    }
+                }
+                
+            }
+
+            .checkbox-container input:checked + .checkbox-custom {
+                border: 1px solid #7752FE;
+                background: #87FE37;
+                svg{
+                    display: block;
+                }
+            }
+        }
+        .num{
+            @include mixins.text(#A4B4D2, 0.7rem, 600, normal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 0;
+            right: 10px;
+            &::before{
+                content: '';
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: #203144;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+            
+            }
+        }
+    }
+
+}
