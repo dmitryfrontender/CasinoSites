@@ -9,8 +9,6 @@
         gap: 10px;
         li{
             .slide-wrapper{
-                // padding-bottom: 150px;
-                // padding-bottom: 50px;
                 .slide-cart{
                     display: flex;
                     flex-direction: column;
@@ -19,19 +17,15 @@
                     width: 100%;
                     padding: 0 0 20px;
                     overflow: hidden;
-
                     border-radius: 20px;
-                    border: 1px solid #1D283C;
+                    border: 2px solid #1D283C;
                     background: linear-gradient(180deg, #111922 0%, #020305 100%);
                     backdrop-filter: blur(17px);
                     position: relative;
-                    // overflow: hidden;
                     .list-head{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-
-
                         span{
                             @include mixins.text(#AFD9A4, 14px, 600, normal);
                             font-family: 'Urbanist-Medium', sans-serif;
@@ -99,6 +93,14 @@
                             }
                         }
                     }
+                    @media screen and (min-width: 1024px) {
+                        &:hover{
+                            border: 2px solid #87FE37;
+                            background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                            backdrop-filter: blur(17px);
+                        }
+                    }
+
                 }
 
             }

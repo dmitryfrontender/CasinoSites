@@ -169,37 +169,47 @@ const showFilterAccordeon = () => {
 
 const roundSliderValue = () => {
 
-function updateProgress(container, value) {
-    let circle = container.find(".progress-bar");
-    let progressValue = container.find(".progress-value");
+	function updateProgress(container, value) {
+		let circle = container.find(".progress-bar");
+		let progressValue = container.find(".progress-value");
 
-    let normalizedValue = Math.min(Math.max(value, 0), 10);
+		let normalizedValue = Math.min(Math.max(value, 0), 10);
 
-    let percent = (normalizedValue / 10) * 100;
-    let offset = 151 - (151 * percent) / 100;
+		let percent = (normalizedValue / 10) * 100;
+		// let offset = 151 - (151 * percent) / 100;
+		let offset;
 
-    circle.css("stroke-dashoffset", offset);
 
-    if (normalizedValue <= 3.3) {
-        circle.css("stroke", "red");
-    } else if (normalizedValue <= 6.6) {
-        circle.css("stroke", "yellow");
-    } else {
-        circle.css("stroke", "limegreen");
-    }
-    progressValue.text(value.toFixed(1).replace('.', ','));
-}
+		if (container.width() > 100) {
+			
+			offset = 75.4 - (75.4 * percent) / 100;
+		} else {
+			
+			offset = 151 - (151 * percent) / 100;
+		}
 
-$(".progress-wrapper").each(function () {
-    let container = $(this);
-    let input = container.find(".progress-input");
+		circle.css("stroke-dashoffset", offset);
 
-    updateProgress(container, parseFloat(input.val() || 0));
+		if (normalizedValue <= 3.3) {
+			circle.css("stroke", "red");
+		} else if (normalizedValue <= 6.6) {
+			circle.css("stroke", "yellow");
+		} else {
+			circle.css("stroke", "limegreen");
+		}
+		progressValue.text(value.toFixed(1).replace('.', ','));
+	}
 
-    input.on("input", function () {
-        updateProgress(container, parseFloat($(this).val()));
-    });
-});
+	$(".progress-wrapper").each(function () {
+		let container = $(this);
+		let input = container.find(".progress-input");
+
+		updateProgress(container, parseFloat(input.val() || 0));
+
+		input.on("input", function () {
+			updateProgress(container, parseFloat($(this).val()));
+		});
+	});
 
 
 }

@@ -160,11 +160,20 @@
                         }
                     }
                     .icon-btn{
-                        width: 24px;
-                        height: 24px;
-                        stroke: #F9EB3D;
+                        width: 24px !important;
+                        height: 24px !important;
+                        stroke: vars.$link_color;
                         fill: transparent;
                         transition: all ease 0.3s;
+                        cursor: pointer;
+                        @media screen and (min-width: 1024px) {
+                            &:hover{
+                                stroke: white;
+
+                            }
+
+                            
+                        }
                     }
                     
                 }
@@ -172,6 +181,16 @@
                     .icon-btn{
                         transform: rotate(180deg);
                         transition: all ease 0.3s;
+                        stroke: #F9EB3D;
+
+                        @media screen and (min-width: 1024px) {
+                            &:hover{
+                                stroke: #F9EB3D;
+
+                            }
+
+                            
+                        }
 
                     }
                 }
@@ -233,6 +252,12 @@
                         position: relative;
                         padding-block: 20px;
                         gap: 10px;
+                        .list-content{
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+                            gap: 10px;
+                        }
                         .item-content{
                             display: flex;
                             justify-content: flex-start;
@@ -252,16 +277,18 @@
                             @include mixins.text(#83A2C6, clamp(10px, 0.8vw, 13px), 600, 150%);
                             white-space: nowrap;
                         }
-                        svg{
+                        .main-icon{
                             width: 30px !important;
                             height: 30px !important;
                             fill: vars.$selection_bg;
                         }
                         button{
-                            svg{
+                            .button-icon{
                                 fill: transparent;
                                 stroke: vars.$link_color;
                                 transition: all ease 0.3s;
+                                width: 24px;
+                                height: 24px;
                                 cursor: pointer;
                             }
                             @media screen and (min-width: 1024px) {
@@ -316,20 +343,17 @@
                 width: calc(33.3% - 10px);
                 padding: 20px;
                 border-radius: 20px;
-                border: 1px solid #1D283C;
+                border: 2px solid #1D283C;
                 background: linear-gradient(180deg, #111922 0%, #020305 100%);
                 backdrop-filter: blur(17px);
                 position: relative;
                 overflow: hidden;
                 margin-left: 10px;
 
-
-
                 .list-head{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-
 
                     span{
                         @include mixins.text(#AFD9A4, 14px, 600, normal);
@@ -378,6 +402,13 @@
 
                     }
 
+                }
+                @media screen and (min-width: 1024px) {
+                    &:hover{
+                        border: 2px solid #87FE37;
+                        background: linear-gradient(180deg, #111922 0%, #020305 100%);
+                        backdrop-filter: blur(17px);
+                    }
                 }
             }
             @media screen and (max-width: 1175px) {

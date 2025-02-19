@@ -15,7 +15,7 @@
 	padding: 0 0 20px;
 	overflow: hidden;
 	border-radius: 20px;
-	border: 1px solid #1D283C;
+	border: 2px solid #1D283C;
 	background: linear-gradient(180deg, #111922 0%, #020305 100%);
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
@@ -99,6 +99,14 @@
 .games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn svg,
 .games-block ul li .slide-wrapper .slide-cart .card-buttons .visit-btn .svg-icon {
 	fill: white;
+}
+@media screen and (min-width: 1024px) {
+	.games-block ul li .slide-wrapper .slide-cart:hover {
+		border: 2px solid #87FE37;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		-webkit-backdrop-filter: blur(17px);
+		        backdrop-filter: blur(17px);
+	}
 }
 @media screen and (max-width: 900px) {
 	.games-block ul {

@@ -41,15 +41,27 @@
 	stroke: none;
 }
 .casino-filters .content-block .sidebar .bar .head .icon-btn {
-	width: 24px;
-	height: 24px;
-	stroke: #F9EB3D;
+	width: 24px !important;
+	height: 24px !important;
+	stroke: #73838F;
 	fill: transparent;
 	transition: all ease 0.3s;
+	cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .head .icon-btn:hover {
+		stroke: white;
+	}
 }
 .casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn {
 	transform: rotate(180deg);
 	transition: all ease 0.3s;
+	stroke: #F9EB3D;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn:hover {
+		stroke: #F9EB3D;
+	}
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list {
 	display: none;
@@ -118,6 +130,12 @@
 	padding-block: 20px;
 	gap: 10px;
 }
+.casino-filters .content-block .sidebar .bar .list li .list-content {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
 .casino-filters .content-block .sidebar .bar .list li .item-content {
 	display: flex;
 	justify-content: flex-start;
@@ -145,15 +163,17 @@
 	font-family: var(--default-font);
 	white-space: nowrap;
 }
-.casino-filters .content-block .sidebar .bar .list li svg {
+.casino-filters .content-block .sidebar .bar .list li .main-icon {
 	width: 30px !important;
 	height: 30px !important;
 	fill: #87FE37;
 }
-.casino-filters .content-block .sidebar .bar .list li button svg {
+.casino-filters .content-block .sidebar .bar .list li button .button-icon {
 	fill: transparent;
 	stroke: #73838F;
 	transition: all ease 0.3s;
+	width: 24px;
+	height: 24px;
 	cursor: pointer;
 }
 @media screen and (min-width: 1024px) {
@@ -200,7 +220,7 @@
 	width: calc(33.3% - 10px);
 	padding: 20px;
 	border-radius: 20px;
-	border: 1px solid #1D283C;
+	border: 2px solid #1D283C;
 	background: linear-gradient(180deg, #111922 0%, #020305 100%);
 	-webkit-backdrop-filter: blur(17px);
 	        backdrop-filter: blur(17px);
@@ -264,6 +284,14 @@
 }
 .casino-filters .content-block .card-wrapper li .card-buttons .visit-btn span {
 	color: #020123;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .card-wrapper li:hover {
+		border: 2px solid #87FE37;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		-webkit-backdrop-filter: blur(17px);
+		        backdrop-filter: blur(17px);
+	}
 }
 @media screen and (max-width: 1175px) {
 	.casino-filters .content-block .card-wrapper {
