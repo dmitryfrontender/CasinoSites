@@ -39,11 +39,11 @@
                 width: 100%;
             }
 
-            svg{
+            .svg-icon {
                 width: 24px;
                 height: 24px;
-                fill: vars.$link_color;
                 flex-shrink: 0;
+                fill: #73838F;
             }
             span{
                 @include mixins.text(#A4B4D2, 14px, 600, normal);
@@ -106,6 +106,10 @@
                     &::before {
                         opacity: 1;
                     }
+
+                    .svg-icon {
+                        fill: #87FE37;
+                    }
                 }
             }
 
@@ -135,14 +139,16 @@
                 border-radius: 10px;
                 background: #1A2535;
                 padding: 10px 15px;
-                flex-basis: 400px;
+                width: 400px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 gap: 15px;
+                cursor: pointer;
                 svg{
                     width: 20px;
                     height: 20px;
+                    flex-shrink: 0;
                 }
                 span{
                     @include mixins.text(vars.$placeholder_color, 14px, 600, 150%);

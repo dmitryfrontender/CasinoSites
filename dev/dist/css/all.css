@@ -558,6 +558,7 @@ main {
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
+	gap: 40px;
 }
 .banner .homepage-banner-wrapper::before {
 	content: "";
@@ -1054,8 +1055,8 @@ footer .footer-bottom .copyright {
 	gap: 30px;
 }
 .benefits-wrapper .content .text-content svg {
-	width: 20px;
-	height: 20px;
+	width: 24px;
+	height: 24px;
 }
 .benefits-wrapper .content .text-content img {
 	border-radius: 20px;
@@ -1822,6 +1823,20 @@ footer .footer-bottom .copyright {
 	justify-content: flex-end;
 	flex: 1;
 }
+.casino-wrapper .bg-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/banner-girl-bg.png);
+	filter: blur(152px);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 1000px;
+	z-index: -1;
+}
 .casino-wrapper .bg-wrapper img {
 	position: relative;
 	left: -2%;
@@ -1830,20 +1845,6 @@ footer .footer-bottom .copyright {
 @media screen and (max-width: 1024px) {
 	.casino-wrapper {
 		flex-direction: column;
-	}
-	.casino-wrapper .bg-wrapper {
-		flex: none;
-		width: 100%;
-		height: 300px;
-		background: rgba(55, 254, 171, 0.4);
-		filter: blur(152px);
-		background-image: url("../images/banner-girl.png");
-		background-size: 250%;
-		background-position: center;
-		background-repeat: no-repeat;
-	}
-	.casino-wrapper .bg-wrapper img {
-		display: none;
 	}
 }
 
@@ -1888,11 +1889,11 @@ footer .footer-bottom .copyright {
 		width: 100%;
 	}
 }
-.filters-component .filters-block .item svg {
+.filters-component .filters-block .item .svg-icon {
 	width: 24px;
 	height: 24px;
-	fill: #73838F;
 	flex-shrink: 0;
+	fill: #73838F;
 }
 .filters-component .filters-block .item span {
 	color: #A4B4D2;
@@ -1955,6 +1956,9 @@ footer .footer-bottom .copyright {
 	.filters-component .filters-block .item:hover::before {
 		opacity: 1;
 	}
+	.filters-component .filters-block .item:hover .svg-icon {
+		fill: #87FE37;
+	}
 }
 .filters-component .filters-block .info {
 	display: flex;
@@ -1983,15 +1987,17 @@ footer .footer-bottom .copyright {
 	border-radius: 10px;
 	background: #1A2535;
 	padding: 10px 15px;
-	flex-basis: 400px;
+	width: 400px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 15px;
+	cursor: pointer;
 }
 .filters-component .filters-block .recommended-buttons button svg {
 	width: 20px;
 	height: 20px;
+	flex-shrink: 0;
 }
 .filters-component .filters-block .recommended-buttons button span {
 	color: #83A2C6;
@@ -2410,7 +2416,7 @@ button {
 	color: white;
 	font-size: 24px;
 	font-weight: 600;
-	line-height: 17px;
+	line-height: 24px;
 	font-family: var(--default-font);
 	font-family: "Urbanist-Medium", sans-serif;
 }
@@ -2663,6 +2669,7 @@ button {
 .event-list .list-name svg {
 	width: 25px;
 	height: 25px;
+	fill: #75F94C;
 }
 .casino-list .list-name span,
 .event-list .list-name span {
@@ -3005,7 +3012,7 @@ button {
 		flex-direction: column;
 	}
 }
-.review-wrapper .available-sports ul {
+.review-wrapper .available-sports .radio-wrapper {
 	margin-top: 20px;
 	display: flex;
 	justify-content: flex-start;
@@ -3013,7 +3020,7 @@ button {
 	flex-wrap: wrap;
 	gap: 20px;
 }
-.review-wrapper .available-sports ul li {
+.review-wrapper .available-sports .radio-wrapper label .radio-element {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -3021,13 +3028,28 @@ button {
 	flex-basis: 100px;
 	gap: 15px;
 }
-.review-wrapper .available-sports ul li svg {
+.review-wrapper .available-sports .radio-wrapper label svg {
 	width: 40px !important;
 	height: 40px !important;
+	fill: #73838F;
 }
-.review-wrapper .available-sports ul li span {
+.review-wrapper .available-sports .radio-wrapper label span {
 	white-space: nowrap;
 	color: #83A2C6;
+}
+@media screen and (min-width: 1024px) {
+	.review-wrapper .available-sports .radio-wrapper label:hover svg {
+		fill: #ffffff;
+	}
+	.review-wrapper .available-sports .radio-wrapper label:hover span {
+		color: #ffffff;
+	}
+}
+.review-wrapper .available-sports .radio-wrapper label input:checked ~ .radio-element svg {
+	fill: #87FE37;
+}
+.review-wrapper .available-sports .radio-wrapper label input:checked ~ .radio-element span {
+	color: #87FE37;
 }
 .review-wrapper .other-products .products-grid {
 	display: grid;
@@ -3543,7 +3565,6 @@ button {
 .navigation svg {
 	width: 16px;
 	height: 16px;
-	fill: #83A2C6;
 	stroke: #83A2C6;
 }
 .navigation span {
