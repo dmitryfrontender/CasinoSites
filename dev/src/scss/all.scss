@@ -62,7 +62,7 @@ button{
             .progress-bg {
                 stroke: transparent;
             }
-    
+
             .progress-bar {
                 stroke: red;
             }
@@ -76,7 +76,7 @@ button{
             color: white;
             font-weight: bold;
         }
-        
+
     }
     .progress-input {
         display: none;
@@ -162,7 +162,7 @@ button{
             height: 25px;
         }
         span{
-            @include mixins.text(white, 24px, 600, 17px);
+            @include mixins.text(white, 24px, 600, 24px);
             font-family: 'Urbanist-Medium', sans-serif;
         }
     }
@@ -409,6 +409,7 @@ button{
         svg{
             width: 25px;
             height: 25px;
+            fill: #75F94C;
         }
         span{
             @include mixins.text(white, 24px, 600, 17px);
@@ -773,28 +774,52 @@ button{
     }
 
     .available-sports{
-        ul{
+        .radio-wrapper {
             margin-top: 20px;
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
-            li{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                flex-basis: 100px;
-                gap: 15px;
+
+            label {
+                .radio-element {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    flex-basis: 100px;
+                    gap: 15px;
+                }
+
                 svg{
                     width: 40px !important;
                     height: 40px !important;
-
+                    fill: #73838F;
                 }
                 span{
                     white-space: nowrap;
                     color: vars.$placeholder_color;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    &:hover {
+                        svg {
+                            fill: #ffffff;
+                        }
+                        span {
+                            color: #ffffff;
+                        }
+                    }
+                }
+
+                input:checked ~ .radio-element {
+                    svg {
+                        fill: #87FE37;
+                    }
+                    span {
+                        color: #87FE37;
+                    }
                 }
             }
         }
@@ -862,8 +887,8 @@ button{
                 height: 50px !important;
             }
         }
-        
-        
+
+
 
         .global-info{
             display: flex;
@@ -889,7 +914,7 @@ button{
                     bottom: 0;
                     left: 0;
                 }
-                
+
             }
         }
         @media screen and (max-width: 550px) {
@@ -906,7 +931,7 @@ button{
                     gap: 10px;
                 }
             }
-            
+
         }
     }
     .column-container {
@@ -916,7 +941,7 @@ button{
         column-gap: 60px;
         position: relative;
 
-        
+
         &::before,
         &::after {
             content: '';
@@ -997,10 +1022,10 @@ button{
                     display: none;
                 }
             }
-           
-           
+
+
         }
-        
+
         @media screen and (max-width: 550px) {
             &{
                 top: -10px;
@@ -1043,7 +1068,7 @@ button{
             .progress-value{
                 font-size: 12px;
             }
-       
+
         }
     }
 
@@ -1213,7 +1238,6 @@ button{
     svg{
         width: 16px;
         height: 16px;
-        fill: vars.$placeholder_color;
         stroke: vars.$placeholder_color;
     }
     span{
