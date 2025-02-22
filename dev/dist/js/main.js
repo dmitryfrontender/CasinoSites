@@ -37,6 +37,11 @@ const mobileMenu = () => {
 	$('.mobile-menu').on('click', function(){
 		$('.header-nav').toggleClass('active-mobile-menu');
 		$('.mobile-menu').toggleClass('active-mobile-btn');
+		if ($('body').css('overflow') === 'hidden') {
+            $('body').css('overflow', '');
+        } else {
+            $('body').css('overflow', 'hidden');
+        }
 	})
 }
 
@@ -50,6 +55,8 @@ const toggleSearch = () => {
 	$('#toggle-search').on('click', function(){
 		$('#toggle-search').toggleClass('active-search-btn');
 		$('#mobile-search').toggleClass('active-mobile-search');
+		// $('body').toggleClass('no-scroll');
+
 	})
 }
 
