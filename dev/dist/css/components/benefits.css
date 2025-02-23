@@ -14,16 +14,20 @@
 }
 .benefits-wrapper .content p {
 	color: #83A2C6;
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 25px;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 150%;
 	font-family: "Urbanist", sans-serif;
+	font-style: italic;
 }
 .benefits-wrapper .content > h2 {
 	margin-bottom: 20px;
 }
 .benefits-wrapper .content > p {
 	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 500;
+	font-style: normal;
 }
 .benefits-wrapper .content .table {
 	padding: 10px 20px;
@@ -31,7 +35,7 @@
 	background: #040608;
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr 1fr;
-	gap: 10px;
+	gap: 20px;
 	margin-bottom: 17px;
 }
 .benefits-wrapper .content .table span {
@@ -48,6 +52,9 @@
 }
 .benefits-wrapper .content .casino-list {
 	margin-bottom: 30px;
+}
+.benefits-wrapper .content .casino-list .visit-btn {
+	width: 170px;
 }
 .benefits-wrapper .content .casino-list .casino-list-elem {
 	margin-bottom: 5px;
