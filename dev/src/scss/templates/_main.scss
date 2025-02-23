@@ -37,6 +37,10 @@ main {
         }
     }
 
+    &.categories-banner {
+        padding-top: 0;
+    }
+
     .categories-banner-wrapper {
         display: flex;
         align-items: center;
