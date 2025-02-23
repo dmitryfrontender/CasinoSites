@@ -117,7 +117,7 @@
 	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;

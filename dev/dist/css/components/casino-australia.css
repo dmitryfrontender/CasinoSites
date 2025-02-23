@@ -21,15 +21,15 @@
 	font-size: 34px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	padding-bottom: 10px;
 }
 .casino-wrapper .info-block p {
 	color: #83A2C6;
 	font-size: 16px;
 	font-weight: 500;
-	line-height: normal;
-	font-family: var(--default-font);
+	line-height: 150%;
+	font-family: "Urbanist", sans-serif;
 	padding-bottom: 20px;
 }
 .casino-wrapper .info-block .summary {
