@@ -21,7 +21,6 @@ footer {
 
             @media screen and (max-width: 1024px) {
                 flex-direction: column;
-                // align-items: center;
             }
         }
 
@@ -36,11 +35,16 @@ footer {
             }
             span{
                 font-size: 23px;
+                font-weight: 700;
             }
         }
 
         &__left {
             max-width: 300px;
+
+            @media screen and (max-width: 1024px) {
+                max-width: 100%;
+            }
 
             .text {
                 color: #FFF;

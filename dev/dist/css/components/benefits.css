@@ -10,14 +10,14 @@
 	font-size: 34px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content p {
 	color: #83A2C6;
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 25px;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content > h2 {
 	margin-bottom: 20px;
@@ -39,7 +39,7 @@
 	font-size: 16px;
 	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 @media screen and (max-width: 768px) {
 	.benefits-wrapper .content .table {
@@ -118,6 +118,8 @@
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 	gap: 20px;
+	font-size: 16px;
+	font-weight: 600;
 }
 .benefits-wrapper .content .text-content .features li {
 	display: flex;
@@ -152,7 +154,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-grow: 1;
+	flex-grow: 0;
+	max-width: 40px;
 }
 .benefits-wrapper .content .text-content .payment-features .card .element span {
 	transform: rotate(-90deg);
@@ -160,7 +163,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	text-transform: uppercase;
 }
 .benefits-wrapper .content .text-content .payment-features .card .cons {
@@ -173,6 +176,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	flex-grow: 1;
 }
 .benefits-wrapper .content .text-content .payment-features .card ul li {
 	display: flex;
@@ -183,8 +187,8 @@
 	color: white;
 	font-size: 15px;
 	font-weight: 600;
-	line-height: normal;
-	font-family: var(--default-font);
+	line-height: 150%;
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .text-content .payment-features .card ul li svg {
 	flex-shrink: 0;
@@ -212,6 +216,9 @@
 .benefits-wrapper .content .text-content .info-block p {
 	color: white;
 	padding-bottom: 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 150%;
 }
 .benefits-wrapper .content .text-content .quote-block {
 	display: flex;
@@ -234,11 +241,13 @@
 	font-size: 24px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .text-content .quote-block .content p {
 	padding-top: 15px;
 	padding-bottom: 0;
+	font-style: italic;
+	font-weight: 600;
 }
 @media screen and (max-width: 475px) {
 	.benefits-wrapper .content .text-content .quote-block {
@@ -270,7 +279,7 @@
 	font-size: 24px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .content-wrapper {
 	display: flex;
@@ -289,7 +298,7 @@
 	font-size: 16px;
 	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .top-content .name-wrapper {
 	display: flex;
@@ -307,7 +316,7 @@
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .bottom-content {
 	display: flex;
@@ -338,7 +347,7 @@
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 @media screen and (max-width: 475px) {
@@ -378,6 +387,7 @@
 	border-radius: 5px;
 	transform: rotate(180deg);
 	transition: all ease 0.3s;
+	flex-shrink: 0;
 }
 .benefits-wrapper .faq ul li .top-block .arrow-active {
 	transform: rotate(0deg);
@@ -425,7 +435,10 @@
 	font-size: 16px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
+}
+.benefits-wrapper .side-bar .casino-bar .head-card svg {
+	fill: #87FE37;
 }
 .benefits-wrapper .side-bar .casino-bar .separate-line {
 	height: 1px;
@@ -458,7 +471,7 @@
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .side-bar .casino-bar .top-card li button {
 	border-radius: 10px;

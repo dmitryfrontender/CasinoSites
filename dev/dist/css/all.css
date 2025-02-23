@@ -91,7 +91,7 @@ html {
 }
 
 body {
-	font: 1rem/150% "Urbanist-SemiBold", serif;
+	font: 1rem/150% "Urbanist", sans-serif;
 	height: 100%;
 	min-width: 320px;
 	position: relative;
@@ -244,6 +244,7 @@ header {
 }
 .top-header-wrapper .logo span {
 	font-size: 23px;
+	font-weight: 700;
 }
 @media screen and (max-width: 650px) {
 	.top-header-wrapper .logo span {
@@ -280,27 +281,27 @@ header {
 	color: white;
 	color: white;
 	font-size: 0.7rem;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .top-header-wrapper .search label input::-moz-placeholder {
 	color: #83A2C6;
 	font-size: 0.7rem;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .top-header-wrapper .search label input::placeholder {
 	color: #83A2C6;
 	font-size: 0.7rem;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 991px) {
 	.top-header-wrapper .search {
 		display: none;
 	}
@@ -321,7 +322,7 @@ header {
 	width: 20px;
 	height: 20px;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 991px) {
 	.top-header-wrapper .button-group .mobile-search-btn {
 		display: block;
 	}
@@ -337,6 +338,12 @@ header {
 	background: #3D9700;
 	padding: 5px;
 	border-radius: 5px;
+	cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+	.top-header-wrapper .button-group button:hover {
+		opacity: 0.7;
+	}
 }
 .top-header-wrapper .button-group button svg {
 	width: 24px;
@@ -345,7 +352,7 @@ header {
 	padding: 0 4px;
 	flex-shrink: 0;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 991px) {
 	.top-header-wrapper .button-group button svg {
 		padding: 0;
 	}
@@ -355,7 +362,7 @@ header {
 	font-size: 0.8rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 @media screen and (max-width: 425px) {
@@ -418,14 +425,14 @@ header {
 	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .mobile-search .search label input::-moz-placeholder {
 	color: #83A2C6;
 	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .mobile-search .search label input::placeholder {
@@ -433,14 +440,14 @@ header {
 	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .mobile-search svg {
 	width: 20px;
 	height: 20px;
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 991px) {
 	.mobile-search {
 		display: none;
 	}
@@ -478,6 +485,7 @@ header {
 	display: flex;
 	align-items: center;
 	gap: 7px;
+	font-weight: 600;
 }
 .header-nav ul li a svg {
 	width: 15px;
@@ -648,6 +656,8 @@ main {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	gap: 10px;
+	font-weight: 500;
 }
 @media screen and (min-width: 1025px) {
 	.banner-grid-link:hover {
@@ -753,6 +763,7 @@ main {
 	border-radius: 10px;
 	background: linear-gradient(180deg, #68C12C 0%, #386A17 100%);
 	box-shadow: 0px 122px 34px 0px rgba(0, 0, 0, 0.01), 0px 78px 31px 0px rgba(0, 0, 0, 0.09), 0px 44px 26px 0px rgba(0, 0, 0, 0.3), 0px 20px 20px 0px rgba(0, 0, 0, 0.51), 0px 5px 11px 0px rgba(0, 0, 0, 0.59);
+	cursor: pointer;
 }
 @media screen and (max-width: 1024px) {
 	.add-to-bookmarks__btn button {
@@ -835,9 +846,15 @@ footer .footer-top .logo img {
 }
 footer .footer-top .logo span {
 	font-size: 23px;
+	font-weight: 700;
 }
 footer .footer-top__left {
 	max-width: 300px;
+}
+@media screen and (max-width: 1024px) {
+	footer .footer-top__left {
+		max-width: 100%;
+	}
 }
 footer .footer-top__left .text {
 	color: #FFF;
@@ -972,14 +989,14 @@ footer .footer-bottom .copyright {
 	font-size: 34px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content p {
 	color: #83A2C6;
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 25px;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content > h2 {
 	margin-bottom: 20px;
@@ -1001,7 +1018,7 @@ footer .footer-bottom .copyright {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 @media screen and (max-width: 768px) {
 	.benefits-wrapper .content .table {
@@ -1080,6 +1097,8 @@ footer .footer-bottom .copyright {
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 	gap: 20px;
+	font-size: 16px;
+	font-weight: 600;
 }
 .benefits-wrapper .content .text-content .features li {
 	display: flex;
@@ -1114,7 +1133,8 @@ footer .footer-bottom .copyright {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-grow: 1;
+	flex-grow: 0;
+	max-width: 40px;
 }
 .benefits-wrapper .content .text-content .payment-features .card .element span {
 	transform: rotate(-90deg);
@@ -1122,7 +1142,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	text-transform: uppercase;
 }
 .benefits-wrapper .content .text-content .payment-features .card .cons {
@@ -1135,6 +1155,7 @@ footer .footer-bottom .copyright {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
+	flex-grow: 1;
 }
 .benefits-wrapper .content .text-content .payment-features .card ul li {
 	display: flex;
@@ -1145,8 +1166,8 @@ footer .footer-bottom .copyright {
 	color: white;
 	font-size: 15px;
 	font-weight: 600;
-	line-height: normal;
-	font-family: var(--default-font);
+	line-height: 150%;
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .text-content .payment-features .card ul li svg {
 	flex-shrink: 0;
@@ -1174,6 +1195,9 @@ footer .footer-bottom .copyright {
 .benefits-wrapper .content .text-content .info-block p {
 	color: white;
 	padding-bottom: 0;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 150%;
 }
 .benefits-wrapper .content .text-content .quote-block {
 	display: flex;
@@ -1196,11 +1220,13 @@ footer .footer-bottom .copyright {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .text-content .quote-block .content p {
 	padding-top: 15px;
 	padding-bottom: 0;
+	font-style: italic;
+	font-weight: 600;
 }
 @media screen and (max-width: 475px) {
 	.benefits-wrapper .content .text-content .quote-block {
@@ -1232,7 +1258,7 @@ footer .footer-bottom .copyright {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .content-wrapper {
 	display: flex;
@@ -1251,7 +1277,7 @@ footer .footer-bottom .copyright {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .top-content .name-wrapper {
 	display: flex;
@@ -1269,7 +1295,7 @@ footer .footer-bottom .copyright {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .content .about-author .bottom-content {
 	display: flex;
@@ -1300,7 +1326,7 @@ footer .footer-bottom .copyright {
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 @media screen and (max-width: 475px) {
@@ -1340,6 +1366,7 @@ footer .footer-bottom .copyright {
 	border-radius: 5px;
 	transform: rotate(180deg);
 	transition: all ease 0.3s;
+	flex-shrink: 0;
 }
 .benefits-wrapper .faq ul li .top-block .arrow-active {
 	transform: rotate(0deg);
@@ -1387,7 +1414,10 @@ footer .footer-bottom .copyright {
 	font-size: 16px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
+}
+.benefits-wrapper .side-bar .casino-bar .head-card svg {
+	fill: #87FE37;
 }
 .benefits-wrapper .side-bar .casino-bar .separate-line {
 	height: 1px;
@@ -1420,7 +1450,7 @@ footer .footer-bottom .copyright {
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .benefits-wrapper .side-bar .casino-bar .top-card li button {
 	border-radius: 10px;
@@ -1562,7 +1592,7 @@ footer .footer-bottom .copyright {
 	font-size: 12px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list button {
 	padding: 8px 20px 8px 35px;
@@ -1576,7 +1606,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list button svg {
 	width: 20px;
@@ -1621,14 +1651,14 @@ footer .footer-bottom .copyright {
 	font-size: clamp(14px, 1vw, 16px);
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .list li span {
 	color: #83A2C6;
 	font-size: clamp(10px, 0.8vw, 13px);
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 .casino-filters .content-block .sidebar .bar .list li .main-icon {
@@ -1706,7 +1736,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	padding: 8px 20px 14px;
 	background: #588552;
@@ -1723,7 +1753,7 @@ footer .footer-bottom .copyright {
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons {
@@ -1748,7 +1778,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons .visit-btn span {
 	color: #020123;
@@ -1808,15 +1838,15 @@ footer .footer-bottom .copyright {
 	font-size: 34px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	padding-bottom: 10px;
 }
 .casino-wrapper .info-block p {
 	color: #83A2C6;
 	font-size: 16px;
 	font-weight: 500;
-	line-height: normal;
-	font-family: var(--default-font);
+	line-height: 150%;
+	font-family: "Urbanist", sans-serif;
 	padding-bottom: 20px;
 }
 .casino-wrapper .info-block .summary {
@@ -1909,7 +1939,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 	flex-shrink: 1;
 }
@@ -1984,7 +2014,7 @@ footer .footer-bottom .copyright {
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .filters-component .filters-block .recommended-buttons {
 	display: flex;
@@ -2013,7 +2043,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .filters-component .filters-block .recommended-buttons .mobile-filters {
 	display: none;
@@ -2069,7 +2099,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	position: absolute;
 	border-top-left-radius: 0;
@@ -2100,7 +2130,7 @@ footer .footer-bottom .copyright {
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -2141,7 +2171,7 @@ footer .footer-bottom .copyright {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 @media screen and (max-width: 650px) {
@@ -2304,7 +2334,7 @@ footer .footer-bottom .copyright {
 	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2328,6 +2358,12 @@ footer .footer-bottom .copyright {
 button {
 	background: transparent;
 	border: none;
+	cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+	button:hover {
+		opacity: 0.8;
+	}
 }
 
 input {
@@ -2391,6 +2427,11 @@ input {
 .visit-btn .svg-icon path {
 	fill: #020123;
 }
+@media screen and (min-width: 1024px) {
+	.visit-btn:hover {
+		opacity: 0.8;
+	}
+}
 
 .rate {
 	display: flex;
@@ -2422,7 +2463,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	position: absolute;
 	top: 50%;
@@ -2450,7 +2491,7 @@ input {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 24px;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .casino-list-block ul {
@@ -2507,7 +2548,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	padding: 8px 10px 8px 20px;
 }
 .casino-list-elem .casino-banner .accent-num {
@@ -2521,6 +2562,15 @@ input {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	color: #83A2C6;
+	font-style: italic;
+	font-weight: 600;
+	font-size: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
 }
 .casino-list-elem .bonus {
 	display: flex;
@@ -2532,7 +2582,7 @@ input {
 	font-size: 15px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	padding: 10px 15px;
 	border-radius: 20px;
 	background: #1A2535;
@@ -2549,7 +2599,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-list-elem .payId span .text-danger {
 	color: #FE373A;
@@ -2579,7 +2629,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-list-elem .summary .top-summary .accent {
 	color: #87FE37;
@@ -2595,8 +2645,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
-	text-transform: capitalize;
+	font-family: "Urbanist", sans-serif;
 }
 .casino-list-elem .summary .discount .accent {
 	color: #B5F88E;
@@ -2644,11 +2693,11 @@ input {
 	color: #fff;
 }
 .run-btn span {
-	color: #87FE37;
+	color: #fff;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 .run-btn svg,
@@ -2689,7 +2738,164 @@ input {
 		color: #B8D5F8;
 	}
 }
-.casino-list .list-name,
+.casino-list .list-name {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 15px;
+	margin-bottom: 30px;
+	gap: 10px;
+}
+.casino-list .list-name svg {
+	width: 25px;
+	height: 25px;
+	fill: #75F94C;
+}
+.casino-list .list-name span {
+	color: white;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 17px;
+	font-family: "Urbanist", sans-serif;
+	font-family: "Urbanist-Medium", sans-serif;
+	line-height: 110%;
+}
+.casino-list .mySwiper {
+	width: 100%;
+	height: 100%;
+	overflow: visible !important;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper {
+	padding-bottom: 50px;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	padding: 10px 20px 20px;
+	border-radius: 20px;
+	border: 2px solid #1D283C;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	-webkit-backdrop-filter: blur(17px);
+	        backdrop-filter: blur(17px);
+	position: relative;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span {
+	color: #AFD9A4;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: "Urbanist", sans-serif;
+	font-family: "Urbanist-Medium", sans-serif;
+	padding: 8px 20px 14px;
+	background: #588552;
+	border-radius: 10px;
+	position: relative;
+	top: 10px;
+	z-index: -1;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
+	width: 200px;
+	border-radius: 20px;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: "Urbanist", sans-serif;
+	font-family: "Urbanist-Medium", sans-serif;
+	text-overflow: ellipsis;
+	width: 100%;
+	max-width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-align: center;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
+	width: 20px;
+	height: 20px;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	width: 200px;
+	cursor: pointer;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button span {
+	color: white;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: normal;
+	font-family: "Urbanist", sans-serif;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span {
+	color: #020123;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:before {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: linear-gradient(90deg, rgb(135, 254, 55) 0%, rgb(131, 162, 198) 80%);
+	z-index: -1;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart::after {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	top: 1px;
+	left: 1px;
+	right: 1px;
+	bottom: 1px;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	border-radius: inherit;
+	z-index: -1;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+@media screen and (min-width: 1024px) {
+	.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover {
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		-webkit-backdrop-filter: blur(17px);
+		        backdrop-filter: blur(17px);
+	}
+	.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover:before {
+		opacity: 1;
+	}
+	.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover .list-head span {
+		background: #87FE37;
+		color: #000000;
+	}
+}
+.casino-list .mySwiper swiper-slide.accent-card .slide-cart {
+	background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
+	box-shadow: 0px 80px 25px 0px rgba(0, 0, 0, 0.01), 0px 50px 20px 0px rgba(0, 0, 0, 0.11), 0px 30px 15px 0px rgba(0, 0, 0, 0.36), 0px 15px 10px 0px rgba(0, 0, 0, 0.61), 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
+}
+
 .event-list .list-name {
 	display: flex;
 	align-items: center;
@@ -2698,33 +2904,28 @@ input {
 	margin-bottom: 30px;
 	gap: 10px;
 }
-.casino-list .list-name svg,
 .event-list .list-name svg {
 	width: 25px;
 	height: 25px;
 	fill: #75F94C;
 }
-.casino-list .list-name span,
 .event-list .list-name span {
 	color: white;
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 17px;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	line-height: 110%;
 }
-.casino-list .mySwiper,
 .event-list .mySwiper {
 	width: 100%;
 	height: 100%;
 	overflow: visible !important;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper,
 .event-list .mySwiper swiper-slide .slide-wrapper {
 	padding-bottom: 50px;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart {
 	display: flex;
 	flex-direction: column;
@@ -2739,19 +2940,18 @@ input {
 	        backdrop-filter: blur(17px);
 	position: relative;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head span {
 	color: #AFD9A4;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	padding: 8px 20px 14px;
 	background: #588552;
@@ -2760,18 +2960,16 @@ input {
 	top: 10px;
 	z-index: -1;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
 	width: 200px;
 	border-radius: 20px;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3 {
 	color: white;
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -2780,7 +2978,6 @@ input {
 	overflow: hidden;
 	text-align: center;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons {
 	display: flex;
 	flex-direction: column;
@@ -2788,12 +2985,10 @@ input {
 	justify-content: center;
 	gap: 15px;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
 	width: 20px;
 	height: 20px;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button {
 	display: flex;
 	justify-content: center;
@@ -2802,36 +2997,63 @@ input {
 	width: 200px;
 	cursor: pointer;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button span,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons button span {
 	color: white;
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
-.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span,
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn span {
 	color: #020123;
 }
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:before {
+	content: "";
+	position: absolute;
+	inset: -2px;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: #A14EF6;
+	z-index: -1;
+	border-radius: inherit;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart::after {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	top: 1px;
+	left: 1px;
+	right: 1px;
+	bottom: 1px;
+	background: linear-gradient(180deg, #111922 0%, #020305 100%);
+	border-radius: inherit;
+	z-index: -1;
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
 @media screen and (min-width: 1024px) {
-	.casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover,
 	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover {
-		border: 2px solid #87FE37;
 		background: linear-gradient(180deg, #111922 0%, #020305 100%);
 		-webkit-backdrop-filter: blur(17px);
 		        backdrop-filter: blur(17px);
 	}
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover:before {
+		opacity: 1;
+	}
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover .list-head span {
+		background: #87FE37;
+		color: #000000;
+	}
 }
-.casino-list .mySwiper swiper-slide.accent-card .slide-cart,
 .event-list .mySwiper swiper-slide.accent-card .slide-cart {
 	background: linear-gradient(180deg, #1F1E22 0%, #201A30 79.5%), linear-gradient(180deg, #111922 0%, #020305 100%);
 	box-shadow: 0px 80px 25px 0px rgba(0, 0, 0, 0.01), 0px 50px 20px 0px rgba(0, 0, 0, 0.11), 0px 30px 15px 0px rgba(0, 0, 0, 0.36), 0px 15px 10px 0px rgba(0, 0, 0, 0.61), 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
 }
 
-.event-list .list-name svg {
-	fill: #75F94C;
-}
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart {
 	padding: 0 0 20px;
 }
@@ -2862,7 +3084,8 @@ input {
 	border: 1px solid #576C86;
 	background: #1A2535;
 	padding: 10px 15px;
-	font-family: "Urbanist-Medium", sans-serif;
+	font-size: 15px;
+	font-weight: 600;
 }
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn {
 	border-radius: 10px;
@@ -2876,8 +3099,20 @@ input {
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons .visit-btn .svg-icon {
 	fill: white;
 }
-.event-list .mySwiper .active-card .slide-wrapper .slide-cart {
-	border: 2px solid #A14EF6;
+@media screen and (min-width: 1024px) {
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover {
+		border: 2px solid #A14EF6;
+		background: linear-gradient(180deg, #111922 0%, #020305 100%);
+		-webkit-backdrop-filter: blur(17px);
+		        backdrop-filter: blur(17px);
+	}
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover:before {
+		background: #A14EF6;
+	}
+	.event-list .mySwiper swiper-slide .slide-wrapper .slide-cart:hover .list-head span {
+		background: linear-gradient(90deg, #51168D 0%, #A34FF9 100%);
+		color: #FFFFFF;
+	}
 }
 
 .review-wrapper {
@@ -2899,7 +3134,7 @@ input {
 	font-size: 18px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .text-content .block {
 	border-radius: 20px;
@@ -2920,7 +3155,7 @@ input {
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .read-more svg {
 	width: 20px;
@@ -2934,7 +3169,7 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .general-info .item-wrap {
 	display: flex;
@@ -3241,7 +3476,7 @@ input {
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .rating-global::after {
 	content: "";
@@ -3475,14 +3710,14 @@ input {
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .side-bar .card .safety-index .value {
 	color: #87FE37;
 	font-size: 18px;
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	text-transform: uppercase;
 }
 .review-wrapper .side-bar .card .safety-index .author {
@@ -3490,7 +3725,7 @@ input {
 	font-size: 12px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .review-wrapper .side-bar .card .rate svg {
 	width: 16px;
@@ -3619,7 +3854,7 @@ input {
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 
 .navigation {
@@ -3639,7 +3874,7 @@ input {
 	font-size: 12px;
 	font-weight: 500;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 
 .gold-party .slot-game {
@@ -3665,7 +3900,7 @@ input {
 	font-size: 24px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .gold-party .slot-game .game-wrap {
 	display: flex;
@@ -3708,7 +3943,7 @@ input {
 	font-size: 15px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 .gold-party .slot-game .game-wrap .popup .visit-btn {
@@ -3726,4 +3961,5 @@ input {
 .svg-icon {
 	max-width: 100%;
 	max-height: 100%;
+	flex-shrink: 0;
 }

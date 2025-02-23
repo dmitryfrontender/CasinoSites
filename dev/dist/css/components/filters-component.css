@@ -50,7 +50,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 	flex-shrink: 1;
 }
@@ -125,7 +125,7 @@
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .filters-component .filters-block .recommended-buttons {
 	display: flex;
@@ -154,7 +154,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .filters-component .filters-block .recommended-buttons .mobile-filters {
 	display: none;

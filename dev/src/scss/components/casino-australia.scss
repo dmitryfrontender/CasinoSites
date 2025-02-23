@@ -26,7 +26,7 @@
 
         }
         p{
-            @include mixins.text(vars.$placeholder_color, 16px, 500, normal);
+            @include mixins.text(vars.$placeholder_color, 16px, 500, 150%);
             padding-bottom: 20px;
         }
         .summary{
