@@ -92,6 +92,7 @@
             flex-direction: column;
             gap: 30px;
             svg{
+                flex-shrink: 0;
                 width: 24px;
                 height: 24px;
             }
@@ -270,7 +271,7 @@
                 .name-wrapper{
                     display: flex;
                     justify-content: flex-start;
-                    align-items: flex-end;
+                    align-items: center;
                     padding-top: 10px;
                     gap: 20px;
                     .name{

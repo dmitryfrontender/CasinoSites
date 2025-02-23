@@ -138,6 +138,7 @@ header {
                 height: 24px;
                 fill: #75F94C;
                 padding: 0 4px;
+                flex-shrink: 0;
                 @media screen and (max-width: 650px) {
                     &{
                         padding: 0;
@@ -149,6 +150,11 @@ header {
             span{
                 @include mixins.text(#B5F88E, 0.8rem, 600, normal);
                 font-family: 'Urbanist-Medium', sans-serif;
+            }
+            @media screen and (max-width: 425px) {
+                &{
+                    gap: 5px;
+                }
             }
         }
         @media screen and (max-width: 375px) {
@@ -239,6 +245,7 @@ header {
         justify-content: space-between;
         align-items: center;
         height: 100%;
+        // padding-top: 70px;
         // gap: 1rem;
         li{
             height: 100%;
@@ -319,8 +326,10 @@ header {
             }
         }
         &.active-mobile-menu{
-            transform: translateY(-10%);
+            transform: translateY(0);
             transition: all 0.3s ease;
+            top: 0;
+            padding-top: 55px;
         }
 
     }

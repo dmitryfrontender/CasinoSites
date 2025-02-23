@@ -42,6 +42,10 @@ button{
     border: none;
 }
 
+input {
+    touch-action: manipulation;
+  }
+
 
 .progress-wrapper{
     display: flex;
@@ -414,6 +418,7 @@ button{
         span{
             @include mixins.text(white, 24px, 600, 17px);
             font-family: 'Urbanist-Medium', sans-serif;
+            line-height: 110%;
         }
     }
     .mySwiper{
@@ -461,6 +466,12 @@ button{
                     h3{
                         @include mixins.text(white, 20px, 600, normal);
                         font-family: 'Urbanist-Medium', sans-serif;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        max-width: 150px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-align: center;
 
                     }
                     .card-buttons{
@@ -545,6 +556,10 @@ button{
                             background: #000;
                             z-index: 1;
                             top: 0;
+                            max-width: 200px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
                         img{
                             top: 0;
@@ -781,15 +796,28 @@ button{
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+            column-gap: 40px;
 
             label {
+                // flex: 1;
+                flex: none; 
+                width: 90px;
+                text-align: center;
                 .radio-element {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    flex-basis: 100px;
+                    flex-basis: auto;
                     gap: 15px;
+                    // @media screen and (max-width: 724px) {
+                    //     &{
+                    //         display: flex;
+                    //         flex-direction: column;
+                    //         align-items: center;
+                    //         justify-content: center;
+                    //     }
+                    // }
                 }
 
                 svg{
@@ -820,6 +848,21 @@ button{
                     span {
                         color: #87FE37;
                     }
+                }
+            }
+            @media screen and (max-width: 1024px) {
+                &{
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+                    gap: 10px;
+                    justify-content: center;
+                    align-items: stretch;
+                    label{
+                        span{
+                            white-space: unset;
+                        }
+                    }
+                  
                 }
             }
         }
@@ -1099,6 +1142,10 @@ button{
                     background: #000;
                     z-index: 1;
                     top: 0;
+                    max-width: 200px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
                 img{
                     top: 0;
@@ -1260,6 +1307,7 @@ button{
                 fill: vars.$selection_bg;
                 width: 30px;
                 height: 30px;
+                flex-shrink: 0;
             }
             h1{
                 @include mixins.text(white, 24px, 600, normal);

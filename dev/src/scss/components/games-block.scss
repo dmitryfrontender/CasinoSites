@@ -34,7 +34,6 @@
                             border-top-right-radius: 0;
                             border-bottom-right-radius: 10px;
                             border-bottom-left-radius: 10px;
-                            // border-radius: 10px;
                             padding-top: 2px;
                             transform: translateY(-5px);
                             color: #83A2C6;
@@ -42,6 +41,10 @@
                             background: #000;
                             z-index: 1;
                             top: 0;
+                            max-width: 200px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
                         img{
                             top: 0;
@@ -54,6 +57,12 @@
                     h3{
                         @include mixins.text(white, 20px, 600, normal);
                         font-family: 'Urbanist-Medium', sans-serif;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        max-width: 150px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-align: center;
 
                     }
                     .card-buttons{
@@ -61,6 +70,9 @@
                         flex-direction: column;
                         align-items: center;
                         justify-content: center;
+                        position: relative;
+                        width: 90%;
+                        max-width: 90%;
                         gap: 18px;
                         svg{
                             width: 20px;
@@ -75,10 +87,15 @@
                             background: #1A2535;
                             padding: 10px 15px;
                             width: 200px;
+                            max-width: 90%;
                             font-family: 'Urbanist-Medium', sans-serif;
                             gap: 10px;
                             span{
                                 @include mixins.text(white, 14px, 600, normal);
+                                white-space: nowrap;
+                            }
+                            @media screen and (max-width: 650px) {
+                                width: 100%;
                             }
 
                         }

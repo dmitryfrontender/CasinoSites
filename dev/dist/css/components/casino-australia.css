@@ -1,0 +1,71 @@
+.casino-australia {
+	overflow-x: clip;
+}
+@media screen and (max-width: 1024px) {
+	.casino-australia {
+		overflow-x: unset;
+	}
+}
+
+.casino-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 25px;
+}
+.casino-wrapper .info-block {
+	flex: 1;
+}
+.casino-wrapper .info-block h2 {
+	color: #fff;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 10px;
+}
+.casino-wrapper .info-block p {
+	color: #83A2C6;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: normal;
+	font-family: var(--default-font);
+	padding-bottom: 20px;
+}
+.casino-wrapper .info-block .summary {
+	color: #fff;
+}
+.casino-wrapper .info-block .summary .yellow-text {
+	color: #F8EB3E;
+}
+.casino-wrapper .bg-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex: 1;
+}
+.casino-wrapper .bg-wrapper::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/banner-girl-bg.png);
+	filter: blur(152px);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	width: 1000px;
+	height: 1000px;
+	z-index: -1;
+}
+.casino-wrapper .bg-wrapper img {
+	position: relative;
+	left: -2%;
+	width: 85%;
+}
+@media screen and (max-width: 1024px) {
+	.casino-wrapper {
+		flex-direction: column;
+	}
+}
