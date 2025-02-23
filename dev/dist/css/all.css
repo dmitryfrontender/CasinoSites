@@ -1491,46 +1491,6 @@ footer .footer-bottom .copyright {
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 }
-.casino-filters .content-block .sidebar .bar .head {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-bottom: 30px;
-}
-.casino-filters .content-block .sidebar .bar .head .title {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 10px;
-}
-.casino-filters .content-block .sidebar .bar .head .title svg {
-	width: 30px;
-	height: 30px;
-	stroke: none;
-}
-.casino-filters .content-block .sidebar .bar .head .icon-btn {
-	width: 24px !important;
-	height: 24px !important;
-	stroke: #73838F;
-	fill: transparent;
-	transition: all ease 0.3s;
-	cursor: pointer;
-}
-@media screen and (min-width: 1024px) {
-	.casino-filters .content-block .sidebar .bar .head .icon-btn:hover {
-		stroke: white;
-	}
-}
-.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn {
-	transform: rotate(180deg);
-	transition: all ease 0.3s;
-	stroke: #F9EB3D;
-}
-@media screen and (min-width: 1024px) {
-	.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn:hover {
-		stroke: #F9EB3D;
-	}
-}
 .casino-filters .content-block .sidebar .bar .checkbox-list {
 	display: none;
 }
@@ -1591,6 +1551,9 @@ footer .footer-bottom .copyright {
 	flex-direction: column;
 }
 .casino-filters .content-block .sidebar .bar .list li {
+	position: relative;
+}
+.casino-filters .content-block .sidebar .bar .list li .li-wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -1650,6 +1613,16 @@ footer .footer-bottom .copyright {
 		transition: all ease 0.3s;
 	}
 }
+.casino-filters .content-block .sidebar .bar .list li .active-btn .svg-icon {
+	transform: rotate(180deg);
+	transition: all ease 0.3s;
+	stroke: #F9EB3D;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .list li .active-btn .svg-icon:hover {
+		stroke: #F9EB3D;
+	}
+}
 .casino-filters .content-block .sidebar .bar .list li::before {
 	content: "";
 	display: block;
@@ -1658,6 +1631,9 @@ footer .footer-bottom .copyright {
 	background: #1D283C;
 	position: absolute;
 	top: 0;
+}
+.casino-filters .content-block .sidebar .bar .list li:first-child::before {
+	content: none;
 }
 .casino-filters .content-block .sidebar img {
 	padding-inline: 20px;
