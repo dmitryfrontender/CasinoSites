@@ -23,6 +23,16 @@
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 }
+.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn {
+	transform: rotate(180deg);
+	transition: all ease 0.3s;
+	stroke: #F9EB3D;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn:hover {
+		stroke: #F9EB3D;
+	}
+}
 .casino-filters .content-block .sidebar .bar .checkbox-list {
 	display: none;
 }
