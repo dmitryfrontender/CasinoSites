@@ -986,6 +986,15 @@ footer .footer-bottom__links a {
 	width: 30px;
 	height: 30px;
 }
+footer .footer-bottom__links a svg {
+	transition: all ease 0.3s;
+}
+@media screen and (min-width: 1024px) {
+	footer .footer-bottom__links a:hover svg {
+		transition: all ease 0.3s;
+		opacity: 0.7;
+	}
+}
 footer .footer-bottom__links .svg-icon {
 	width: 30px;
 	height: 30px;
@@ -1055,7 +1064,7 @@ footer .footer-bottom .copyright {
 	line-height: normal;
 	font-family: "Urbanist", sans-serif;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 	.benefits-wrapper .content .table {
 		display: none;
 	}
@@ -1069,6 +1078,9 @@ footer .footer-bottom .copyright {
 .benefits-wrapper .content .casino-list .casino-list-elem {
 	margin-bottom: 5px;
 	padding: 20px;
+}
+.benefits-wrapper .content .casino-list .casino-list-elem span, .benefits-wrapper .content .casino-list .casino-list-elem p, .benefits-wrapper .content .casino-list .casino-list-elem .progress-value {
+	cursor: default;
 }
 .benefits-wrapper .content .casino-list .casino-list-elem .casino-banner span {
 	display: none;
@@ -1383,13 +1395,15 @@ footer .footer-bottom .copyright {
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 	margin-block: 10px;
+	cursor: pointer;
+	position: relative;
 }
 .benefits-wrapper .faq ul li .top-block {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
+	height: 100%;
 	align-items: center;
-	margin-bottom: 20px;
-	cursor: pointer;
 	gap: 5px;
 }
 .benefits-wrapper .faq ul li .top-block .question {
@@ -1414,6 +1428,7 @@ footer .footer-bottom .copyright {
 	display: none;
 	justify-content: flex-start;
 	align-items: flex-start;
+	margin-top: 20px;
 	gap: 15px;
 }
 .benefits-wrapper .faq ul li .answer svg {
@@ -1511,7 +1526,7 @@ footer .footer-bottom .copyright {
 	height: 16px;
 }
 .benefits-wrapper .side-bar .casino-bar .bottom-card .table-list .link-element .active-link svg {
-	stroke: #7692B4;
+	fill: #7692B4;
 }
 .benefits-wrapper .side-bar .casino-bar .bottom-card .table-list .link-element .active-link span {
 	color: white;
@@ -1606,24 +1621,14 @@ footer .footer-bottom .copyright {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-block: 10px;
+	padding: 10px 5px;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list li .filter {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	padding: 0 0 10px 0;
 	width: 100%;
-}
-.casino-filters .content-block .sidebar .bar .checkbox-list li .filter::after {
-	content: "";
-	height: 1px;
-	width: 100%;
-	background: #1A2535;
-	position: absolute;
-	bottom: 0;
-	left: 0;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content {
 	display: flex;
@@ -1805,7 +1810,7 @@ footer .footer-bottom .copyright {
 		stroke: #F9EB3D;
 	}
 }
-.casino-filters .content-block .sidebar .bar .list li::before {
+.casino-filters .content-block .sidebar .bar .list > li::before {
 	content: "";
 	display: block;
 	width: 100%;
@@ -1814,7 +1819,7 @@ footer .footer-bottom .copyright {
 	position: absolute;
 	top: 0;
 }
-.casino-filters .content-block .sidebar .bar .list li:first-child::before {
+.casino-filters .content-block .sidebar .bar .list > li:first-child::before {
 	content: none;
 }
 .casino-filters .content-block .sidebar img {
@@ -2408,12 +2413,23 @@ footer .footer-bottom .copyright {
 .popup-head {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
+}
+.popup-head .head-content {
+	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 	gap: 10px;
 }
-.popup-head svg {
+.popup-head .head-content svg {
 	width: 30px;
 	height: 30px;
+}
+.popup-head button svg {
+	width: 20px;
+	height: 20px;
 }
 
 .filters-wrap {
@@ -2599,6 +2615,7 @@ input {
 	border: 1px solid #576C86;
 	padding: 10px 15px;
 	background: #1A2535;
+	flex-shrink: 0;
 	gap: 5px;
 }
 .rate svg {
@@ -2691,6 +2708,9 @@ input {
 	gap: 20px;
 	justify-content: space-between;
 }
+.casino-list-elem span, .casino-list-elem p, .casino-list-elem .progress-value {
+	cursor: default;
+}
 .casino-list-elem .casino-banner {
 	display: flex;
 	align-items: center;
@@ -2721,8 +2741,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	color: #83A2C6;
-	font-style: italic;
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 15px;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2861,6 +2880,8 @@ input {
 	max-width: 100%;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	cursor: pointer;
+	max-width: 160px;
 }
 .run-btn svg,
 .run-btn .svg-icon {
@@ -4451,4 +4472,15 @@ input {
 
 .active-mobile-filter {
 	display: flex;
+}
+
+:root {
+	--swiper-pagination-bullet-width: 15px;
+	--swiper-pagination-bullet-height: 15px;
+	--swiper-pagination-bullet-size: 15px;
+	--swiper-pagination-bullet-border-radius: 50%;
+	--swiper-pagination-bullet-inactive-color: cornflowerblue;
+	--swiper-pagination-bullet-inactive-opacity: 0.2;
+	--swiper-theme-color: #87FE37;
+	--swiper-pagination-color: #87FE37;
 }

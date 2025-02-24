@@ -37,6 +37,8 @@
 @use './components/games-block.scss';
 @use './components/filter-popup.scss';
 
+
+
 button {
     background: transparent;
     border: none;
@@ -141,6 +143,7 @@ input {
     border: 1px solid #576C86;
     padding: 10px 15px;
     background: #1A2535;
+    flex-shrink: 0;
     gap: 5px;
 
     svg {
@@ -237,6 +240,9 @@ input {
     padding: 14px;
     gap: 20px;
     justify-content: space-between;
+    span, p, .progress-value{
+        cursor: default;
+    }
 
     .casino-banner {
         display: flex;
@@ -269,8 +275,8 @@ input {
         align-items: center;
         justify-content: center;
         color: #83A2C6;
-        font-style: italic;
-        font-weight: 600;
+        // font-style: italic;
+        font-weight: 500;
         font-size: 15px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -420,6 +426,8 @@ input {
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
+        cursor: pointer;
+        max-width: 160px;
     }
 
     svg,
@@ -655,6 +663,7 @@ input {
             }
 
         }
+      
     }
 }
 
@@ -2200,3 +2209,23 @@ input {
 .active-mobile-filter{
     display: flex;
 }
+
+:root {
+    --swiper-pagination-bullet-width: 15px;
+    --swiper-pagination-bullet-height: 15px;
+    --swiper-pagination-bullet-size: 15px;
+    --swiper-pagination-bullet-border-radius: 50%;
+    --swiper-pagination-bullet-inactive-color: cornflowerblue;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-theme-color: #87FE37;
+    --swiper-pagination-color: #87FE37;
+}
+
+
+
+
+// .swiper-pagination-bullet{
+//     width: 15px;
+//     height: 15px;
+//     border: 1px solid #87FE37;
+// }

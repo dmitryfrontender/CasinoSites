@@ -37,13 +37,28 @@
 .popup-head{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 10px;
-    svg{
-        width: 30px;
-        height: 30px;
-
+    width: 100%;
+    .head-content{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+        svg{
+            width: 30px;
+            height: 30px;
+    
+        }
     }
+
+    button{
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    
 }
 
 .filters-wrap{
