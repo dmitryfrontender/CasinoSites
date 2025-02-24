@@ -56,7 +56,7 @@
 	line-height: normal;
 	font-family: "Urbanist", sans-serif;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 	.benefits-wrapper .content .table {
 		display: none;
 	}
@@ -70,6 +70,9 @@
 .benefits-wrapper .content .casino-list .casino-list-elem {
 	margin-bottom: 5px;
 	padding: 20px;
+}
+.benefits-wrapper .content .casino-list .casino-list-elem span, .benefits-wrapper .content .casino-list .casino-list-elem p, .benefits-wrapper .content .casino-list .casino-list-elem .progress-value {
+	cursor: default;
 }
 .benefits-wrapper .content .casino-list .casino-list-elem .casino-banner span {
 	display: none;
@@ -384,13 +387,15 @@
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 	margin-block: 10px;
+	cursor: pointer;
+	position: relative;
 }
 .benefits-wrapper .faq ul li .top-block {
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
+	height: 100%;
 	align-items: center;
-	margin-bottom: 20px;
-	cursor: pointer;
 	gap: 5px;
 }
 .benefits-wrapper .faq ul li .top-block .question {
@@ -415,6 +420,7 @@
 	display: none;
 	justify-content: flex-start;
 	align-items: flex-start;
+	margin-top: 20px;
 	gap: 15px;
 }
 .benefits-wrapper .faq ul li .answer svg {
@@ -512,7 +518,7 @@
 	height: 16px;
 }
 .benefits-wrapper .side-bar .casino-bar .bottom-card .table-list .link-element .active-link svg {
-	stroke: #7692B4;
+	fill: #7692B4;
 }
 .benefits-wrapper .side-bar .casino-bar .bottom-card .table-list .link-element .active-link span {
 	color: white;

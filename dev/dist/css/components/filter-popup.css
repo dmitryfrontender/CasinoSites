@@ -34,12 +34,23 @@
 .popup-head {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	width: 100%;
+}
+.popup-head .head-content {
+	display: flex;
 	justify-content: flex-start;
+	align-items: center;
 	gap: 10px;
 }
-.popup-head svg {
+.popup-head .head-content svg {
 	width: 30px;
 	height: 30px;
+}
+.popup-head button svg {
+	width: 20px;
+	height: 20px;
 }
 
 .filters-wrap {

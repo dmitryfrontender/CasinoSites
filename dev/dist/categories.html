@@ -136,10 +136,9 @@
 			<path
 				d="M11.6055 14.2794L15.3705 10.5314C15.6535 10.2494 15.6535 9.75043 15.3705 9.46743L11.6055 5.71943C11.3115 5.42743 10.8365 5.42843 10.5445 5.72243C10.2525 6.01643 10.2525 6.49043 10.5465 6.78343L13.0235 9.25043H6.66846C6.25346 9.25043 5.91846 9.58643 5.91846 10.0004C5.91846 10.4144 6.25346 10.7504 6.66846 10.7504H13.0235L10.5465 13.2164C10.3995 13.3634 10.3265 13.5554 10.3265 13.7484C10.3265 13.9394 10.3995 14.1314 10.5445 14.2774C10.8365 14.5704 11.3115 14.5714 11.6055 14.2794Z" />
 		</symbol>
-		<symbol id='icon-arrow-left' viewBox='0 0 16 16'>
-			<path d="M2.83325 8.18294L12.8333 8.18294" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-			<path d="M6.86646 12.1992L2.83312 8.18317L6.86646 4.1665" stroke-width="1.5" stroke-linecap="round"
-				stroke-linejoin="round" />
+		<symbol id='icon-arrow-left' viewBox="0 0 400.004 400.004" >
+			<path d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757   c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072   c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315   C400.004,190.438,392.251,182.686,382.688,182.686z"/>
+			
 		</symbol>
 		<symbol id='icon-tick-square-1' viewBox='0 0 21 20'>
 			<path opacity="0.4"
@@ -1387,7 +1386,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -1526,7 +1525,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -1664,7 +1663,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -1801,7 +1800,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -1940,7 +1939,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -2078,7 +2077,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -2217,7 +2216,7 @@
                             </div>
                         </li>
                     </ul>
-                    <button id="more-filters">
+                    <button class="more-filters-btn">
                         More 27 Variants
                         <svg class="svg-icon">
                             <use xlink:href='#icon-arrow-right-square' />
@@ -2347,10 +2346,18 @@
 <div class="popup-category-filters">
   <div class="popup-wrapper">
     <div class="popup-head">
-      <svg class="svg-icon">
-        <use xlink:href="#icon-fire" />
-      </svg>
-      <h2>Popular Filters</h2>
+      <div class="head-content">
+        <svg class="svg-icon">
+          <use xlink:href="#icon-fire" />
+        </svg>
+        <h2>Popular Filters</h2>
+      </div>
+      <button>
+        <svg class="svg-icon" id="close-filter-popup-btn">
+          <use xlink:href="#icon-close-btn" />
+        </svg>
+      </button>
+      
     </div>
     <div class="filters-wrap">
       <div class="filter">
@@ -2776,7 +2783,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -2915,7 +2922,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -3053,7 +3060,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -3190,7 +3197,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -3329,7 +3336,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -3467,7 +3474,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -3606,7 +3613,7 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <button id="more-filters">
+                                <button class="more-filters-btn">
                                     More 27 Variants
                                     <svg class="svg-icon">
                                         <use xlink:href='#icon-arrow-right-square' />
@@ -4500,6 +4507,11 @@
                     <button class="run-btn">
                         <span>
                             <span class="text-accent">RunWinCasino</span>
+                            <span class="text-accent">RunWinCasino</span>
+                            <span class="text-accent">RunWinCasino</span>
+                            <span class="text-accent">RunWinCasino</span>
+
+
                             Review
                         </span>
                         <svg class="svg-icon">
@@ -5767,7 +5779,7 @@
                 </div>
                 <div class="add-to-bookmarks__text">
                     <p>We’re your trusted guide to finding the best casinos.</p>
-                    <p class="instructions">Stay up-to-date with the latest reviews and exclusive offers by <span class="white-text">pressing Ctrl + D</span> on your keyboard now to bookmark this site. </p>
+                    <p class="instructions">Stay up-to-date with the latest reviews and exclusive offers by <span class="white-text">pressing Ctrl + D or Cmnd + D (macOS system)</span> on your keyboard now to bookmark this site. </p>
                 </div>
             </div>
             <div class="add-to-bookmarks__right">

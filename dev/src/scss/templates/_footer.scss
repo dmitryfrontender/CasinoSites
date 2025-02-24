@@ -167,12 +167,28 @@ footer {
                 display: inline-block;
                 width: 30px;
                 height: 30px;
+                svg{
+                    transition: all ease 0.3s;
+
+                }
+                @media screen and (min-width: 1024px) {
+                    &:hover{
+                        svg{
+                            transition: all ease 0.3s;
+                            opacity: 0.7;
+
+                        }
+                    }
+                  
+                    
+                }
             }
 
             .svg-icon {
                 width: 30px;
                 height: 30px;
             }
+            
         }
 
         .copyright {

@@ -4,6 +4,7 @@ $(document).ready(function(){
 	closeSearch();
 	toggleSearch();
 	openFilterPopup();
+	// closeFilterPopup();
 	closeFilterPopup();
 	toggleAccordeon();
 	scrollToBenefitsContent();
@@ -75,6 +76,8 @@ const removeSwiperOverflow = () => {
 
 if ($('.swiper').length) {
 
+	$('.swiper-pagination-bullet').css('border', '1px solid #87FE37');
+
 	const swiper = new Swiper('.swiper', {
 		// Optional parameters
 		direction: 'horizontal',
@@ -106,7 +109,7 @@ if ($('.swiper').length) {
 }
 
 const openFilterPopup = () => {
-	$('#more-filters').on('click', function() {
+	$('.more-filters-btn').on('click', function() {
 		$('body').css('overflow', 'hidden');
 		$('.popup-category-filters').addClass('filters-popup-active');
 	});
@@ -137,12 +140,16 @@ const closeFilterPopup = () => {
 			$('body').css('overflow', 'auto');
 		}
 	});
+	$('#close-filter-popup-btn').on('click', function(){
+		$('.popup-category-filters').removeClass('filters-popup-active');
+		$('body').css('overflow', 'auto');
+	})
 }
 
 const toggleAccordeon = () => {
-	$('.top-block').on('click', function() {
+	$('#faq li').on('click', function() {
 		$(this).find('.arrow').toggleClass('arrow-active');
-		$(this).closest('li').find('.answer').toggleClass('answer-active');
+		$(this).find('.answer').toggleClass('answer-active');
 
 	})
 }

@@ -70,24 +70,14 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-block: 10px;
+	padding: 10px 5px;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list li .filter {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: relative;
-	padding: 0 0 10px 0;
 	width: 100%;
-}
-.casino-filters .content-block .sidebar .bar .checkbox-list li .filter::after {
-	content: "";
-	height: 1px;
-	width: 100%;
-	background: #1A2535;
-	position: absolute;
-	bottom: 0;
-	left: 0;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content {
 	display: flex;
@@ -269,7 +259,7 @@
 		stroke: #F9EB3D;
 	}
 }
-.casino-filters .content-block .sidebar .bar .list li::before {
+.casino-filters .content-block .sidebar .bar .list > li::before {
 	content: "";
 	display: block;
 	width: 100%;
@@ -278,7 +268,7 @@
 	position: absolute;
 	top: 0;
 }
-.casino-filters .content-block .sidebar .bar .list li:first-child::before {
+.casino-filters .content-block .sidebar .bar .list > li:first-child::before {
 	content: none;
 }
 .casino-filters .content-block .sidebar img {
