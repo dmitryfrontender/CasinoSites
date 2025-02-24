@@ -1532,6 +1532,36 @@ footer .footer-bottom .copyright {
 	        backdrop-filter: blur(17px);
 	padding: 20px;
 }
+.casino-filters .content-block .sidebar .bar .head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 30px;
+}
+.casino-filters .content-block .sidebar .bar .head .title {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 10px;
+}
+.casino-filters .content-block .sidebar .bar .head .title svg {
+	width: 30px;
+	height: 30px;
+	stroke: none;
+}
+.casino-filters .content-block .sidebar .bar .head .icon-btn {
+	width: 24px !important;
+	height: 24px !important;
+	stroke: #73838F;
+	fill: transparent;
+	transition: all ease 0.3s;
+	cursor: pointer;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .head .icon-btn:hover {
+		stroke: white;
+	}
+}
 .casino-filters .content-block .sidebar .bar .active-head-btn .icon-btn {
 	transform: rotate(180deg);
 	transition: all ease 0.3s;
@@ -2881,7 +2911,7 @@ input {
 	border-radius: 10px;
 	position: relative;
 	top: 10px;
-	z-index: -1;
+	z-index: 0;
 	white-space: nowrap;
 	max-width: 120px;
 	overflow: hidden;
@@ -2890,6 +2920,7 @@ input {
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
 	width: 200px;
 	border-radius: 20px;
+	z-index: 1;
 }
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart h3 {
 	color: white;
@@ -3055,7 +3086,7 @@ input {
 	z-index: 1;
 	top: 0;
 	white-space: nowrap;
-	max-width: 120px;
+	max-width: 160px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
