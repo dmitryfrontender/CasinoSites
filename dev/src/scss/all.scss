@@ -992,6 +992,23 @@ input {
                     .option {
                         min-width: 130px;
                     }
+                    a{
+                        @include mixins.text(vars.$selection-bg, 14px, 600, 150%);
+                    }
+                    // .link {
+                    //     @media screen and (max-width: 420px) {
+                    //         display: none;
+                    //     }
+                    // }
+                    .mobile-link {
+                        // display: none;
+                        @media screen and (max-width: 420px) {
+                            &{
+                                display: block;
+                            }
+                        }
+
+                    }
                 }
             }
 
