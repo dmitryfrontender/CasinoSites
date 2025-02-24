@@ -31,7 +31,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	position: absolute;
 	border-top-left-radius: 0;
@@ -62,7 +62,7 @@
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	text-overflow: ellipsis;
 	width: 100%;
@@ -103,7 +103,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 @media screen and (max-width: 650px) {

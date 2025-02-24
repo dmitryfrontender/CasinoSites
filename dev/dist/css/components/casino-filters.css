@@ -54,7 +54,7 @@
 	font-size: 12px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list button {
 	padding: 8px 20px 8px 35px;
@@ -68,7 +68,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list button svg {
 	width: 20px;
@@ -116,14 +116,14 @@
 	font-size: clamp(14px, 1vw, 16px);
 	font-weight: 700;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .sidebar .bar .list li span {
 	color: #83A2C6;
 	font-size: clamp(10px, 0.8vw, 13px);
 	font-weight: 600;
 	line-height: 150%;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
 }
 .casino-filters .content-block .sidebar .bar .list li .main-icon {
@@ -214,7 +214,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 	padding: 8px 20px 14px;
 	background: #588552;
@@ -231,7 +231,7 @@
 	font-size: 20px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 	font-family: "Urbanist-Medium", sans-serif;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons {
@@ -256,7 +256,7 @@
 	font-size: 14px;
 	font-weight: 600;
 	line-height: normal;
-	font-family: var(--default-font);
+	font-family: "Urbanist", sans-serif;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons .visit-btn span {
 	color: #020123;

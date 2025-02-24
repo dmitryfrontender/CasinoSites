@@ -50,6 +50,7 @@ header {
         }
         span{
             font-size: 23px;
+            font-weight: 700;
         }
 
         @media screen and (max-width: 650px) {
@@ -88,15 +89,15 @@ header {
                 background: transparent;
                 border: none;
                 color: white;
-                @include mixins.text(white, 0.7rem, 600, normal);
+                @include mixins.text(white, 0.7rem, 500, normal);
                 &::placeholder{
-                    @include mixins.text(#83A2C6, 0.7rem, 600, normal);
+                    @include mixins.text(#83A2C6, 0.7rem, 500, normal);
                     font-family: 'Urbanist-Medium', sans-serif;
                 }
 
             }
         }
-        @media screen and (max-width: 650px) {
+        @media screen and (max-width: 991px) {
             &{
                 display: none;
             }
@@ -117,7 +118,7 @@ header {
                 height: 20px;
 
             }
-            @media screen and (max-width: 650px) {
+            @media screen and (max-width: 991px) {
                 display: block;
             }
         }
@@ -132,6 +133,13 @@ header {
             background: #3D9700;
             padding: 5px;
             border-radius: 5px;
+            cursor: pointer;
+
+            @media screen and (min-width: 1024px) {
+                &:hover{
+                    opacity: 0.7;
+                }
+            }
 
             svg{
                 width: 24px;
@@ -139,7 +147,7 @@ header {
                 fill: #75F94C;
                 padding: 0 4px;
                 flex-shrink: 0;
-                @media screen and (max-width: 650px) {
+                @media screen and (max-width: 991px) {
                     &{
                         padding: 0;
                     }
@@ -222,7 +230,7 @@ header {
         width: 20px;
         height: 20px;
     }
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 991px) {
         display: none;
 
     }
@@ -239,6 +247,7 @@ header {
     justify-content: center;
     .container{
         height: 100%;
+        overflow: auto;
     }
     ul{
         display: flex;
@@ -262,6 +271,7 @@ header {
                 display: flex;
                 align-items: center;
                 gap: 7px;
+                font-weight: 600;
                 svg{
                     width: 15px;
                     height: 15px;

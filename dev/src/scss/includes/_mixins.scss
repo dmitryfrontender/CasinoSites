@@ -1,3 +1,6 @@
+// variables
+@use "variables" as vars;
+
 // font-face
 // @include font-face('Ico Moon', '../fonts/icomoon', normal, normal);
 @mixin font-face($font-family, $file-path, $font-weight, $font-style) {
@@ -94,7 +97,7 @@
 	font-size: $font-size;
 	font-weight: $font-weight;
 	line-height: $line-height;
-	font-family: var(--default-font);
+	font-family: vars.$default_font;
 }
 
 @mixin mediaGridBlock() {
