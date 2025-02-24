@@ -619,12 +619,28 @@ main {
 	z-index: -1;
 }
 @media screen and (max-width: 1024px) {
+	.banner .categories-banner-wrapper::before {
+		filter: blur(0px);
+		right: auto;
+	}
+}
+@media screen and (max-width: 1024px) {
 	.banner .categories-banner-wrapper {
 		flex-direction: column;
 	}
 }
 .banner-left {
 	max-width: 520px;
+}
+@media screen and (max-width: 1024px) {
+	.banner-left {
+		max-width: 100%;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.banner-right img {
+		max-width: 100%;
+	}
 }
 .banner-title {
 	color: #FFF;
@@ -998,10 +1014,9 @@ footer .footer-bottom .copyright {
 .benefits-wrapper .content .hero-text-wrap p {
 	color: #83A2C6;
 	font-size: 15px;
-	font-weight: 600;
+	font-weight: 500;
 	line-height: 150%;
 	font-family: "Urbanist", sans-serif;
-	font-style: italic;
 	height: 70px;
 	overflow: hidden;
 }
@@ -3337,6 +3352,18 @@ input {
 }
 .review-wrapper .general-info .info-wrap ul li .option {
 	min-width: 130px;
+}
+.review-wrapper .general-info .info-wrap ul li a {
+	color: #87FE37;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 150%;
+	font-family: "Urbanist", sans-serif;
+}
+@media screen and (max-width: 420px) {
+	.review-wrapper .general-info .info-wrap ul li .mobile-link {
+		display: block;
+	}
 }
 @media screen and (max-width: 768px) {
 	.review-wrapper .general-info .info-wrap {

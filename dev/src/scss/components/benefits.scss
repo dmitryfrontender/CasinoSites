@@ -14,8 +14,8 @@
         }
         .hero-text-wrap{
             p{
-                @include mixins.text(vars.$placeholder_color, 15px, 600, 150%);
-                font-style: italic;
+                @include mixins.text(vars.$placeholder_color, 15px, 500, 150%);
+                // font-style: italic;
                 height: 70px;
                 overflow: hidden;
                

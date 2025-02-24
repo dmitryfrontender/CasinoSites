@@ -60,6 +60,10 @@ main {
             background: url('../images/banner-bg.png') 50% / contain no-repeat;
             filter: blur(10px);
             z-index: -1;
+            @media screen and (max-width: 1024px) {
+                filter: blur(0px);
+                right: auto;
+            }
         }
 
         @media screen and (max-width: 1024px) {
@@ -69,6 +73,19 @@ main {
 
     &-left {
         max-width: 520px;
+        @media screen and (max-width: 1024px) {
+            max-width: 100%;
+            
+        }
+    }
+
+    &-right {
+        @media screen and (max-width: 1024px) {
+            img{
+                max-width: 100%;
+            }
+            
+        }
     }
 
     &-title {
