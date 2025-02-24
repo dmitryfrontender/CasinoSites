@@ -19,6 +19,7 @@
 	flex-wrap: wrap;
 	width: 100%;
 	gap: 10px;
+	position: relative;
 }
 .filters-component .filters-block .item {
 	width: calc(25% - 8px);
@@ -129,19 +130,21 @@
 }
 .filters-component .filters-block .recommended-buttons {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
+	flex: 1 0 400px;
 	gap: 10px;
 }
 .filters-component .filters-block .recommended-buttons button {
 	border-radius: 10px;
 	background: #1A2535;
 	padding: 10px 15px;
-	width: 400px;
+	max-width: 400px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	gap: 15px;
+	width: 100%;
 	cursor: pointer;
 }
 .filters-component .filters-block .recommended-buttons button svg {
@@ -156,23 +159,44 @@
 	line-height: 150%;
 	font-family: "Urbanist", sans-serif;
 }
+@media screen and (max-width: 820px) {
+	.filters-component .filters-block .recommended-buttons button {
+		max-width: unset;
+	}
+}
 .filters-component .filters-block .recommended-buttons .mobile-filters {
 	display: none;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 860px) {
 	.filters-component .filters-block .recommended-buttons .mobile-filters {
 		display: flex;
 	}
 }
-@media screen and (max-width: 768px) {
-	.filters-component .filters-block .bottom-row {
-		flex-direction: column;
+@media screen and (max-width: 450px) {
+	.filters-component .filters-block .recommended-buttons {
+		flex: 1;
 	}
-	.filters-component .filters-block .bottom-row .info {
-		justify-content: flex-start;
-		width: 100%;
+}
+@media screen and (max-width: 860px) {
+	.filters-component .filters-block .bottom-row {
+		position: relative;
+		flex-direction: column;
+		align-items: flex-start;
 	}
 	.filters-component .filters-block .bottom-row .recommended-buttons {
 		width: 100%;
+		flex: 1;
 	}
+	.filters-component .filters-block .bottom-row .recommended-buttons button {
+		max-width: unset;
+	}
+}
+@media screen and (max-width: 400px) {
+	.filters-component .filters-block .recommended-buttons {
+		flex-direction: column;
+	}
+}
+
+.game-filter .mobile-filters {
+	display: none !important;
 }

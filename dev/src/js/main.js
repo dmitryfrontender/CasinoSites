@@ -7,9 +7,12 @@ $(document).ready(function(){
 	closeFilterPopup();
 	toggleAccordeon();
 	scrollToBenefitsContent();
+	openSideBarFilter();
+	closeSidebarFilter();
 	displayLink();
 	// showFilterAccordeon();
 	roundSliderValue();
+	showFullText();
 	// removeSwiperOverflow();
 	// swiper()
 
@@ -55,7 +58,6 @@ const toggleSearch = () => {
 	$('#toggle-search').on('click', function(){
 		$('#toggle-search').toggleClass('active-search-btn');
 		$('#mobile-search').toggleClass('active-mobile-search');
-		// $('body').toggleClass('no-scroll');
 
 	})
 }
@@ -66,8 +68,6 @@ const removeSwiperOverflow = () => {
 	  let swiperElement = $(swiperContainer.shadowRoot).find(".swiper");
 	  if (swiperElement.length) {
 		swiperElement.css("overflow", "visible");
-		// swiperElement.css("overflow-x", "hidden");
-		// swiperElement.css("overflow-y", "visible");
 
 	  }
 	}
@@ -106,10 +106,28 @@ if ($('.swiper').length) {
 }
 
 const openFilterPopup = () => {
-	$('#more-filters, .mobile-filters').on('click', function() {
+	$('#more-filters').on('click', function() {
 		$('body').css('overflow', 'hidden');
 		$('.popup-category-filters').addClass('filters-popup-active');
 	});
+}
+
+const openSideBarFilter = () => {
+	$('.mobile-filters').on('click', function() {
+		console.log('click filter')
+		$('.mobile-filter').toggleClass('active-mobile-filter');
+		if ($('body').css('overflow') === 'hidden') {
+            $('body').css('overflow', '');
+        } else {
+            $('body').css('overflow', 'hidden');
+        }
+	})
+}
+const closeSidebarFilter = () => {
+	$('#close-mobile-filter').on('click', function() {
+		$('.mobile-filter').removeClass('active-mobile-filter');
+		$('body').css('overflow', '');
+	})
 }
 
 const closeFilterPopup = () => {
@@ -177,29 +195,15 @@ function displayLink() {
 $('.filter-element .li-wrapper button').on('click', function() {
 	const listItem = $(this).closest('.filter-element');
 
-	// Закрываем все другие открытые элементы
 	$('.filter-element').not(listItem).removeClass('active');
 	$('.filter-element .li-wrapper button').not(this).removeClass('active-btn');
 	$('.checkbox-list').not(listItem.find('.checkbox-list')).removeClass('active-checkbox-list');
 
-	// Добавляем/убираем активный класс
 	listItem.toggleClass('active');
 	$(this).toggleClass('active-btn');
 	listItem.find('.checkbox-list').toggleClass('active-checkbox-list');
 });
 
-// const showFilterAccordeon = () => {
-// 		$(".icon-btn").on("click", function () {
-// 			const $listItem = $(this).closest("li");
-
-// 			// Переключаем класс active у текущего элемента
-// 			$listItem.toggleClass("active");
-
-// 			// Закрываем все остальные списки
-// 			$(".list li").not($listItem).removeClass("active");
-// 		});
-
-// }
 
 const roundSliderValue = () => {
 
@@ -210,7 +214,6 @@ const roundSliderValue = () => {
 		let normalizedValue = Math.min(Math.max(value, 0), 10);
 
 		let percent = (normalizedValue / 10) * 100;
-		// let offset = 151 - (151 * percent) / 100;
 		let offset;
 
 
@@ -247,3 +250,19 @@ const roundSliderValue = () => {
 
 
 };
+
+
+const showFullText = () => {
+
+	$('#show-full-text').on('click', () => {
+		$('.hero-text-wrap').addClass('full-text');
+		$('#show-full-text').hide();
+		$('#show-less-text').show();
+
+	})
+	$('#show-less-text').on('click', () => {
+		$('.hero-text-wrap').removeClass('full-text');
+		$('#show-less-text').hide();
+		$('#show-full-text').show();
+	})
+}

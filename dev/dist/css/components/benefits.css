@@ -12,13 +12,25 @@
 	line-height: normal;
 	font-family: "Urbanist", sans-serif;
 }
-.benefits-wrapper .content p {
+.benefits-wrapper .content .hero-text-wrap p {
 	color: #83A2C6;
 	font-size: 15px;
 	font-weight: 600;
 	line-height: 150%;
 	font-family: "Urbanist", sans-serif;
 	font-style: italic;
+	height: 70px;
+	overflow: hidden;
+}
+.benefits-wrapper .content .hero-text-wrap::after {
+	content: "...";
+	color: #83A2C6;
+}
+.benefits-wrapper .content .full-text p {
+	height: auto;
+}
+.benefits-wrapper .content .full-text::after {
+	content: "";
 }
 .benefits-wrapper .content > h2 {
 	margin-bottom: 20px;
