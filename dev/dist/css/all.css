@@ -1699,7 +1699,7 @@ footer .footer-bottom .copyright {
 	display: flex;
 	flex-direction: column;
 }
-.casino-filters .content-block .sidebar .bar .list li {
+.casino-filters .content-block .sidebar .bar .list li .li-wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;

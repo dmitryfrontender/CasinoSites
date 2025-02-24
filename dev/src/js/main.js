@@ -172,7 +172,7 @@ const showFilterAccordeon = () => {
 		$('.checkbox-list').toggleClass('active-checkbox-list');
 	})
 
-// }
+}
 
 $('.filter-element .li-wrapper button').on('click', function() {
 	const listItem = $(this).closest('.filter-element');
@@ -246,4 +246,4 @@ const roundSliderValue = () => {
 	});
 
 
-}
+};

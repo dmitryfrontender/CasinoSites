@@ -1,7 +1,7 @@
-@use "../includes/variables" as vars;
-@use '../includes/mixins' as mixins;
+@use "../includes/variables"as vars;
+@use '../includes/mixins'as mixins;
 
-.casino-filters{
+.casino-filters {
     margin-top: 30px;
     // .filters-block{
     //     display: flex;
@@ -124,50 +124,57 @@
     //         }
     //    }
     // }
-    .content-block{
+    .content-block {
 
         display: flex;
         justify-content: center;
         align-items: flex-start;
         margin-top: 15px;
-        .sidebar{
+
+        .sidebar {
             display: flex;
             flex-direction: column;
             justify-content: center;
             flex-shrink: 0;
             gap: 50px;
             width: 25%;
-            .bar{
+
+            .bar {
                 border-radius: 20px;
                 border: 1px solid #1D283C;
                 background: linear-gradient(180deg, #111922 0%, #020305 100%);
                 backdrop-filter: blur(17px);
                 padding: 20px;
-                .head{
+
+                .head {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
                     padding-bottom: 30px;
-                    .title{
+
+                    .title {
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
                         gap: 10px;
-                        svg{
+
+                        svg {
                             width: 30px;
                             height: 30px;
                             stroke: none;
                         }
                     }
-                    .icon-btn{
+
+                    .icon-btn {
                         width: 24px !important;
                         height: 24px !important;
                         stroke: vars.$link_color;
                         fill: transparent;
                         transition: all ease 0.3s;
                         cursor: pointer;
+
                         @media screen and (min-width: 1024px) {
-                            &:hover{
+                            &:hover {
                                 stroke: white;
 
                             }
@@ -177,14 +184,15 @@
                     }
 
                 }
-                .active-head-btn{
-                    .icon-btn{
+
+                .active-head-btn {
+                    .icon-btn {
                         transform: rotate(180deg);
                         transition: all ease 0.3s;
                         stroke: #F9EB3D;
 
                         @media screen and (min-width: 1024px) {
-                            &:hover{
+                            &:hover {
                                 stroke: #F9EB3D;
 
                             }
@@ -194,22 +202,25 @@
 
                     }
                 }
-                .checkbox-list{
+
+                .checkbox-list {
                     display: none;
-                    li{
+
+                    li {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
                         padding-block: 10px;
 
-                        .filter{
+                        .filter {
                             display: flex;
                             align-items: center;
                             justify-content: space-between;
                             position: relative;
                             padding: 0 0 10px 0;
                             width: 100%;
-                            &::after{
+
+                            &::after {
                                 content: '';
                                 height: 1px;
                                 width: 100%;
@@ -218,17 +229,20 @@
                                 bottom: 0;
                                 left: 0;
                             }
-                            .content{
+
+                            .content {
                                 display: flex;
                                 align-items: center;
                                 justify-content: flex-start;
                                 gap: 10px;
                                 width: 85%;
-                                svg{
+
+                                svg {
                                     width: 18px;
                                     height: 18px;
                                     display: none;
                                 }
+
                                 .checkbox-container {
                                     display: flex;
                                     align-items: center;
@@ -236,9 +250,11 @@
                                     cursor: pointer;
                                     width: 100%;
                                 }
+
                                 .checkbox-container input {
                                     display: none;
                                 }
+
                                 .checkbox-custom {
                                     width: 20px;
                                     height: 20px;
@@ -252,15 +268,17 @@
                                     flex-shrink: 0;
                                 }
 
-                                .checkbox-container input:checked + .checkbox-custom {
+                                .checkbox-container input:checked+.checkbox-custom {
                                     border: 1px solid #7752FE;
                                     background: #87FE37;
-                                    svg{
+
+                                    svg {
                                         display: block;
                                     }
                                 }
                             }
-                            .num{
+
+                            .num {
                                 @include mixins.text(#A4B4D2, 0.7rem, 600, normal);
                                 display: flex;
                                 align-items: center;
@@ -269,7 +287,8 @@
                                 z-index: 0;
                                 right: 10px;
                                 flex-shrink: 0;
-                                &::before{
+
+                                &::before {
                                     content: '';
                                     width: 20px;
                                     height: 20px;
@@ -283,10 +302,12 @@
 
                                 }
                             }
+
                             @media screen and (min-width: 1024px) {
-                                &:hover{
-                                    .checkbox-container input:checked + .checkbox-custom,
-                                    .checkbox-custom{
+                                &:hover {
+
+                                    .checkbox-container input:checked+.checkbox-custom,
+                                    .checkbox-custom {
                                         border: 1px solid vars.$selection_bg;
                                         transition: all ease 0.3s;
                                     }
@@ -294,7 +315,8 @@
                             }
                         }
                     }
-                    button{
+
+                    button {
                         padding: 8px 20px 8px 35px;
                         margin-block: 20px;
                         display: flex;
@@ -303,7 +325,8 @@
                         cursor: pointer;
                         gap: 10px;
                         @include mixins.text(#F9EB3D, 14px, 600, normal);
-                        svg{
+
+                        svg {
                             width: 20px;
                             height: 20px;
                             stroke: #F9EB3D;
@@ -311,28 +334,35 @@
                         }
                     }
                 }
-                .active-checkbox-list{
+
+                .active-checkbox-list {
                     display: block;
                 }
-                .list{
+
+                .list {
                     display: flex;
                     flex-direction: column;
+
                     // gap: 15px;
-                    li{
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        position: relative;
-                        padding-block: 20px;
-                        gap: 10px;
-                        .list-content{
+                    li {
+                        .li-wrapper {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            position: relative;
+                            padding-block: 20px;
+                            gap: 10px;
+                        }
+
+                        .list-content {
                             display: flex;
                             justify-content: flex-start;
                             align-items: center;
                             gap: 10px;
                             max-width: 70%;
                         }
-                        .item-content{
+
+                        .item-content {
                             display: flex;
                             justify-content: flex-start;
                             align-items: center;
@@ -340,15 +370,18 @@
                             flex: 1;
                             min-width: 0;
                         }
-                        .text{
+
+                        .text {
                             display: flex;
                             flex-direction: column;
                             width: 100%;
                         }
-                        .title{
+
+                        .title {
                             @include mixins.text(white, clamp(14px, 1vw, 16px), 700, normal);
                         }
-                        span{
+
+                        span {
                             @include mixins.text(#83A2C6, clamp(10px, 0.8vw, 13px), 600, 150%);
                             white-space: nowrap;
                             overflow: hidden;
@@ -356,13 +389,15 @@
                             max-width: 100%;
                             display: inline-block;
                         }
-                        .main-icon{
+
+                        .main-icon {
                             width: 30px !important;
                             height: 30px !important;
                             fill: vars.$selection_bg;
                         }
-                        button{
-                            .button-icon{
+
+                        button {
+                            .button-icon {
                                 fill: transparent;
                                 stroke: vars.$link_color;
                                 transition: all ease 0.3s;
@@ -370,9 +405,10 @@
                                 height: 24px;
                                 cursor: pointer;
                             }
+
                             @media screen and (min-width: 1024px) {
-                                &:hover{
-                                    svg{
+                                &:hover {
+                                    svg {
                                         stroke: white;
                                         transition: all ease 0.3s;
 
@@ -382,7 +418,8 @@
                         }
 
                     }
-                    li::before{
+
+                    li::before {
                         content: '';
                         display: block;
                         width: 100%;
@@ -393,28 +430,33 @@
                     }
                 }
             }
-            img{
+
+            img {
                 padding-inline: 20px;
             }
+
             @media screen and (max-width: 1175px) {
-                &{
+                & {
                     width: 33.3%;
                 }
             }
+
             @media screen and (max-width: 860px) {
-                &{
+                & {
                     display: none;
                 }
             }
         }
-        .card-wrapper{
+
+        .card-wrapper {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             flex-wrap: wrap;
             row-gap: 10px;
             width: 75%;
-            li{
+
+            li {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -429,12 +471,12 @@
                 overflow: hidden;
                 margin-left: 10px;
 
-                .list-head{
+                .list-head {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
 
-                    span{
+                    span {
                         @include mixins.text(#AFD9A4, 14px, 600, normal);
                         font-family: 'Urbanist-Medium', sans-serif;
                         padding: 8px 20px 14px;
@@ -447,39 +489,46 @@
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
-                    img{
+
+                    img {
                         width: 200px;
                         border-radius: 20px;
                     }
                 }
-                h3{
+
+                h3 {
                     @include mixins.text(white, 20px, 600, normal);
                     font-family: 'Urbanist-Medium', sans-serif;
 
                 }
-                .card-buttons{
+
+                .card-buttons {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     gap: 18px;
                     max-width: 100%;
-                    svg{
+
+                    svg {
                         width: 20px;
                         height: 20px;
                     }
-                    button{
+
+                    button {
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         gap: 10px;
-                        span{
+
+                        span {
                             @include mixins.text(white, 14px, 600, normal);
                         }
 
                     }
-                    .visit-btn{
-                        span{
+
+                    .visit-btn {
+                        span {
                             color: #020123;
 
                         }
@@ -487,43 +536,50 @@
                     }
 
                 }
+
                 @media screen and (min-width: 1024px) {
-                    &:hover{
+                    &:hover {
                         border: 2px solid #87FE37;
                         background: linear-gradient(180deg, #111922 0%, #020305 100%);
                         backdrop-filter: blur(17px);
                     }
                 }
             }
+
             @media screen and (max-width: 1175px) {
-                &{
+                & {
                     width: auto;
-                    li{
+
+                    li {
                         width: calc(50% - 10px);
 
                     }
 
                 }
             }
+
             @media screen and (max-width: 860px) {
-                &{
+                & {
                     justify-content: center;
                     gap: 10px;
-                    li{
+
+                    li {
                         margin-left: unset;
                         width: calc(50% - 5px);
 
                     }
                 }
             }
+
             @media screen and (max-width: 550px) {
-                &{
-                    li{
+                & {
+                    li {
                         width: 100%;
                     }
                 }
             }
         }
+
         // @media screen and (max-width: 860px) {
         //     justify-content: center;
         //     gap: 10px;
