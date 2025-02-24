@@ -165,12 +165,12 @@ function displayLink() {
 }
 
 
-const showFilterAccordeon = () => {
+// const showFilterAccordeon = () => {
 
-	$('.icon-btn').on('click', function() {
-		$('.head').toggleClass('active-head-btn');
-		$('.checkbox-list').toggleClass('active-checkbox-list');
-	})
+// 	$('.icon-btn').on('click', function() {
+// 		$('.head').toggleClass('active-head-btn');
+// 		$('.checkbox-list').toggleClass('active-checkbox-list');
+// 	})
 
 }
 
