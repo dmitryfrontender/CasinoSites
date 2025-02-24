@@ -99,12 +99,6 @@
 	justify-content: center;
 	transition: all ease 0.3s;
 }
-@media screen and (min-width: 1024px) {
-	.filters-wrap .filter .content .checkbox-custom:hover {
-		border: 2px solid #87FE37;
-		transition: all ease 0.3s;
-	}
-}
 .filters-wrap .filter .content .checkbox-container input:checked + .checkbox-custom {
 	border: 1px solid #7752FE;
 	background: #87FE37;
@@ -136,4 +130,11 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: -1;
+}
+@media screen and (min-width: 1024px) {
+	.filters-wrap .filter:hover .checkbox-container input:checked + .checkbox-custom,
+	.filters-wrap .filter:hover .checkbox-custom {
+		border: 1px solid #87FE37;
+		transition: all ease 0.3s;
+	}
 }
