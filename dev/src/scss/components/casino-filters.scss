@@ -172,10 +172,10 @@
 
                             }
 
-                            
+
                         }
                     }
-                    
+
                 }
                 .active-head-btn{
                     .icon-btn{
@@ -189,7 +189,7 @@
 
                             }
 
-                            
+
                         }
 
                     }
@@ -201,30 +201,102 @@
                         justify-content: space-between;
                         align-items: center;
                         padding-block: 10px;
-                        .box-content{
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            gap: 14px;
-                        }
-                        svg{
-                            width: 18px;
-                            height: 18px;
-                        }
-                        .num{
-                            width: 20px;
-                            height: 20px;
-                            border-radius: 20px;
-                            background: #203144;
+
+                        .filter{
                             display: flex;
                             align-items: center;
-                            justify-content: center;
-                            @include mixins.text(#A4B4D2, 12px, 600, normal);
+                            justify-content: space-between;
+                            position: relative;
+                            padding: 0 0 10px 0;
+                            width: 100%;
+                            &::after{
+                                content: '';
+                                height: 1px;
+                                width: 100%;
+                                background: #1A2535;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                            }
+                            .content{
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                gap: 10px;
+                                width: 85%;
+                                svg{
+                                    width: 18px;
+                                    height: 18px;
+                                    display: none;
+                                }
+                                .checkbox-container {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    cursor: pointer;
+                                    width: 100%;
+                                }
+                                .checkbox-container input {
+                                    display: none;
+                                }
+                                .checkbox-custom {
+                                    width: 20px;
+                                    height: 20px;
+                                    border: 2px solid #1A2535;
+                                    border-radius: 4px;
+                                    position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    transition: all ease 0.3s;
+                                    flex-shrink: 0;
+                                }
+
+                                .checkbox-container input:checked + .checkbox-custom {
+                                    border: 1px solid #7752FE;
+                                    background: #87FE37;
+                                    svg{
+                                        display: block;
+                                    }
+                                }
+                            }
+                            .num{
+                                @include mixins.text(#A4B4D2, 0.7rem, 600, normal);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                position: relative;
+                                z-index: 0;
+                                right: 10px;
+                                flex-shrink: 0;
+                                &::before{
+                                    content: '';
+                                    width: 20px;
+                                    height: 20px;
+                                    border-radius: 50%;
+                                    background: #203144;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    z-index: -1;
+
+                                }
+                            }
+                            @media screen and (min-width: 1024px) {
+                                &:hover{
+                                    .checkbox-container input:checked + .checkbox-custom,
+                                    .checkbox-custom{
+                                        border: 1px solid vars.$selection_bg;
+                                        transition: all ease 0.3s;
+                                    }
+                                }
+                            }
                         }
                     }
                     button{
                         padding: 8px 20px 8px 35px;
-                        margin-block: 35px;
+                        margin-block: 20px;
                         display: flex;
                         justify-content: flex-start;
                         align-items: center;
@@ -235,6 +307,7 @@
                             width: 20px;
                             height: 20px;
                             stroke: #F9EB3D;
+                            fill: #F9EB3D;
                         }
                     }
                 }
@@ -257,6 +330,7 @@
                             justify-content: flex-start;
                             align-items: center;
                             gap: 10px;
+                            max-width: 70%;
                         }
                         .item-content{
                             display: flex;
@@ -269,6 +343,7 @@
                         .text{
                             display: flex;
                             flex-direction: column;
+                            width: 100%;
                         }
                         .title{
                             @include mixins.text(white, clamp(14px, 1vw, 16px), 700, normal);
@@ -276,6 +351,10 @@
                         span{
                             @include mixins.text(#83A2C6, clamp(10px, 0.8vw, 13px), 600, 150%);
                             white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 100%;
+                            display: inline-block;
                         }
                         .main-icon{
                             width: 30px !important;
@@ -363,6 +442,10 @@
                         border-radius: 10px;
                         transform: translateY(10px);
                         z-index: -1;
+                        white-space: nowrap;
+                        max-width: 120px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
                     img{
                         width: 200px;
@@ -380,6 +463,7 @@
                     align-items: center;
                     justify-content: center;
                     gap: 18px;
+                    max-width: 100%;
                     svg{
                         width: 20px;
                         height: 20px;

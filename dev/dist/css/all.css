@@ -1581,33 +1581,100 @@ footer .footer-bottom .copyright {
 	align-items: center;
 	padding-block: 10px;
 }
-.casino-filters .content-block .sidebar .bar .checkbox-list li .box-content {
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter {
 	display: flex;
-	justify-content: flex-start;
 	align-items: center;
-	gap: 14px;
+	justify-content: space-between;
+	position: relative;
+	padding: 0 0 10px 0;
+	width: 100%;
 }
-.casino-filters .content-block .sidebar .bar .checkbox-list li svg {
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter::after {
+	content: "";
+	height: 1px;
+	width: 100%;
+	background: #1A2535;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+	width: 85%;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content svg {
 	width: 18px;
 	height: 18px;
+	display: none;
 }
-.casino-filters .content-block .sidebar .bar .checkbox-list li .num {
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content .checkbox-container {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+	width: 100%;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content .checkbox-container input {
+	display: none;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content .checkbox-custom {
 	width: 20px;
 	height: 20px;
-	border-radius: 20px;
-	background: #203144;
+	border: 2px solid #1A2535;
+	border-radius: 4px;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: all ease 0.3s;
+	flex-shrink: 0;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content .checkbox-container input:checked + .checkbox-custom {
+	border: 1px solid #7752FE;
+	background: #87FE37;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .content .checkbox-container input:checked + .checkbox-custom svg {
+	display: block;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .num {
 	color: #A4B4D2;
-	font-size: 12px;
+	font-size: 0.7rem;
 	font-weight: 600;
 	line-height: normal;
 	font-family: "Urbanist", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 0;
+	right: 10px;
+	flex-shrink: 0;
+}
+.casino-filters .content-block .sidebar .bar .checkbox-list li .filter .num::before {
+	content: "";
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #203144;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+}
+@media screen and (min-width: 1024px) {
+	.casino-filters .content-block .sidebar .bar .checkbox-list li .filter:hover .checkbox-container input:checked + .checkbox-custom,
+	.casino-filters .content-block .sidebar .bar .checkbox-list li .filter:hover .checkbox-custom {
+		border: 1px solid #87FE37;
+		transition: all ease 0.3s;
+	}
 }
 .casino-filters .content-block .sidebar .bar .checkbox-list button {
 	padding: 8px 20px 8px 35px;
-	margin-block: 35px;
+	margin-block: 20px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -1623,6 +1690,7 @@ footer .footer-bottom .copyright {
 	width: 20px;
 	height: 20px;
 	stroke: #F9EB3D;
+	fill: #F9EB3D;
 }
 .casino-filters .content-block .sidebar .bar .active-checkbox-list {
 	display: block;
@@ -1644,6 +1712,7 @@ footer .footer-bottom .copyright {
 	justify-content: flex-start;
 	align-items: center;
 	gap: 10px;
+	max-width: 70%;
 }
 .casino-filters .content-block .sidebar .bar .list li .item-content {
 	display: flex;
@@ -1656,6 +1725,7 @@ footer .footer-bottom .copyright {
 .casino-filters .content-block .sidebar .bar .list li .text {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 }
 .casino-filters .content-block .sidebar .bar .list li .title {
 	color: white;
@@ -1671,6 +1741,10 @@ footer .footer-bottom .copyright {
 	line-height: 150%;
 	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	display: inline-block;
 }
 .casino-filters .content-block .sidebar .bar .list li .main-icon {
 	width: 30px !important;
@@ -1754,6 +1828,10 @@ footer .footer-bottom .copyright {
 	border-radius: 10px;
 	transform: translateY(10px);
 	z-index: -1;
+	white-space: nowrap;
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .casino-filters .content-block .card-wrapper li .list-head img {
 	width: 200px;
@@ -1773,6 +1851,7 @@ footer .footer-bottom .copyright {
 	align-items: center;
 	justify-content: center;
 	gap: 18px;
+	max-width: 100%;
 }
 .casino-filters .content-block .card-wrapper li .card-buttons svg {
 	width: 20px;
@@ -2124,8 +2203,8 @@ footer .footer-bottom .copyright {
 	background: #000;
 	z-index: 1;
 	top: 0;
-	max-width: 200px;
 	white-space: nowrap;
+	max-width: 120px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -2327,12 +2406,6 @@ footer .footer-bottom .copyright {
 	justify-content: center;
 	transition: all ease 0.3s;
 }
-@media screen and (min-width: 1024px) {
-	.filters-wrap .filter .content .checkbox-custom:hover {
-		border: 2px solid #87FE37;
-		transition: all ease 0.3s;
-	}
-}
 .filters-wrap .filter .content .checkbox-container input:checked + .checkbox-custom {
 	border: 1px solid #7752FE;
 	background: #87FE37;
@@ -2364,6 +2437,13 @@ footer .footer-bottom .copyright {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: -1;
+}
+@media screen and (min-width: 1024px) {
+	.filters-wrap .filter:hover .checkbox-container input:checked + .checkbox-custom,
+	.filters-wrap .filter:hover .checkbox-custom {
+		border: 1px solid #87FE37;
+		transition: all ease 0.3s;
+	}
 }
 
 button {
@@ -2699,6 +2779,7 @@ input {
 	justify-content: center;
 	gap: 10px;
 	cursor: pointer;
+	max-width: 100%;
 }
 .run-btn .white-text {
 	color: #fff;
@@ -2710,6 +2791,9 @@ input {
 	line-height: normal;
 	font-family: "Urbanist", sans-serif;
 	white-space: nowrap;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .run-btn svg,
 .run-btn .svg-icon {
@@ -2812,6 +2896,10 @@ input {
 	position: relative;
 	top: 10px;
 	z-index: -1;
+	white-space: nowrap;
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .list-head img {
 	width: 200px;
@@ -2837,6 +2925,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	gap: 15px;
+	max-width: 100%;
 }
 .casino-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
 	width: 20px;
@@ -2979,8 +3068,8 @@ input {
 	background: #000;
 	z-index: 1;
 	top: 0;
-	max-width: 200px;
 	white-space: nowrap;
+	max-width: 120px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -3014,6 +3103,7 @@ input {
 	align-items: center;
 	justify-content: center;
 	gap: 15px;
+	max-width: 100%;
 }
 .event-list .mySwiper swiper-slide .slide-wrapper .slide-cart .card-buttons svg {
 	width: 20px;
@@ -3656,8 +3746,8 @@ input {
 	background: #000;
 	z-index: 1;
 	top: 0;
-	max-width: 200px;
 	white-space: nowrap;
+	max-width: 120px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
@@ -3728,6 +3818,7 @@ input {
 	justify-content: center;
 	flex-direction: column;
 	gap: 10px;
+	max-width: 100%;
 }
 .review-wrapper .side-bar .card .card-buttons button {
 	border-radius: 10px;

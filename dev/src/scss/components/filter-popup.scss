@@ -42,7 +42,7 @@
     svg{
         width: 30px;
         height: 30px;
-       
+
     }
 }
 
@@ -85,7 +85,7 @@
                 align-items: center;
                 gap: 10px;
                 cursor: pointer;
-                
+
             }
             .checkbox-container input {
                 display: none;
@@ -100,13 +100,7 @@
                 align-items: center;
                 justify-content: center;
                 transition: all ease 0.3s;
-                @media screen and (min-width: 1024px) {
-                    &:hover{
-                        border: 2px solid vars.$selection_bg;
-                        transition: all ease 0.3s;
-                    }
-                }
-                
+
             }
 
             .checkbox-container input:checked + .checkbox-custom {
@@ -136,7 +130,17 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 z-index: -1;
-            
+
+            }
+        }
+
+        @media screen and (min-width: 1024px) {
+            &:hover{
+                .checkbox-container input:checked + .checkbox-custom,
+                .checkbox-custom{
+                    border: 1px solid vars.$selection_bg;
+                    transition: all ease 0.3s;
+                }
             }
         }
     }

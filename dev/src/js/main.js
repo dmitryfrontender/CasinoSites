@@ -8,7 +8,7 @@ $(document).ready(function(){
 	toggleAccordeon();
 	scrollToBenefitsContent();
 	displayLink();
-	showFilterAccordeon();
+	// showFilterAccordeon();
 	roundSliderValue();
 	// removeSwiperOverflow();
 	// swiper()
@@ -125,7 +125,7 @@ const toggleAccordeon = () => {
 	$('.top-block').on('click', function() {
 		$(this).find('.arrow').toggleClass('arrow-active');
 		$(this).closest('li').find('.answer').toggleClass('answer-active');
-		
+
 	})
 }
 
@@ -172,7 +172,34 @@ const showFilterAccordeon = () => {
 		$('.checkbox-list').toggleClass('active-checkbox-list');
 	})
 
-}
+// }
+
+$('.filter-element .li-wrapper button').on('click', function() {
+	const listItem = $(this).closest('.filter-element');
+
+	// Закрываем все другие открытые элементы
+	$('.filter-element').not(listItem).removeClass('active');
+	$('.filter-element .li-wrapper button').not(this).removeClass('active-btn');
+	$('.checkbox-list').not(listItem.find('.checkbox-list')).removeClass('active-checkbox-list');
+
+	// Добавляем/убираем активный класс
+	listItem.toggleClass('active');
+	$(this).toggleClass('active-btn');
+	listItem.find('.checkbox-list').toggleClass('active-checkbox-list');
+});
+
+// const showFilterAccordeon = () => {
+// 		$(".icon-btn").on("click", function () {
+// 			const $listItem = $(this).closest("li");
+
+// 			// Переключаем класс active у текущего элемента
+// 			$listItem.toggleClass("active");
+
+// 			// Закрываем все остальные списки
+// 			$(".list li").not($listItem).removeClass("active");
+// 		});
+
+// }
 
 const roundSliderValue = () => {
 
@@ -188,10 +215,10 @@ const roundSliderValue = () => {
 
 
 		if (container.width() > 100) {
-			
+
 			offset = 75.4 - (75.4 * percent) / 100;
 		} else {
-			
+
 			offset = 151 - (151 * percent) / 100;
 		}
 
